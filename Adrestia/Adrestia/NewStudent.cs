@@ -53,9 +53,11 @@ namespace Adrestia
         {
             connection.Open();
 
+            string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
+
             string sql1 = "INSERT INTO [USER] VALUES (@pw, @type)";
             command = new SqlCommand(sql1, connection);
-            command.Parameters.AddWithValue("@pw", txtPass.Text);
+            command.Parameters.AddWithValue("@pw", hashedPassword);
             command.Parameters.AddWithValue("@type", 3);
             command.ExecuteNonQuery();
 
