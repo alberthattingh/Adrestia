@@ -1,0 +1,2 @@
+INSERT INTO USER_TYPE 
+VALUES (2, 'Instructor');
