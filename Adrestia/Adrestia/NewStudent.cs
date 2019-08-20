@@ -15,11 +15,9 @@ namespace Adrestia
     {
         private string defaultPassword = "music123";
 
-        public string connectionString = @"Data Source=alberts-pc;User ID=albert;Password=sql123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string connectionString = Security.ConnectionString;
         public SqlConnection connection;
-        public SqlDataAdapter adapter;
         public SqlCommand command;
-        public DataSet ds;
 
         public NewStudent()
         {

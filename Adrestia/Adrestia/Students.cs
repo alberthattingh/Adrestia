@@ -13,7 +13,7 @@ namespace Adrestia
 {
     public partial class Students : UserControl
     {
-        public string connectionString = @"Data Source=alberts-pc;User ID=albert;Password=sql123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string connectionString = Security.ConnectionString;
         public SqlConnection connection;
         public SqlDataAdapter adapter;
         public SqlCommand command;
@@ -101,7 +101,26 @@ namespace Adrestia
                 return;
             }
 
+            // This query is only to check if the userID is valid
+            connection.Open();
+            string sql = "SELECT * FROM [USER] WHERE UserID = '" + txtEdit.Text + "';";
+            command = new SqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+            
 
+            if (!reader.HasRows)
+            {
+                MessageBox.Show("There aren't any students with the Student ID: " + txtEdit.Text);
+                connection.Close();
+                return;
+            }
+            connection.Close();
+
+            EditStudent editStudentForm = new EditStudent();
+            editStudentForm.studentID = txtEdit.Text;
+            editStudentForm.ShowDialog();
+
+            PopulateGridView();
         }
     }
 }

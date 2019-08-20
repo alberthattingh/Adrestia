@@ -9,6 +9,8 @@ namespace Adrestia
 {
     public class Security
     {
+        public static string ConnectionString = @"Data Source=alberts-pc;User ID=albert;Password=sql123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
         public static string GetSHA1Hash(string pw)
         {
             using (SHA1Managed sha1 = new SHA1Managed())

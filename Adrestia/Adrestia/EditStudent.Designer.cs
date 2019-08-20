@@ -64,6 +64,7 @@
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // label6
             // 
@@ -159,11 +160,9 @@
             // 
             // txtPass
             // 
-            this.txtPass.Enabled = false;
-            this.txtPass.Location = new System.Drawing.Point(184, 70);
-            this.txtPass.Multiline = true;
+            this.txtPass.Location = new System.Drawing.Point(184, 83);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(155, 33);
+            this.txtPass.Size = new System.Drawing.Size(155, 20);
             this.txtPass.TabIndex = 7;
             this.txtPass.UseSystemPasswordChar = true;
             // 
@@ -178,11 +177,9 @@
             // 
             // txtConfirm
             // 
-            this.txtConfirm.Enabled = false;
-            this.txtConfirm.Location = new System.Drawing.Point(184, 109);
-            this.txtConfirm.Multiline = true;
+            this.txtConfirm.Location = new System.Drawing.Point(184, 122);
             this.txtConfirm.Name = "txtConfirm";
-            this.txtConfirm.Size = new System.Drawing.Size(155, 33);
+            this.txtConfirm.Size = new System.Drawing.Size(155, 20);
             this.txtConfirm.TabIndex = 7;
             this.txtConfirm.UseSystemPasswordChar = true;
             // 
@@ -219,6 +216,7 @@
             this.Controls.Add(this.txtID);
             this.Name = "EditStudent";
             this.Text = "Edit Student";
+            this.Load += new System.EventHandler(this.EditStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
