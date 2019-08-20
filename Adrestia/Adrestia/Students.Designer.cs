@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -35,9 +36,11 @@
             this.btnNewStudent = new System.Windows.Forms.Button();
             this.btnEditStudent = new System.Windows.Forms.Button();
             this.btnDeleteStudent = new System.Windows.Forms.Button();
-            this.btnSearchStudent = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtEdit = new System.Windows.Forms.TextBox();
+            this.txtDelete = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,30 +96,22 @@
             // 
             // btnEditStudent
             // 
-            this.btnEditStudent.Location = new System.Drawing.Point(812, 208);
+            this.btnEditStudent.Location = new System.Drawing.Point(812, 204);
             this.btnEditStudent.Name = "btnEditStudent";
             this.btnEditStudent.Size = new System.Drawing.Size(168, 50);
             this.btnEditStudent.TabIndex = 2;
             this.btnEditStudent.Text = "Edit Student";
             this.btnEditStudent.UseVisualStyleBackColor = true;
+            this.btnEditStudent.Click += new System.EventHandler(this.BtnEditStudent_Click);
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(812, 273);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(812, 296);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(168, 50);
             this.btnDeleteStudent.TabIndex = 2;
             this.btnDeleteStudent.Text = "Delete Student";
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchStudent
-            // 
-            this.btnSearchStudent.Location = new System.Drawing.Point(812, 78);
-            this.btnSearchStudent.Name = "btnSearchStudent";
-            this.btnSearchStudent.Size = new System.Drawing.Size(168, 50);
-            this.btnSearchStudent.TabIndex = 2;
-            this.btnSearchStudent.Text = "Search";
-            this.btnSearchStudent.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -125,6 +120,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(382, 50);
             this.txtSearch.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.txtSearch, "Start typing to filter students.");
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // label2
@@ -137,15 +133,32 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Search:";
             // 
+            // txtEdit
+            // 
+            this.txtEdit.Location = new System.Drawing.Point(812, 265);
+            this.txtEdit.Name = "txtEdit";
+            this.txtEdit.Size = new System.Drawing.Size(168, 20);
+            this.txtEdit.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txtEdit, "Enter the StudentID of the student you wish to edit.");
+            // 
+            // txtDelete
+            // 
+            this.txtDelete.Location = new System.Drawing.Point(812, 357);
+            this.txtDelete.Name = "txtDelete";
+            this.txtDelete.Size = new System.Drawing.Size(168, 20);
+            this.txtDelete.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txtDelete, "Enter the StudentID of the student you wish to delete.");
+            // 
             // Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtDelete);
+            this.Controls.Add(this.txtEdit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnDeleteStudent);
             this.Controls.Add(this.btnEditStudent);
-            this.Controls.Add(this.btnSearchStudent);
             this.Controls.Add(this.btnNewStudent);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -170,8 +183,10 @@
         private System.Windows.Forms.Button btnNewStudent;
         private System.Windows.Forms.Button btnEditStudent;
         private System.Windows.Forms.Button btnDeleteStudent;
-        private System.Windows.Forms.Button btnSearchStudent;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtEdit;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox txtDelete;
     }
 }

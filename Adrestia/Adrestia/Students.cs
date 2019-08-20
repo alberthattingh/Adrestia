@@ -18,6 +18,7 @@ namespace Adrestia
         public SqlDataAdapter adapter;
         public SqlCommand command;
         public DataSet ds;
+        public SqlDataReader reader;
 
         public Students()
         {
@@ -90,6 +91,17 @@ namespace Adrestia
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             PopulateGridView(txtSearch.Text);
+        }
+
+        private void BtnEditStudent_Click(object sender, EventArgs e)
+        {
+            if (txtEdit.Text == "")
+            {
+                MessageBox.Show("Enter the StudentID of the student you wish to edit into the textbox below.");
+                return;
+            }
+
+
         }
     }
 }
