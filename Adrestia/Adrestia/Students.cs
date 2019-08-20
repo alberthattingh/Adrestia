@@ -56,11 +56,40 @@ namespace Adrestia
             connection.Close();
         }
 
+        public void PopulateGridView(string query)
+        {
+            connection.Open();
+
+            string sql = "SELECT * FROM STUDENT " +
+                "WHERE StudentID LIKE '%" + query + "%' OR " +
+                "FirstName LIKE '%" + query + "%' OR " +
+                "LastName LIKE '%" + query + "%' OR " +
+                "Email LIKE '%" + query + "%'";
+
+            command = new SqlCommand(sql, connection);
+            ds = new DataSet();
+
+            adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            adapter.Fill(ds, "StudentTable");
+
+            dataGridView1.DataMember = "StudentTable";
+            dataGridView1.DataSource = ds;
+
+            adapter.Dispose();
+            connection.Close();
+        }
+
         private void BtnNewStudent_Click(object sender, EventArgs e)
         {
             NewStudent newStudentForm = new NewStudent();
             newStudentForm.ShowDialog();
             PopulateGridView();
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            PopulateGridView(txtSearch.Text);
         }
     }
 }

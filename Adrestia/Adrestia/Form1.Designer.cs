@@ -55,9 +55,9 @@
             // 
             // students1
             // 
-            this.students1.Location = new System.Drawing.Point(197, 0);
+            this.students1.Location = new System.Drawing.Point(197, -3);
             this.students1.Name = "students1";
-            this.students1.Size = new System.Drawing.Size(1000, 705);
+            this.students1.Size = new System.Drawing.Size(1000, 666);
             this.students1.TabIndex = 1;
             // 
             // Form1
