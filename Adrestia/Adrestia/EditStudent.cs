@@ -13,6 +13,9 @@ namespace Adrestia
 {
     public partial class EditStudent : Form
     {
+        private const string DEFAULT_PASSWORD = "music123";
+        private const int TYPE_STUDENT = 3;
+
         public string connectionString = Security.ConnectionString;
         public SqlConnection connection;
         public SqlCommand command;
@@ -65,17 +68,21 @@ namespace Adrestia
                 MessageBox.Show("Passwords do not match!");
                 txtConfirm.Clear();
                 txtPass.Clear();
+                txtPass.Focus();
                 return;
             }
 
             connection.Open();
 
-            string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
-
-            string sql1 = "UPDATE [USER] SET Password = '" + hashedPassword + "' WHERE UserID = '" + studentID + "';";
-            command = new SqlCommand(sql1, connection);
-            command.ExecuteNonQuery();
-
+            
+            if (txtPass.Text != Security.GetSHA1Hash(DEFAULT_PASSWORD))
+            {
+                string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
+                string sql1 = "UPDATE [USER] SET Password = '" + hashedPassword + "' WHERE UserID = '" + studentID + "';";
+                command = new SqlCommand(sql1, connection);
+                command.ExecuteNonQuery();
+            }
+              
             string sql2 = "UPDATE STUDENT SET FirstName = '" + txtFirst.Text + "', " +
                 "LastName = '" + txtLast.Text + "', " +
                 "CellNo = '" + txtCell.Text +"', " +

@@ -31,12 +31,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnStudents = new System.Windows.Forms.Button();
             this.students1 = new Adrestia.Students();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnStudents);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -46,12 +48,13 @@
             // 
             // btnStudents
             // 
-            this.btnStudents.Location = new System.Drawing.Point(0, 124);
+            this.btnStudents.Location = new System.Drawing.Point(0, 114);
             this.btnStudents.Name = "btnStudents";
             this.btnStudents.Size = new System.Drawing.Size(200, 71);
             this.btnStudents.TabIndex = 1;
             this.btnStudents.Text = "Students";
             this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnStudents.Click += new System.EventHandler(this.BtnStudents_Click);
             // 
             // students1
             // 
@@ -59,6 +62,17 @@
             this.students1.Name = "students1";
             this.students1.Size = new System.Drawing.Size(1000, 666);
             this.students1.TabIndex = 1;
+            this.students1.Visible = false;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Location = new System.Drawing.Point(0, 43);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(200, 71);
+            this.btnHome.TabIndex = 1;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.BtnHome_Click);
             // 
             // Form1
             // 
@@ -79,6 +93,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnStudents;
         private Students students1;
+        private System.Windows.Forms.Button btnHome;
     }
 }
 

@@ -112,6 +112,7 @@
             this.btnDeleteStudent.TabIndex = 2;
             this.btnDeleteStudent.Text = "Delete Student";
             this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.Click += new System.EventHandler(this.BtnDeleteStudent_Click);
             // 
             // txtSearch
             // 

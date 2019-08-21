@@ -98,6 +98,7 @@ namespace Adrestia
             if (txtEdit.Text == "")
             {
                 MessageBox.Show("Enter the StudentID of the student you wish to edit into the textbox below.");
+                txtEdit.Focus();
                 return;
             }
 
@@ -107,19 +108,72 @@ namespace Adrestia
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
             
-
             if (!reader.HasRows)
             {
                 MessageBox.Show("There aren't any students with the Student ID: " + txtEdit.Text);
+                txtEdit.Clear();
+                txtEdit.Focus();
                 connection.Close();
                 return;
             }
             connection.Close();
 
-            EditStudent editStudentForm = new EditStudent();
-            editStudentForm.studentID = txtEdit.Text;
+            EditStudent editStudentForm = new EditStudent
+            {
+                studentID = txtEdit.Text
+            };
             editStudentForm.ShowDialog();
+            txtEdit.Clear();
+            txtEdit.Focus();
 
+            PopulateGridView();
+        }
+
+        private void BtnDeleteStudent_Click(object sender, EventArgs e)
+        {
+            if (txtDelete.Text == "")
+            {
+                MessageBox.Show("Enter the StudentID of the student you wish to remove into the textbox below.");
+            }
+            else
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Check if studentID in table
+                    string sql = "SELECT COUNT(*) FROM [STUDENT] WHERE StudentID = '" + txtDelete.Text + "';";
+                    command = new SqlCommand(sql, connection);
+                    int exists = (int)command.ExecuteScalar();
+
+                    if (exists == 0)
+                    {
+                        MessageBox.Show("There aren't any students with the Student ID: " + txtDelete.Text);
+                        connection.Close();
+                        txtDelete.Clear();
+                        txtDelete.Focus();
+                        return;
+                    }
+
+                    sql = "DELETE FROM [STUDENT] WHERE StudentID = '" + txtDelete.Text + "';";
+                    command = new SqlCommand(sql, connection);
+                    command.ExecuteNonQuery();
+
+                    sql = "DELETE FROM [USER] WHERE UserID = '" + txtDelete.Text + "';";
+                    command = new SqlCommand(sql, connection);
+                    command.ExecuteNonQuery();
+
+                    connection.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    connection.Close();
+                }
+            }
+
+            txtDelete.Clear();
+            txtDelete.Focus();
             PopulateGridView();
         }
     }
