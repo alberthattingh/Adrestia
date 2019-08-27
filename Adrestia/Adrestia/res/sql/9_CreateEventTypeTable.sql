@@ -1,0 +1,10 @@
+/*
+ * CREATE EVENT_TYPE
+ */
+
+ CREATE TABLE EVENT_TYPE(
+	EventTypeID			INT			NOT NULL,
+	[Description]		VARCHAR(30),
+
+	CONSTRAINT PK_EventType	PRIMARY KEY (EventTypeID)
+	);
