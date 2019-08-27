@@ -1,0 +1,9 @@
+/*
+ * CREATE BACKUP_LOG
+ */
+
+CREATE TABLE [BACKUP_LOG] (
+	BackupID	INT		NOT NULL	IDENTITY(1,1)	PRIMARY KEY,
+	BackupDate	DATE,
+	BackupTime	TIME
+	);
