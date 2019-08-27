@@ -1,0 +1,8 @@
+/*
+ * CREATE USER_TYPE
+ */
+
+CREATE TABLE [USER_TYPE] (
+	UserTypeID		INT				NOT NULL	PRIMARY KEY,
+	[Description]	VARCHAR(30)
+	);

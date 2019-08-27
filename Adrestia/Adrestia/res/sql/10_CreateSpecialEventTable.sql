@@ -1,0 +1,24 @@
+/*
+ * CREATE SPECIAL_EVENT
+ */
+
+ CREATE TABLE SPECIAL_EVENT(
+	EventID				INT			NOT NULL,
+	EventDate			DATE,
+	EventTime			TIME,
+	CostAdult			MONEY,
+	CostChildren		MONEY,
+	CostPensioner		MONEY,
+	VenueID				INT,
+	EventTypeID			INT,
+
+	CONSTRAINT PK_SpecialEvent			PRIMARY KEY (EventID),
+
+	CONSTRAINT FK_SpecialEvent_Venue	FOREIGN KEY	(VenueID)		REFERENCES	VENUE		(VenueID)
+		ON DELETE	NO ACTION
+		ON UPDATE	CASCADE,
+
+	CONSTRAINT FK_SpecialEvent_Type		FOREIGN KEY	(EventTypeID)	REFERENCES	EVENT_TYPE	(EventTypeID)
+		ON DELETE	NO ACTION
+		ON UPDATE	NO ACTION
+	);
