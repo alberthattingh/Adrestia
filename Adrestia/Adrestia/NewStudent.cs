@@ -64,15 +64,14 @@ namespace Adrestia
                     
             int studentId = int.Parse(txtID.Text);
 
-            string sql2 = "INSERT INTO STUDENT VALUES (@id, @first, @last, @cell, @email, @credits, @instrument)";
+            string sql2 = "INSERT INTO STUDENT VALUES (@id, @first, @last, @cell, @email, @credits)";
             command = new SqlCommand(sql2, connection);
             command.Parameters.AddWithValue("@id", studentId);
             command.Parameters.AddWithValue("@first", txtFirst.Text);
             command.Parameters.AddWithValue("@last", txtLast.Text);
             command.Parameters.AddWithValue("@cell", txtCell.Text);
             command.Parameters.AddWithValue("@email", txtEmail.Text);
-            command.Parameters.AddWithValue("@credits", DBNull.Value);
-            command.Parameters.AddWithValue("@instrument", DBNull.Value);
+            command.Parameters.AddWithValue("@credits", 0.0);
             command.ExecuteNonQuery();
 
             connection.Close();
