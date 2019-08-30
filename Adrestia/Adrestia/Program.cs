@@ -16,7 +16,19 @@ namespace Adrestia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Login loginForm = new Login();
+            loginForm.ShowDialog();
+
+            if (loginForm.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new Form1(loginForm.UserID, loginForm.UserType));
+            }
+            else
+            {
+                Application.Exit();
+            }
+            
         }
     }
 }
