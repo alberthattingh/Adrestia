@@ -12,9 +12,19 @@ namespace Adrestia
 {
     public partial class Form1 : Form
     {
+        public string UserID;
+        public string UserType;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public Form1(string id, string type)
+        {
+            InitializeComponent();
+            this.UserID = id;
+            this.UserType = type;
         }
 
         private void HideAllControls()

@@ -16,7 +16,29 @@ namespace Adrestia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            // Show login form -- will only close if login is successful or exit button is used
+            Login loginForm = new Login();
+            loginForm.ShowDialog();
+
+            // If login is successful (not when exit button is pressed)
+            if (loginForm.DialogResult == DialogResult.OK)
+            {
+                // Run the main application
+
+                // TODO: Add if-statement to open specific form, based on UserType
+                //          Admin - Form1
+                //          Instructor - Form2
+                //          Student - Form3
+
+                Application.Run(new Form1(loginForm.UserID, loginForm.UserType));
+            }
+            else
+            {
+                // Close the entire application, because the exit button was pressed
+                Application.Exit();
+            }
+            
         }
     }
 }
