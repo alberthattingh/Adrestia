@@ -73,7 +73,7 @@ CREATE TABLE INSTRUCTOR(
  */
 
 CREATE TABLE LESSON(
-	LessonID			[int]			NOT NULL,
+	LessonID			[int]			NOT NULL	IDENTITY(1,1),
 	LessonDate			[varchar](30)	NULL,
 	LessonTime			[varchar](30)	NULL,
 	Price				[varchar](13)	NULL,
@@ -111,7 +111,7 @@ CREATE TABLE LESSON_STUDENT(
  */
 
 CREATE TABLE VENUE(
-	VenueID			INT			NOT NULL,
+	VenueID			INT			NOT NULL	IDENTITY(1,1),
 	[Description]	VARCHAR(30),
 	MaxNoOfSeats	INT,
 
@@ -123,7 +123,7 @@ CREATE TABLE VENUE(
  */
 
 CREATE TABLE EVENT_TYPE(
-	EventTypeID			INT			NOT NULL,
+	EventTypeID			INT			NOT NULL	IDENTITY(1,1),
 	[Description]		VARCHAR(30),
 
 	CONSTRAINT PK_EventType	PRIMARY KEY (EventTypeID)
@@ -134,7 +134,7 @@ CREATE TABLE EVENT_TYPE(
  */
 
 CREATE TABLE SPECIAL_EVENT(
-	EventID				INT			NOT NULL,
+	EventID				INT			NOT NULL	IDENTITY(1,1),
 	EventDate			DATE,
 	EventTime			TIME,
 	CostAdult			MONEY,
@@ -159,7 +159,7 @@ CREATE TABLE SPECIAL_EVENT(
  */
 
 CREATE TABLE TICKET_SALE(
-	SaleID			INT		NOT NULL,
+	SaleID			INT		NOT NULL	IDENTITY(1,1),
 	SaleDate		DATE,
 	SaleTime		TIME,
 	NoOfAdults		INT,
@@ -196,3 +196,22 @@ CREATE TABLE EVENT_STUDENT(
 /*
  * CREATE MESSAGE
  */
+
+CREATE TABLE [MESSAGE](
+	MessageID		INT		NOT NULL	IDENTITY(1,1),
+	Sender			INT,
+	Receiver		INT,
+	MessageText		TEXT,
+	[Date]			DATE,
+	[Time]			TIME,
+
+	CONSTRAINT PK_Message				PRIMARY KEY	(MessageID),
+
+	CONSTRAINT	FK_Message_Sender		FOREIGN KEY (Sender)				REFERENCES	[USER]	(UserID)
+		ON DELETE	NO ACTION
+		ON UPDATE	NO ACTION,
+
+	CONSTRAINT	FK_Message_Receiver		FOREIGN KEY (Receiver)				REFERENCES	[USER]	(UserID)
+		ON DELETE	NO ACTION
+		ON UPDATE	NO ACTION
+	);
