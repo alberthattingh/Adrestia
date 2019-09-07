@@ -122,7 +122,7 @@
             // 
             // txtDeleteInstructor
             // 
-            this.txtDeleteInstructor.Location = new System.Drawing.Point(1083, 357);
+            this.txtDeleteInstructor.Location = new System.Drawing.Point(1083, 346);
             this.txtDeleteInstructor.Name = "txtDeleteInstructor";
             this.txtDeleteInstructor.Size = new System.Drawing.Size(151, 22);
             this.txtDeleteInstructor.TabIndex = 7;

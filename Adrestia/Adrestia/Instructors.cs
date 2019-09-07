@@ -13,6 +13,7 @@ namespace Adrestia
 {
     public partial class Instructors : Form
     {
+
         public string connectionString = Security.ConnectionString;
         public SqlConnection connection;
         public SqlDataAdapter adapter;
