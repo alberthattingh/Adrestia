@@ -52,6 +52,7 @@
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(200, 20);
             this.txtUserID.TabIndex = 1;
+            this.txtUserID.Text = "1002";
             // 
             // txtPassword
             // 
@@ -59,6 +60,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 20);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "sql123";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
