@@ -51,7 +51,7 @@
             this.txtUserID.Location = new System.Drawing.Point(492, 493);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(200, 20);
-            this.txtUserID.TabIndex = 1;
+            this.txtUserID.TabIndex = 0;
             // 
             // txtPassword
             // 
@@ -91,6 +91,7 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);

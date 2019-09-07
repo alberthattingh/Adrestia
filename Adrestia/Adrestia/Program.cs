@@ -25,13 +25,22 @@ namespace Adrestia
             if (loginForm.DialogResult == DialogResult.OK)
             {
                 // Run the main application
-
-                // TODO: Add if-statement to open specific form, based on UserType
+                // if-statement to open specific form, based on UserType
                 //          Admin - Form1
                 //          Instructor - Form2
                 //          Student - Form3
 
-                Application.Run(new Form1(loginForm.UserID, loginForm.UserType));
+                if (loginForm.UserType.Equals("1"))
+                    Application.Run(new Form1(loginForm.UserID, loginForm.UserType));
+                else if (loginForm.UserType.Equals("2"))
+                    Application.Run(new Form2(loginForm.UserID, loginForm.UserType));
+                else if (loginForm.UserType.Equals("3"))
+                    Application.Run(new Form3(loginForm.UserID, loginForm.UserType));
+                else
+                {
+                    MessageBox.Show("An unknown error occured. The program will now be terminated.");
+                    Application.Exit();
+                }
             }
             else
             {
