@@ -105,9 +105,11 @@
     </Compile>
     <Compile Include="Instructors.cs">
       <SubType>Form</SubType>
+    <Compile Include="Instructor.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Instructors.Designer.cs">
-      <DependentUpon>Instructors.cs</DependentUpon>
+    <Compile Include="Instructor.Designer.cs">
+      <DependentUpon>Instructor.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -154,6 +156,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instructor.resx">
+      <DependentUpon>Instructor.cs</DependentUpon>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +210,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\images\TempLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
