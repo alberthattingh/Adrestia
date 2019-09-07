@@ -12,21 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateRequired>false</UpdateRequired>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateEnabled>false</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <Install>true</Install>
+    <PublishUrl>publish\</PublishUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -121,6 +121,12 @@
     <Compile Include="NewInstructor.Designer.cs">
       <DependentUpon>NewInstructor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messaging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Messaging.Designer.cs">
+      <DependentUpon>Messaging.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <EmbeddedResource Include="NewInstructor.resx">
       <DependentUpon>NewInstructor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Messaging.resx">
+      <DependentUpon>Messaging.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,35 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\images\TempLogo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="res\0_CreateAllTables.sql" />
-    <Content Include="res\DatabaseAJ.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="res\DatabaseAJ_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DatabaseAJ.mdf</DependentUpon>
-    </Content>
-    <Content Include="special-events.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="special-events_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>special-events.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

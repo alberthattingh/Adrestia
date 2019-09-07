@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,10 @@ namespace Adrestia
     {
         public string UserID;
         public string UserType;
+        private string ConnectionString = Security.ConnectionString;
+        private SqlConnection Connection;
+        private SqlDataReader Reader;
+        private SqlCommand Command;
 
         public Form1()
         {
@@ -33,6 +38,7 @@ namespace Adrestia
             // Not buttons on side panel
             students1.Visible = false;
             lessonsInstructor1.Visible = false;
+            messaging1.Visible = false;
         }
 
         private void BtnStudents_Click(object sender, EventArgs e)
@@ -53,7 +59,7 @@ namespace Adrestia
             // Make home control visible
             // home1.Visible = true;
         }
-
+		
         private void Students1_Load(object sender, EventArgs e)
         {
 
@@ -64,24 +70,45 @@ namespace Adrestia
             HideAllControls();
             lessonsInstructor1.Visible = true;
         }
-    }
-}
 
-        }
-
-        private void Students1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Button1_Click(object sender, EventArgs e)
-        {
+        {
             HideAllControls();
             lessonsInstructor1.UserID = this.UserID;
-            lessonsInstructor1.Visible = true;
+            lessonsInstructor1.Visible = true;
         }
-
-        private void LessonsInstructor1_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void LessonsInstructor1_Load(object sender, EventArgs e)
+        {
+			
+        }
+		
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CheckBackup();
+        }
+
+        private void CheckBackup()
+        {
+            
+        }
+
+        private void BtnMessaging_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            messaging1.Visible = true;
+        }
+
+        private void BtnBackup_Click(object sender, EventArgs e)
+        {
+            Connection = new SqlConnection(ConnectionString);
+            Connection.Open();
+            string sql = "BACKUP DATABASE Database2 TO DISK = 'D:/Media/Documents/CMPG 223/Adrestia/Adrestia/Adrestia/Adrestia/Database2.bak' WITH DIFFERENTIAL; ";
+            Command = new SqlCommand(sql, Connection);
+
+            Command.ExecuteNonQuery();
+
+            Connection.Close();
+        }
+    }
+}
