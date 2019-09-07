@@ -2,4 +2,21 @@
  * CREATE MESSAGE
  */
 
- 
+CREATE TABLE [MESSAGE](
+	MessageID		INT		NOT NULL	IDENTITY(1,1),
+	Sender			INT,
+	Receiver		INT,
+	MessageText		TEXT,
+	[Date]			DATE,
+	[Time]			TIME,
+
+	CONSTRAINT PK_Message				PRIMARY KEY	(MessageID),
+
+	CONSTRAINT	FK_Message_Sender		FOREIGN KEY (Sender)				REFERENCES	[USER]	(UserID)
+		ON DELETE	NO ACTION
+		ON UPDATE	NO ACTION,
+
+	CONSTRAINT	FK_Message_Receiver		FOREIGN KEY (Receiver)				REFERENCES	[USER]	(UserID)
+		ON DELETE	NO ACTION
+		ON UPDATE	NO ACTION
+	);

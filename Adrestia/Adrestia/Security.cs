@@ -10,6 +10,8 @@ namespace Adrestia
     public class Security
     {
         public static string ConnectionString = @"Data Source=alberts-pc;User ID=albert;Password=sql123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        // @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marné\Documents\NWU\CMPG 223\Assignment\GitHub\Adrestia\Adrestia\Adrestia\Database2.mdf;Integrated Security=True";
+        //
 
         public static string GetSHA1Hash(string pw)
         {
