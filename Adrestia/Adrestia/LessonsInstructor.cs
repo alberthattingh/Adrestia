@@ -40,7 +40,7 @@ namespace Adrestia
             lessonPrice = 0.00;
             lessonDate = DateTime.Today;
             lessonTime = DateTime.Now;
-            lessonStudents = 0;
+            lessonStudents = 1;
             //Butttons
             btnPreview.Enabled = true;
             //Objects
@@ -49,7 +49,7 @@ namespace Adrestia
             cbxPrice.Text = "";
             cbxTime.Text = "";
             tbDescription.Text = "";
-            nudStudents.Value = 0;
+            nudStudents.Value = 1;
 
         }
 
@@ -105,56 +105,75 @@ namespace Adrestia
 
         private void BtnPreview_Click(object sender, EventArgs e)
         {
+            //Exception handeling
+            Boolean correct = true;
+
             //Select date:
             String sDate = monthCalendar1.SelectionRange.Start.ToShortDateString();
             lessonDate = Convert.ToDateTime(sDate);
             if (Convert.ToDateTime(sDate) < DateTime.Today)
             {
+                correct = false;
                 MessageBox.Show("Can't Select Past Date!");
-            }
-            else
-            {
-                lbFinal.Items.Add("Date: \t\t" + sDate);
-                
             }
 
             //Select Time:
             if (cbxTime.SelectedIndex == -1)
             {
                 MessageBox.Show("No Time Has Been Selected!");
+                cbxTime.Focus();
             }
-            else
-            {
-                string sTime = cbxTime.GetItemText(cbxTime.SelectedItem);
-                lessonTime = Convert.ToDateTime(sTime);
 
-                lbFinal.Items.Add("Time: \t\t" + sTime);
-                
-            }
 
             //Select Price:
             if (cbxPrice.SelectedIndex == -1)
             {
-                MessageBox.Show("No Time Has Been Selected!");
-            }
-            else
-            {
-                double price = Convert.ToDouble(cbxPrice.GetItemText(cbxPrice.SelectedItem));
-                lessonPrice = price;
-                lbFinal.Items.Add("Price: \t\tR" + price.ToString());
-                
+                MessageBox.Show("No Price Has Been Selected!");
+                cbxPrice.Focus();
             }
 
-            //Select Students
-            int students = Convert.ToInt32(Math.Round(nudStudents.Value, 0));
-            lessonStudents = students;
-            lbFinal.Items.Add("Max Student: \t" + students.ToString());
-            
 
             //Select Description
             string description = tbDescription.Text;
-            lessonDescription = description;
-            lbFinal.Items.Add("Description: \t" + description);
+            if (description == "")
+            {
+                MessageBox.Show("You did not fill in a description!");
+                tbDescription.Focus();
+                correct = false;
+            }
+            else
+            {
+                if(correct == true)
+                {
+                    correct = true;
+                }
+                
+            }
+
+            //Exception handeling
+            if(correct == true)
+            {
+                
+                //Clear list box
+                lbFinal.Items.Clear();
+                //Date
+                lbFinal.Items.Add("Date: \t\t\t" + sDate);
+                //Time
+                string sTime = cbxTime.GetItemText(cbxTime.SelectedItem);
+                lessonTime = Convert.ToDateTime(sTime);
+                lbFinal.Items.Add("Time: \t\t\t" + sTime);
+                //Descriprion::
+                lbFinal.Items.Add("Description: \t\t" + description); 
+                //Price:
+                double price = Convert.ToDouble(cbxPrice.GetItemText(cbxPrice.SelectedItem));
+                lessonPrice = price;
+                lbFinal.Items.Add("Price: \t\t\tR" + price.ToString());
+                //Select Students
+                int students = Convert.ToInt32(Math.Round(nudStudents.Value, 0));
+                lessonStudents = students;
+                lbFinal.Items.Add("Max Student: \t\t" + students.ToString());
+                
+            }
             
         }
     }

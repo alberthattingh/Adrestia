@@ -116,7 +116,7 @@
             // lbFinal
             // 
             this.lbFinal.FormattingEnabled = true;
-            this.lbFinal.Location = new System.Drawing.Point(369, 86);
+            this.lbFinal.Location = new System.Drawing.Point(260, 83);
             this.lbFinal.Name = "lbFinal";
             this.lbFinal.Size = new System.Drawing.Size(275, 212);
             this.lbFinal.TabIndex = 12;
@@ -139,9 +139,19 @@
             // nudStudents
             // 
             this.nudStudents.Location = new System.Drawing.Point(9, 444);
+            this.nudStudents.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudStudents.Name = "nudStudents";
             this.nudStudents.Size = new System.Drawing.Size(191, 20);
             this.nudStudents.TabIndex = 16;
+            this.nudStudents.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
@@ -171,7 +181,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(366, 70);
+            this.label8.Location = new System.Drawing.Point(257, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 25;
@@ -179,7 +189,7 @@
             // 
             // btnAddLesson
             // 
-            this.btnAddLesson.Location = new System.Drawing.Point(369, 304);
+            this.btnAddLesson.Location = new System.Drawing.Point(260, 301);
             this.btnAddLesson.Name = "btnAddLesson";
             this.btnAddLesson.Size = new System.Drawing.Size(75, 23);
             this.btnAddLesson.TabIndex = 26;
@@ -189,7 +199,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(369, 333);
+            this.btnClear.Location = new System.Drawing.Point(260, 327);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 27;
