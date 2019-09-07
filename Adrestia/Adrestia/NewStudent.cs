@@ -50,7 +50,7 @@ namespace Adrestia
             }
             catch (Exception)
             {
-                id = 0;
+                id = 1000;
             }
             
             connection.Close();

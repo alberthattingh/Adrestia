@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCredit.Designer.cs">
+      <DependentUpon>AddCredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangeDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCredit.resx">
+      <DependentUpon>AddCredit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeDetails.resx">
       <DependentUpon>ChangeDetails.cs</DependentUpon>
     </EmbeddedResource>

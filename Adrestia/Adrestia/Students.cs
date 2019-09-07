@@ -176,5 +176,12 @@ namespace Adrestia
             txtDelete.Focus();
             PopulateGridView();
         }
+
+        private void BtnAddCredit_Click(object sender, EventArgs e)
+        {
+            AddCredit credit = new AddCredit();
+            credit.ShowDialog();
+            PopulateGridView();
+        }
     }
 }

@@ -41,9 +41,14 @@
             this.txtEdit = new System.Windows.Forms.TextBox();
             this.txtDelete = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnAddCredit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +91,7 @@
             // 
             // btnNewStudent
             // 
-            this.btnNewStudent.Location = new System.Drawing.Point(812, 143);
+            this.btnNewStudent.Location = new System.Drawing.Point(805, 143);
             this.btnNewStudent.Name = "btnNewStudent";
             this.btnNewStudent.Size = new System.Drawing.Size(168, 50);
             this.btnNewStudent.TabIndex = 2;
@@ -96,7 +101,7 @@
             // 
             // btnEditStudent
             // 
-            this.btnEditStudent.Location = new System.Drawing.Point(812, 204);
+            this.btnEditStudent.Location = new System.Drawing.Point(6, 19);
             this.btnEditStudent.Name = "btnEditStudent";
             this.btnEditStudent.Size = new System.Drawing.Size(168, 50);
             this.btnEditStudent.TabIndex = 2;
@@ -106,7 +111,7 @@
             // 
             // btnDeleteStudent
             // 
-            this.btnDeleteStudent.Location = new System.Drawing.Point(812, 296);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(6, 22);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Size = new System.Drawing.Size(168, 50);
             this.btnDeleteStudent.TabIndex = 2;
@@ -136,7 +141,7 @@
             // 
             // txtEdit
             // 
-            this.txtEdit.Location = new System.Drawing.Point(812, 265);
+            this.txtEdit.Location = new System.Drawing.Point(6, 75);
             this.txtEdit.Name = "txtEdit";
             this.txtEdit.Size = new System.Drawing.Size(168, 20);
             this.txtEdit.TabIndex = 5;
@@ -144,22 +149,53 @@
             // 
             // txtDelete
             // 
-            this.txtDelete.Location = new System.Drawing.Point(812, 357);
+            this.txtDelete.Location = new System.Drawing.Point(6, 78);
             this.txtDelete.Name = "txtDelete";
             this.txtDelete.Size = new System.Drawing.Size(168, 20);
             this.txtDelete.TabIndex = 5;
             this.toolTip1.SetToolTip(this.txtDelete, "Enter the StudentID of the student you wish to delete.");
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnEditStudent);
+            this.groupBox2.Controls.Add(this.txtEdit);
+            this.groupBox2.Location = new System.Drawing.Point(799, 271);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(187, 107);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Change setails";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnDeleteStudent);
+            this.groupBox3.Controls.Add(this.txtDelete);
+            this.groupBox3.Location = new System.Drawing.Point(799, 384);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 122);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Remove student";
+            // 
+            // btnAddCredit
+            // 
+            this.btnAddCredit.Location = new System.Drawing.Point(805, 199);
+            this.btnAddCredit.Name = "btnAddCredit";
+            this.btnAddCredit.Size = new System.Drawing.Size(168, 50);
+            this.btnAddCredit.TabIndex = 2;
+            this.btnAddCredit.Text = "Credit Student Account";
+            this.btnAddCredit.UseVisualStyleBackColor = true;
+            this.btnAddCredit.Click += new System.EventHandler(this.BtnAddCredit_Click);
+            // 
             // Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtDelete);
-            this.Controls.Add(this.txtEdit);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnDeleteStudent);
-            this.Controls.Add(this.btnEditStudent);
+            this.Controls.Add(this.btnAddCredit);
             this.Controls.Add(this.btnNewStudent);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -170,6 +206,10 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +229,8 @@
         private System.Windows.Forms.TextBox txtEdit;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox txtDelete;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnAddCredit;
     }
 }
