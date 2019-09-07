@@ -32,8 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
-            this.students1 = new Adrestia.Students();
             this.lessonsInstructor1 = new Adrestia.LessonsInstructor();
+            this.students1 = new Adrestia.Students();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +79,14 @@
             this.btnStudents.UseVisualStyleBackColor = true;
             this.btnStudents.Click += new System.EventHandler(this.BtnStudents_Click);
             // 
+            // lessonsInstructor1
+            // 
+            this.lessonsInstructor1.Location = new System.Drawing.Point(197, 0);
+            this.lessonsInstructor1.Name = "lessonsInstructor1";
+            this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
+            this.lessonsInstructor1.TabIndex = 2;
+            this.lessonsInstructor1.Load += new System.EventHandler(this.LessonsInstructor1_Load);
+            // 
             // students1
             // 
             this.students1.Location = new System.Drawing.Point(197, -3);
@@ -87,13 +95,6 @@
             this.students1.TabIndex = 1;
             this.students1.Visible = false;
             this.students1.Load += new System.EventHandler(this.Students1_Load);
-            // 
-            // lessonsInstructor1
-            // 
-            this.lessonsInstructor1.Location = new System.Drawing.Point(197, 0);
-            this.lessonsInstructor1.Name = "lessonsInstructor1";
-            this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
-            this.lessonsInstructor1.TabIndex = 2;
             // 
             // Form1
             // 

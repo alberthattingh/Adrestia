@@ -62,7 +62,13 @@ namespace Adrestia
         private void Button1_Click(object sender, EventArgs e)
         {
             HideAllControls();
+            lessonsInstructor1.UserID = this.UserID;
             lessonsInstructor1.Visible = true;
+        }
+
+        private void LessonsInstructor1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
