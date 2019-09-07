@@ -13,6 +13,7 @@ namespace Adrestia
 {
     public partial class NewInstructor : Form
     {
+
         private const string DEFAULT_PASSWORD = "music123";
         private const int TYPE_INSTRUCTOR = 2;
 

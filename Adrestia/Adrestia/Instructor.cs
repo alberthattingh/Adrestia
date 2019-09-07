@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Adrestia
 {
-    public partial class Instructors : Form
+    public partial class Instructors_UC_ : UserControl
     {
 
         public string connectionString = Security.ConnectionString;
@@ -21,7 +21,7 @@ namespace Adrestia
         public DataSet ds;
         public SqlDataReader reader;
 
-        public Instructors()
+        public Instructors_UC_()
         {
             InitializeComponent();
         }
@@ -33,7 +33,7 @@ namespace Adrestia
             PopulateGridView();
         }
 
-        private void Instructors_Load(object sender, EventArgs e)
+        private void Instructors_UC__Load(object sender, EventArgs e)
         {
             try
             {
