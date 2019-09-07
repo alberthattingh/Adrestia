@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeDetails.Designer.cs">
+      <DependentUpon>ChangeDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +85,23 @@
     <Compile Include="LessonsInstructor.Designer.cs">
       <DependentUpon>LessonsInstructor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instructors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Instructors.Designer.cs">
+      <DependentUpon>Instructors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewInstructor.Designer.cs">
+      <DependentUpon>NewInstructor.cs</DependentUpon>
     </Compile>
     <Compile Include="NewStudent.cs">
       <SubType>Form</SubType>
@@ -100,6 +118,9 @@
     <Compile Include="Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangeDetails.resx">
+      <DependentUpon>ChangeDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditStudent.resx">
       <DependentUpon>EditStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,8 +130,14 @@
     <EmbeddedResource Include="LessonsInstructor.resx">
       <DependentUpon>LessonsInstructor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instructors.resx">
+      <DependentUpon>Instructors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewInstructor.resx">
+      <DependentUpon>NewInstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
