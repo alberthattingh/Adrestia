@@ -32,7 +32,7 @@ namespace Adrestia
             // List all controls that should be hidden here, and hide them, e.g. students control, instructors control, etc.
             // Not buttons on side panel
             students1.Visible = false;
-
+            lessonsInstructor1.Visible = false;
         }
 
         private void BtnStudents_Click(object sender, EventArgs e)
@@ -52,6 +52,17 @@ namespace Adrestia
 
             // Make home control visible
             // home1.Visible = true;
+        }
+
+        private void Students1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            lessonsInstructor1.Visible = true;
         }
     }
 }
