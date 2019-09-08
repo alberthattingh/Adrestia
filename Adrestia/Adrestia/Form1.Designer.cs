@@ -32,8 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
-            this.lessonsInstructor1 = new Adrestia.LessonsInstructor();
-            this.students1 = new Adrestia.Students();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,11 +49,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 191);
+            this.button1.Location = new System.Drawing.Point(62, 191);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "Lessons";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -79,30 +77,11 @@
             this.btnStudents.UseVisualStyleBackColor = true;
             this.btnStudents.Click += new System.EventHandler(this.BtnStudents_Click);
             // 
-            // lessonsInstructor1
-            // 
-            this.lessonsInstructor1.Location = new System.Drawing.Point(197, 0);
-            this.lessonsInstructor1.Name = "lessonsInstructor1";
-            this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
-            this.lessonsInstructor1.TabIndex = 2;
-            this.lessonsInstructor1.Load += new System.EventHandler(this.LessonsInstructor1_Load);
-            // 
-            // students1
-            // 
-            this.students1.Location = new System.Drawing.Point(197, -3);
-            this.students1.Name = "students1";
-            this.students1.Size = new System.Drawing.Size(1000, 666);
-            this.students1.TabIndex = 1;
-            this.students1.Visible = false;
-            this.students1.Load += new System.EventHandler(this.Students1_Load);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
-            this.Controls.Add(this.lessonsInstructor1);
-            this.Controls.Add(this.students1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Adrestia";
@@ -115,10 +94,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnStudents;
-        private Students students1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button button1;
-        private LessonsInstructor lessonsInstructor1;
     }
 }
 
