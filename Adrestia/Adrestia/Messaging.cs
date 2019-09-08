@@ -219,5 +219,10 @@ namespace Adrestia
                 rdbSent.Checked = false;
             }
         }
+
+        private void CmbRecipient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

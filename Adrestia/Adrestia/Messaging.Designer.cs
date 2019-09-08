@@ -36,6 +36,12 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.rdbReceived = new System.Windows.Forms.RadioButton();
             this.rdbSent = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbReciever = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +73,7 @@
             this.cmbRecipient.Name = "cmbRecipient";
             this.cmbRecipient.Size = new System.Drawing.Size(237, 21);
             this.cmbRecipient.TabIndex = 2;
+            this.cmbRecipient.SelectedIndexChanged += new System.EventHandler(this.CmbRecipient_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -81,7 +88,7 @@
             // 
             this.redOutput.Location = new System.Drawing.Point(69, 183);
             this.redOutput.Name = "redOutput";
-            this.redOutput.Size = new System.Drawing.Size(848, 413);
+            this.redOutput.Size = new System.Drawing.Size(315, 413);
             this.redOutput.TabIndex = 4;
             this.redOutput.Text = "";
             // 
@@ -119,10 +126,67 @@
             this.rdbSent.UseVisualStyleBackColor = true;
             this.rdbSent.CheckedChanged += new System.EventHandler(this.RdbSent_CheckedChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(534, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "New Message:";
+            // 
+            // cmbReciever
+            // 
+            this.cmbReciever.FormattingEnabled = true;
+            this.cmbReciever.Location = new System.Drawing.Point(603, 108);
+            this.cmbReciever.Name = "cmbReciever";
+            this.cmbReciever.Size = new System.Drawing.Size(168, 21);
+            this.cmbReciever.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(534, 111);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "To:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(534, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Message:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(603, 145);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(363, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(537, 183);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 23);
+            this.btnSend.TabIndex = 13;
+            this.btnSend.Text = "Send:";
+            this.btnSend.UseVisualStyleBackColor = true;
+            // 
             // Messaging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbReciever);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.rdbSent);
             this.Controls.Add(this.rdbReceived);
             this.Controls.Add(this.btnGo);
@@ -150,5 +214,11 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.RadioButton rdbReceived;
         private System.Windows.Forms.RadioButton rdbSent;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbReciever;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSend;
     }
 }
