@@ -121,6 +121,12 @@
     <Compile Include="NewInstructor.Designer.cs">
       <DependentUpon>NewInstructor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messaging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Messaging.Designer.cs">
+      <DependentUpon>Messaging.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewInstructor.resx">
       <DependentUpon>NewInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messaging.resx">
+      <DependentUpon>Messaging.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>
