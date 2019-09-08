@@ -24,6 +24,7 @@ namespace Adrestia
         public double lessonPrice;
         public string lessonDescription;
         public int lessonStudents;
+        public string selectedVal;
  
         //Value for the InstructorID
         public int instID = 1000;
@@ -50,25 +51,6 @@ namespace Adrestia
             cbxTime.Text = "";
             tbDescription.Text = "";
             nudStudents.Value = 1;
-
-        }
-
-        private void BtnAddLesson_Click(object sender, EventArgs e)
-        {
-            //Query:
-            string query = @"INSERT INTO LESSON VALUES(@LessonDate, @LessonTime, @Price, @Description, @MaxNoOfStudents, @InstructorID)";
-            //INSERT INTO DATABASE
-            SqlConnection conn = new SqlConnection(conString);
-            conn.Open();
-            SqlCommand comm = new SqlCommand(query, conn);
-            comm.Parameters.AddWithValue("@LessonDate", lessonDate.ToShortDateString());
-            comm.Parameters.AddWithValue("@LessonTime", lessonTime.ToShortTimeString());
-            comm.Parameters.AddWithValue("@Price", lessonPrice);
-            comm.Parameters.AddWithValue("@Description", lessonDescription);
-            comm.Parameters.AddWithValue("@MaxNoOfStudents", lessonStudents);
-            comm.Parameters.AddWithValue("@InstructorID", instID);
-            comm.ExecuteNonQuery();
-
 
         }
 
@@ -108,6 +90,19 @@ namespace Adrestia
             //Exception handeling
             Boolean correct = true;
 
+            //Select Description
+            string description = tbDescription.Text;
+            if (description == "")
+            {
+                MessageBox.Show("You did not fill in a description!");
+                tbDescription.Focus();
+                correct = false;
+            }
+            else
+            {
+                correct = true;
+            }
+
             //Select date:
             String sDate = monthCalendar1.SelectionRange.Start.ToShortDateString();
             lessonDate = Convert.ToDateTime(sDate);
@@ -132,23 +127,6 @@ namespace Adrestia
                 cbxPrice.Focus();
             }
 
-
-            //Select Description
-            string description = tbDescription.Text;
-            if (description == "")
-            {
-                MessageBox.Show("You did not fill in a description!");
-                tbDescription.Focus();
-                correct = false;
-            }
-            else
-            {
-                if(correct == true)
-                {
-                    correct = true;
-                }
-                
-            }
 
             //Exception handeling
             if(correct == true)
@@ -175,6 +153,102 @@ namespace Adrestia
                 
             }
             
+        }
+
+        private void BtnAddLesson_Click(object sender, EventArgs e)
+        {
+            //Query:
+            string query = @"INSERT INTO LESSON VALUES(@LessonDate, @LessonTime, @Price, @Description, @MaxNoOfStudents, @InstructorID)";
+
+            //INSERT INTO DATABASE
+            SqlConnection conn = new SqlConnection(conString);
+            conn.Open();
+            SqlCommand comm = new SqlCommand(query, conn);
+            comm.Parameters.AddWithValue("@LessonDate", lessonDate.ToShortDateString());
+            comm.Parameters.AddWithValue("@LessonTime", lessonTime.ToShortTimeString());
+            comm.Parameters.AddWithValue("@Price", lessonPrice);
+            comm.Parameters.AddWithValue("@Description", lessonDescription);
+            comm.Parameters.AddWithValue("@MaxNoOfStudents", lessonStudents);
+            comm.Parameters.AddWithValue("@InstructorID", instID);
+            comm.ExecuteNonQuery();
+
+
+            //Display Data
+            string LoadQuery = @"SELECT * FROM LESSON";
+
+            SqlCommand comShow = new SqlCommand(LoadQuery, conn);
+            DataSet ds = new DataSet();
+            SqlDataAdapter adap = new SqlDataAdapter();
+            adap.SelectCommand = comShow;
+            adap.Fill(ds, "LESSON");
+
+            dgvLessons.DataSource = ds;
+            dgvLessons.DataMember = "LESSON";
+            conn.Close();
+
+
+        }
+
+        private void LessonsInstructor_Load(object sender, EventArgs e)
+        {
+            string LoadQuery = @"SELECT * FROM LESSON";
+
+            SqlConnection conn = new SqlConnection(conString);
+            conn.Open();
+
+            SqlCommand com = new SqlCommand(LoadQuery, conn);
+            DataSet ds = new DataSet();
+            SqlDataAdapter adap = new SqlDataAdapter();
+            adap.SelectCommand = com;
+            adap.Fill(ds, "LESSON");
+
+            dgvLessons.DataSource = ds;
+            dgvLessons.DataMember = "LESSON";
+            conn.Close();
+        }
+
+        private void DgvLessons_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvLessons.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dgvLessons.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgvLessons.Rows[selectedrowindex];
+                selectedVal = Convert.ToString(selectedRow.Cells["LessonID"].Value);
+                lbltest.Text = selectedVal;
+            }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(conString);
+            //Delete
+            try
+            {
+                string deleteQuery = "DELETE FROM LESSON WHERE LessonID = '" + selectedVal + "'";
+                
+                conn.Open();
+                SqlCommand cmn = new SqlCommand(deleteQuery, conn);
+                cmn.ExecuteNonQuery();
+                
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+            //Show updated data:
+            string LoadQuery = @"SELECT * FROM LESSON";
+
+           
+
+            SqlCommand com = new SqlCommand(LoadQuery, conn);
+            DataSet ds = new DataSet();
+            SqlDataAdapter adap = new SqlDataAdapter();
+            adap.SelectCommand = com;
+            adap.Fill(ds, "LESSON");
+
+            dgvLessons.DataSource = ds;
+            dgvLessons.DataMember = "LESSON";
+            conn.Close();
         }
     }
 }

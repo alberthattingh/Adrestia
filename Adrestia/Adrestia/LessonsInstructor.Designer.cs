@@ -46,7 +46,14 @@
             this.btnAddLesson = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
+            this.dgvLessons = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.lbltest = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -89,7 +96,7 @@
             "300.00",
             "400.00",
             "500.00"});
-            this.cbxPrice.Location = new System.Drawing.Point(8, 329);
+            this.cbxPrice.Location = new System.Drawing.Point(257, 172);
             this.cbxPrice.Name = "cbxPrice";
             this.cbxPrice.Size = new System.Drawing.Size(121, 21);
             this.cbxPrice.TabIndex = 9;
@@ -98,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 311);
+            this.label4.Location = new System.Drawing.Point(256, 156);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 10;
@@ -107,7 +114,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 257);
+            this.label5.Location = new System.Drawing.Point(254, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 11;
@@ -116,9 +123,9 @@
             // lbFinal
             // 
             this.lbFinal.FormattingEnabled = true;
-            this.lbFinal.Location = new System.Drawing.Point(260, 83);
+            this.lbFinal.Location = new System.Drawing.Point(707, 88);
             this.lbFinal.Name = "lbFinal";
-            this.lbFinal.Size = new System.Drawing.Size(275, 212);
+            this.lbFinal.Size = new System.Drawing.Size(275, 160);
             this.lbFinal.TabIndex = 12;
             // 
             // cbxTime
@@ -130,7 +137,7 @@
             "13:00",
             "14:30",
             "16:00"});
-            this.cbxTime.Location = new System.Drawing.Point(9, 274);
+            this.cbxTime.Location = new System.Drawing.Point(257, 86);
             this.cbxTime.Name = "cbxTime";
             this.cbxTime.Size = new System.Drawing.Size(121, 21);
             this.cbxTime.TabIndex = 13;
@@ -138,7 +145,7 @@
             // 
             // nudStudents
             // 
-            this.nudStudents.Location = new System.Drawing.Point(9, 444);
+            this.nudStudents.Location = new System.Drawing.Point(449, 173);
             this.nudStudents.Minimum = new decimal(new int[] {
             1,
             0,
@@ -156,7 +163,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 428);
+            this.label3.Location = new System.Drawing.Point(446, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 13);
             this.label3.TabIndex = 17;
@@ -165,7 +172,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 369);
+            this.label7.Location = new System.Drawing.Point(446, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 22;
@@ -173,7 +180,7 @@
             // 
             // tbDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(9, 385);
+            this.tbDescription.Location = new System.Drawing.Point(449, 86);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(198, 20);
             this.tbDescription.TabIndex = 23;
@@ -181,15 +188,15 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(257, 70);
+            this.label8.Location = new System.Drawing.Point(706, 67);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 13);
+            this.label8.Size = new System.Drawing.Size(106, 13);
             this.label8.TabIndex = 25;
-            this.label8.Text = "FINAL LESSON:";
+            this.label8.Text = "PREVIEW LESSON:";
             // 
             // btnAddLesson
             // 
-            this.btnAddLesson.Location = new System.Drawing.Point(260, 301);
+            this.btnAddLesson.Location = new System.Drawing.Point(709, 254);
             this.btnAddLesson.Name = "btnAddLesson";
             this.btnAddLesson.Size = new System.Drawing.Size(75, 23);
             this.btnAddLesson.TabIndex = 26;
@@ -199,7 +206,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(260, 327);
+            this.btnClear.Location = new System.Drawing.Point(800, 254);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 27;
@@ -209,7 +216,7 @@
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(9, 470);
+            this.btnPreview.Location = new System.Drawing.Point(449, 199);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(85, 33);
             this.btnPreview.TabIndex = 28;
@@ -217,10 +224,71 @@
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.BtnPreview_Click);
             // 
+            // dgvLessons
+            // 
+            this.dgvLessons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLessons.Location = new System.Drawing.Point(9, 336);
+            this.dgvLessons.Name = "dgvLessons";
+            this.dgvLessons.Size = new System.Drawing.Size(745, 277);
+            this.dgvLessons.TabIndex = 29;
+            this.dgvLessons.SelectionChanged += new System.EventHandler(this.DgvLessons_SelectionChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 320);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Lessons:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(760, 320);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Edit Lesson:";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(760, 352);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 32;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // lbltest
+            // 
+            this.lbltest.AutoSize = true;
+            this.lbltest.Location = new System.Drawing.Point(760, 336);
+            this.lbltest.Name = "lbltest";
+            this.lbltest.Size = new System.Drawing.Size(35, 13);
+            this.lbltest.TabIndex = 33;
+            this.lbltest.Text = "TEST";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(865, 352);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 34;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
             // LessonsInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.lbltest);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dgvLessons);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddLesson);
@@ -239,7 +307,9 @@
             this.Controls.Add(this.label2);
             this.Name = "LessonsInstructor";
             this.Size = new System.Drawing.Size(1000, 666);
+            this.Load += new System.EventHandler(this.LessonsInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +333,11 @@
         private System.Windows.Forms.Button btnAddLesson;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.DataGridView dgvLessons;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label lbltest;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
