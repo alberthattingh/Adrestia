@@ -42,7 +42,7 @@ namespace Adrestia
 
             // Make students control visible
             students1.Visible = true;
-            
+
         }
 
         private void BtnHome_Click(object sender, EventArgs e)
@@ -60,28 +60,25 @@ namespace Adrestia
         }
 
         private void Button1_Click(object sender, EventArgs e)
+
         {
+
             HideAllControls();
+
+            lessonsInstructor1.UserID = this.UserID;
+
             lessonsInstructor1.Visible = true;
+
+        }
+
+
+
+        private void LessonsInstructor1_Load(object sender, EventArgs e)
+
+        {
+
+
+
         }
     }
 }
-
-        }
-
-        private void Students1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            HideAllControls();
-            lessonsInstructor1.UserID = this.UserID;
-            lessonsInstructor1.Visible = true;
-        }
-
-        private void LessonsInstructor1_Load(object sender, EventArgs e)
-        {
-
-        }
