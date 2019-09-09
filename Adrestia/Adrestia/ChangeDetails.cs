@@ -48,7 +48,7 @@ namespace Adrestia
             txtPassword.Text = txtConPassword.Text = reader.GetValue(1).ToString();
             reader.Close();
 
-            string sql2 = "SELECT * FROM [STUDENT] WHERE StudentID = '" + instructorID + "';";
+            string sql2 = "SELECT * FROM [INSTRUCTOR] WHERE InstructorID = '" + instructorID + "';";
             command = new SqlCommand(sql2, connection);
             reader = command.ExecuteReader();
 
@@ -83,7 +83,7 @@ namespace Adrestia
                 command.ExecuteNonQuery();
             }
 
-            string sql2 = "UPDATE STUDENT SET FirstName = '" + txtFirstname.Text + "', " +
+            string sql2 = "UPDATE INSTRUCTOR SET FirstName = '" + txtFirstname.Text + "', " +
                 "LastName = '" + txtLastname.Text + "', " +
                 "CellNo = '" + txtCellNo.Text + "', " +
                 "Email = '" + txtEmail.Text + "' " +
