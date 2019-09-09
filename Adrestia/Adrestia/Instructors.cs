@@ -158,5 +158,18 @@ namespace Adrestia
             txtRemove.Focus();
             DisplayGridView();
         }
+
+        private void Instructors_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                DisplayGridView();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("DB Error: " + er.Message);
+            }
+        }
     }
 }

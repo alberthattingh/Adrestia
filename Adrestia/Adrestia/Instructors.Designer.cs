@@ -123,8 +123,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtRemove);
             this.groupBox3.Controls.Add(this.btnRemoveInstructor);
+            this.groupBox3.Controls.Add(this.txtRemove);
             this.groupBox3.Location = new System.Drawing.Point(685, 245);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(133, 89);
@@ -134,16 +134,16 @@
             // 
             // txtRemove
             // 
-            this.txtRemove.Location = new System.Drawing.Point(6, 57);
+            this.txtRemove.Location = new System.Drawing.Point(6, 63);
             this.txtRemove.Name = "txtRemove";
             this.txtRemove.Size = new System.Drawing.Size(121, 20);
             this.txtRemove.TabIndex = 5;
             // 
             // btnRemoveInstructor
             // 
-            this.btnRemoveInstructor.Location = new System.Drawing.Point(6, 19);
+            this.btnRemoveInstructor.Location = new System.Drawing.Point(6, 23);
             this.btnRemoveInstructor.Name = "btnRemoveInstructor";
-            this.btnRemoveInstructor.Size = new System.Drawing.Size(1000, 666);
+            this.btnRemoveInstructor.Size = new System.Drawing.Size(121, 34);
             this.btnRemoveInstructor.TabIndex = 4;
             this.btnRemoveInstructor.Text = "Remove";
             this.btnRemoveInstructor.UseVisualStyleBackColor = true;
@@ -160,6 +160,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Instructors";
             this.Size = new System.Drawing.Size(826, 457);
+            this.Load += new System.EventHandler(this.Instructors_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
