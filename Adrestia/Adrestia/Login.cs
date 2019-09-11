@@ -114,7 +114,14 @@ namespace Adrestia
 
         private void Login_Load(object sender, EventArgs e)
         {
-            Connection = new SqlConnection(ConnectionString);
+            try
+            {
+                Connection = new SqlConnection(ConnectionString);
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("Error: " + er.Message);
+            }
         }
     }
 }
