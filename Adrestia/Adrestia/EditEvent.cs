@@ -17,7 +17,7 @@ namespace Adrestia
         public SqlConnection connection;
         public SqlCommand command;
         public SqlDataReader reader;
-        public string eventID;
+        public int eventID;
 
         public EditEvent()
         {
@@ -54,7 +54,7 @@ namespace Adrestia
             }
             reader.Close();
 
-            sql = "SELECT * FROM SPECIAL_EVENT WHERE EventID = '" + int.Parse(eventID) + "'";
+            sql = "SELECT * FROM SPECIAL_EVENT WHERE EventID = '" + eventID + "'";
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
             reader.Read();

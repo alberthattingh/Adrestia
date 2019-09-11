@@ -75,6 +75,12 @@
     <Compile Include="ChangeDetails.Designer.cs">
       <DependentUpon>ChangeDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomReport.Designer.cs">
+      <DependentUpon>CustomReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reporting.Designer.cs">
+      <DependentUpon>Reporting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Security.cs" />
     <Compile Include="SpecialEvents.cs">
       <SubType>UserControl</SubType>
@@ -185,6 +197,9 @@
     </Compile>
     <EmbeddedResource Include="ChangeDetails.resx">
       <DependentUpon>ChangeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomReport.resx">
+      <DependentUpon>CustomReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditEvent.resx">
       <DependentUpon>EditEvent.cs</DependentUpon>
@@ -238,6 +253,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reporting.resx">
+      <DependentUpon>Reporting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpecialEvents.resx">
       <DependentUpon>SpecialEvents.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +292,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

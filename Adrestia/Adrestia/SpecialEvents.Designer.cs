@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtDelete = new System.Windows.Forms.TextBox();
-            this.txtEdit = new System.Windows.Forms.TextBox();
             this.btnDeleteEvent = new System.Windows.Forms.Button();
             this.btnEditEvent = new System.Windows.Forms.Button();
             this.btnNewEvent = new System.Windows.Forms.Button();
             this.btnShowUpcoming = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -55,93 +58,149 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(398, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 20);
+            this.label1.Size = new System.Drawing.Size(177, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Special Events";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 197);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 154);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(851, 466);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.Size = new System.Drawing.Size(750, 500);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // txtDelete
-            // 
-            this.txtDelete.Location = new System.Drawing.Point(860, 411);
-            this.txtDelete.Name = "txtDelete";
-            this.txtDelete.Size = new System.Drawing.Size(137, 20);
-            this.txtDelete.TabIndex = 9;
-            // 
-            // txtEdit
-            // 
-            this.txtEdit.Location = new System.Drawing.Point(860, 319);
-            this.txtEdit.Name = "txtEdit";
-            this.txtEdit.Size = new System.Drawing.Size(137, 20);
-            this.txtEdit.TabIndex = 10;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
             // 
             // btnDeleteEvent
             // 
-            this.btnDeleteEvent.Location = new System.Drawing.Point(860, 350);
+            this.btnDeleteEvent.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDeleteEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeleteEvent.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteEvent.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteEvent.Location = new System.Drawing.Point(810, 490);
             this.btnDeleteEvent.Name = "btnDeleteEvent";
-            this.btnDeleteEvent.Size = new System.Drawing.Size(137, 50);
+            this.btnDeleteEvent.Size = new System.Drawing.Size(150, 50);
             this.btnDeleteEvent.TabIndex = 6;
             this.btnDeleteEvent.Text = "Delete Event";
-            this.btnDeleteEvent.UseVisualStyleBackColor = true;
+            this.btnDeleteEvent.UseVisualStyleBackColor = false;
             this.btnDeleteEvent.Click += new System.EventHandler(this.BtnDeleteEvent_Click);
             // 
             // btnEditEvent
             // 
-            this.btnEditEvent.Location = new System.Drawing.Point(860, 258);
+            this.btnEditEvent.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditEvent.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnEditEvent.ForeColor = System.Drawing.Color.White;
+            this.btnEditEvent.Location = new System.Drawing.Point(810, 369);
             this.btnEditEvent.Name = "btnEditEvent";
-            this.btnEditEvent.Size = new System.Drawing.Size(137, 50);
+            this.btnEditEvent.Size = new System.Drawing.Size(150, 50);
             this.btnEditEvent.TabIndex = 7;
             this.btnEditEvent.Text = "Edit Event";
-            this.btnEditEvent.UseVisualStyleBackColor = true;
+            this.btnEditEvent.UseVisualStyleBackColor = false;
             this.btnEditEvent.Click += new System.EventHandler(this.BtnEditEvent_Click);
             // 
             // btnNewEvent
             // 
-            this.btnNewEvent.Location = new System.Drawing.Point(860, 197);
+            this.btnNewEvent.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNewEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewEvent.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnNewEvent.ForeColor = System.Drawing.Color.White;
+            this.btnNewEvent.Location = new System.Drawing.Point(810, 248);
             this.btnNewEvent.Name = "btnNewEvent";
-            this.btnNewEvent.Size = new System.Drawing.Size(137, 50);
+            this.btnNewEvent.Size = new System.Drawing.Size(150, 50);
             this.btnNewEvent.TabIndex = 8;
             this.btnNewEvent.Text = "New Event";
-            this.btnNewEvent.UseVisualStyleBackColor = true;
+            this.btnNewEvent.UseVisualStyleBackColor = false;
             this.btnNewEvent.Click += new System.EventHandler(this.BtnNewEvent_Click);
             // 
             // btnShowUpcoming
             // 
-            this.btnShowUpcoming.Location = new System.Drawing.Point(204, 98);
+            this.btnShowUpcoming.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShowUpcoming.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnShowUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowUpcoming.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowUpcoming.ForeColor = System.Drawing.Color.White;
+            this.btnShowUpcoming.Location = new System.Drawing.Point(620, 80);
             this.btnShowUpcoming.Name = "btnShowUpcoming";
-            this.btnShowUpcoming.Size = new System.Drawing.Size(137, 50);
+            this.btnShowUpcoming.Size = new System.Drawing.Size(150, 50);
             this.btnShowUpcoming.TabIndex = 11;
             this.btnShowUpcoming.Text = "Show Upcoming Events";
-            this.btnShowUpcoming.UseVisualStyleBackColor = true;
+            this.btnShowUpcoming.UseVisualStyleBackColor = false;
             this.btnShowUpcoming.Click += new System.EventHandler(this.BtnShowUpcoming_Click);
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(50, 98);
+            this.btnShowAll.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowAll.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.ForeColor = System.Drawing.Color.White;
+            this.btnShowAll.Location = new System.Drawing.Point(412, 80);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(137, 50);
+            this.btnShowAll.Size = new System.Drawing.Size(150, 50);
             this.btnShowAll.TabIndex = 12;
             this.btnShowAll.Text = "Show All Events";
-            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.UseVisualStyleBackColor = false;
             this.btnShowAll.Click += new System.EventHandler(this.BtnShowAll_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(94, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 22);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Search:";
+            // 
+            // txSearch
+            // 
+            this.txSearch.Location = new System.Drawing.Point(177, 98);
+            this.txSearch.Name = "txSearch";
+            this.txSearch.Size = new System.Drawing.Size(150, 20);
+            this.txSearch.TabIndex = 14;
+            this.txSearch.TextChanged += new System.EventHandler(this.TxSearch_TextChanged);
             // 
             // SpecialEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txSearch);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnShowUpcoming);
             this.Controls.Add(this.btnShowAll);
-            this.Controls.Add(this.txtDelete);
-            this.Controls.Add(this.txtEdit);
             this.Controls.Add(this.btnDeleteEvent);
             this.Controls.Add(this.btnEditEvent);
             this.Controls.Add(this.btnNewEvent);
@@ -163,12 +222,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtDelete;
-        private System.Windows.Forms.TextBox txtEdit;
         private System.Windows.Forms.Button btnDeleteEvent;
         private System.Windows.Forms.Button btnEditEvent;
         private System.Windows.Forms.Button btnNewEvent;
         private System.Windows.Forms.Button btnShowUpcoming;
         private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txSearch;
     }
 }

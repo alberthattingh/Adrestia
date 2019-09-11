@@ -14,24 +14,27 @@ namespace Adrestia
     
     public partial class NewEvent : Form
     {
-        public string connectionString = Security.ConnectionString;
-        public SqlConnection connection;
-        public SqlCommand command;
-        public SqlDataReader reader;
-
         public NewEvent()
         {
             InitializeComponent();
             
         }
 
+        //Global variables
+        public string connectionString = Security.ConnectionString;
+        public SqlConnection connection;
+        public SqlCommand command;
+        public SqlDataReader reader;
+
+
+        //Add event record to database
         private void BtnAddEvent_Click(object sender, EventArgs e)
         {
             connection.Open();
             string venueID = "";
             string typeID = "";
 
-            string sql = "SELECT EventTypeID FROM EVENT_TYPE WHERE Description ='" + lbType.SelectedItem.ToString() + "'";
+            string sql = "SELECT EventTypeID FROM EVENT_TYPE WHERE Description ='" + cbxType.SelectedItem.ToString() + "'";
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
             while(reader.Read())
@@ -40,7 +43,7 @@ namespace Adrestia
             }
             reader.Close();
 
-             sql = "SELECT VenueID FROM VENUE WHERE Description ='" + lbVenue.SelectedItem.ToString() + "'";
+             sql = "SELECT VenueID FROM VENUE WHERE Description ='" + cbxVenue.SelectedItem.ToString() + "'";
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
             while (reader.Read())
@@ -48,10 +51,9 @@ namespace Adrestia
                 venueID = reader.GetValue(0).ToString();
             }
             reader.Close();
-
-
-
-
+               
+            
+            //if(cbxType.)
             sql = "INSERT INTO SPECIAL_EVENT VALUES (@date, @time, @costAdult, @costChildren, @costPensioner, @venue, @type)";
             command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@date", datePicker.Value.ToShortDateString());
@@ -67,11 +69,15 @@ namespace Adrestia
             this.Close();
         }
 
+
+        //Cancel and close form
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        // Add new event venue
         private void BtnNewVenue_Click(object sender, EventArgs e)
         {
             NewEventVenue venueForm = new NewEventVenue();
@@ -84,9 +90,9 @@ namespace Adrestia
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if (!lbVenue.Items.Contains(reader.GetValue(1)))
+                if (!cbxVenue.Items.Contains(reader.GetValue(1)))
                 {
-                    lbVenue.Items.Add(reader.GetValue(1));
+                    cbxVenue.Items.Add(reader.GetValue(1));
                 }
 
             }
@@ -94,6 +100,8 @@ namespace Adrestia
             connection.Close();
         }
 
+
+        //Load event types and venues into comboboxes
         private void NewEvent_Load(object sender, EventArgs e)
         {
             connection = new SqlConnection(connectionString);
@@ -104,9 +112,9 @@ namespace Adrestia
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if(!lbType.Items.Contains(reader.GetValue(1)))
+                if(!cbxType.Items.Contains(reader.GetValue(1)))
                 {
-                    lbType.Items.Add(reader.GetValue(1));
+                    cbxType.Items.Add(reader.GetValue(1));
                 }
             }
             reader.Close();
@@ -116,9 +124,9 @@ namespace Adrestia
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if (!lbVenue.Items.Contains(reader.GetValue(1)))
+                if (!cbxVenue.Items.Contains(reader.GetValue(1)))
                 {
-                    lbVenue.Items.Add(reader.GetValue(1));
+                    cbxVenue.Items.Add(reader.GetValue(1));
                 }
                     
             }
@@ -126,6 +134,8 @@ namespace Adrestia
             connection.Close();
         }
 
+
+        // Add new event type
         private void BtnNewType_Click(object sender, EventArgs e)
         {
             NewEventType typeForm = new NewEventType();
@@ -138,9 +148,9 @@ namespace Adrestia
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if (!lbType.Items.Contains(reader.GetValue(1)))
+                if (!cbxType.Items.Contains(reader.GetValue(1)))
                 {
-                    lbType.Items.Add(reader.GetValue(1));
+                    cbxType.Items.Add(reader.GetValue(1));
                 }
             }
             reader.Close();
