@@ -46,7 +46,17 @@
             this.btnAddLesson = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
+            this.dgvLessons = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSelected = new System.Windows.Forms.Label();
+            this.btnDeleteLesson = new System.Windows.Forms.Button();
+            this.btnEditLesson = new System.Windows.Forms.Button();
+            this.gbEditDelete = new System.Windows.Forms.GroupBox();
+            this.rdpDelete = new System.Windows.Forms.RadioButton();
+            this.rdpEdit = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).BeginInit();
+            this.gbEditDelete.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -82,6 +92,7 @@
             // 
             // cbxPrice
             // 
+            this.cbxPrice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPrice.FormattingEnabled = true;
             this.cbxPrice.Items.AddRange(new object[] {
             "100.00 ",
@@ -89,7 +100,7 @@
             "300.00",
             "400.00",
             "500.00"});
-            this.cbxPrice.Location = new System.Drawing.Point(8, 329);
+            this.cbxPrice.Location = new System.Drawing.Point(266, 151);
             this.cbxPrice.Name = "cbxPrice";
             this.cbxPrice.Size = new System.Drawing.Size(121, 21);
             this.cbxPrice.TabIndex = 9;
@@ -98,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 311);
+            this.label4.Location = new System.Drawing.Point(263, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 10;
@@ -107,7 +118,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 257);
+            this.label5.Location = new System.Drawing.Point(263, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 11;
@@ -116,13 +127,14 @@
             // lbFinal
             // 
             this.lbFinal.FormattingEnabled = true;
-            this.lbFinal.Location = new System.Drawing.Point(260, 83);
+            this.lbFinal.Location = new System.Drawing.Point(707, 88);
             this.lbFinal.Name = "lbFinal";
-            this.lbFinal.Size = new System.Drawing.Size(275, 212);
+            this.lbFinal.Size = new System.Drawing.Size(275, 160);
             this.lbFinal.TabIndex = 12;
             // 
             // cbxTime
             // 
+            this.cbxTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTime.FormattingEnabled = true;
             this.cbxTime.Items.AddRange(new object[] {
             "8:00",
@@ -130,7 +142,7 @@
             "13:00",
             "14:30",
             "16:00"});
-            this.cbxTime.Location = new System.Drawing.Point(9, 274);
+            this.cbxTime.Location = new System.Drawing.Point(266, 86);
             this.cbxTime.Name = "cbxTime";
             this.cbxTime.Size = new System.Drawing.Size(121, 21);
             this.cbxTime.TabIndex = 13;
@@ -138,7 +150,7 @@
             // 
             // nudStudents
             // 
-            this.nudStudents.Location = new System.Drawing.Point(9, 444);
+            this.nudStudents.Location = new System.Drawing.Point(426, 151);
             this.nudStudents.Minimum = new decimal(new int[] {
             1,
             0,
@@ -156,7 +168,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 428);
+            this.label3.Location = new System.Drawing.Point(423, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 13);
             this.label3.TabIndex = 17;
@@ -165,7 +177,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 369);
+            this.label7.Location = new System.Drawing.Point(423, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 22;
@@ -173,7 +185,7 @@
             // 
             // tbDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(9, 385);
+            this.tbDescription.Location = new System.Drawing.Point(426, 87);
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Size = new System.Drawing.Size(198, 20);
             this.tbDescription.TabIndex = 23;
@@ -181,7 +193,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(257, 70);
+            this.label8.Location = new System.Drawing.Point(704, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 25;
@@ -189,7 +201,7 @@
             // 
             // btnAddLesson
             // 
-            this.btnAddLesson.Location = new System.Drawing.Point(260, 301);
+            this.btnAddLesson.Location = new System.Drawing.Point(707, 254);
             this.btnAddLesson.Name = "btnAddLesson";
             this.btnAddLesson.Size = new System.Drawing.Size(75, 23);
             this.btnAddLesson.TabIndex = 26;
@@ -199,7 +211,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(260, 327);
+            this.btnClear.Location = new System.Drawing.Point(907, 254);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 27;
@@ -209,7 +221,7 @@
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(9, 470);
+            this.btnPreview.Location = new System.Drawing.Point(426, 186);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(85, 33);
             this.btnPreview.TabIndex = 28;
@@ -217,10 +229,99 @@
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.BtnPreview_Click);
             // 
+            // dgvLessons
+            // 
+            this.dgvLessons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLessons.Location = new System.Drawing.Point(9, 294);
+            this.dgvLessons.Name = "dgvLessons";
+            this.dgvLessons.Size = new System.Drawing.Size(744, 157);
+            this.dgvLessons.TabIndex = 29;
+            this.dgvLessons.SelectionChanged += new System.EventHandler(this.DgvLessons_SelectionChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 278);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Lessons:";
+            // 
+            // lblSelected
+            // 
+            this.lblSelected.AutoSize = true;
+            this.lblSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelected.Location = new System.Drawing.Point(6, 454);
+            this.lblSelected.Name = "lblSelected";
+            this.lblSelected.Size = new System.Drawing.Size(132, 20);
+            this.lblSelected.TabIndex = 31;
+            this.lblSelected.Text = "Selected Lesson:";
+            // 
+            // btnDeleteLesson
+            // 
+            this.btnDeleteLesson.Location = new System.Drawing.Point(10, 563);
+            this.btnDeleteLesson.Name = "btnDeleteLesson";
+            this.btnDeleteLesson.Size = new System.Drawing.Size(115, 23);
+            this.btnDeleteLesson.TabIndex = 32;
+            this.btnDeleteLesson.Text = "Delete Selected Lesson";
+            this.btnDeleteLesson.UseVisualStyleBackColor = true;
+            this.btnDeleteLesson.Click += new System.EventHandler(this.BtnDeleteLesson_Click);
+            // 
+            // btnEditLesson
+            // 
+            this.btnEditLesson.Location = new System.Drawing.Point(8, 592);
+            this.btnEditLesson.Name = "btnEditLesson";
+            this.btnEditLesson.Size = new System.Drawing.Size(115, 23);
+            this.btnEditLesson.TabIndex = 33;
+            this.btnEditLesson.Text = "Edit Lesson: ";
+            this.btnEditLesson.UseVisualStyleBackColor = true;
+            this.btnEditLesson.Click += new System.EventHandler(this.BtnEditLesson_Click);
+            // 
+            // gbEditDelete
+            // 
+            this.gbEditDelete.Controls.Add(this.rdpEdit);
+            this.gbEditDelete.Controls.Add(this.rdpDelete);
+            this.gbEditDelete.Location = new System.Drawing.Point(10, 477);
+            this.gbEditDelete.Name = "gbEditDelete";
+            this.gbEditDelete.Size = new System.Drawing.Size(156, 80);
+            this.gbEditDelete.TabIndex = 34;
+            this.gbEditDelete.TabStop = false;
+            this.gbEditDelete.Text = "Edit/Delete";
+            // 
+            // rdpDelete
+            // 
+            this.rdpDelete.AutoSize = true;
+            this.rdpDelete.Location = new System.Drawing.Point(6, 19);
+            this.rdpDelete.Name = "rdpDelete";
+            this.rdpDelete.Size = new System.Drawing.Size(138, 17);
+            this.rdpDelete.TabIndex = 35;
+            this.rdpDelete.TabStop = true;
+            this.rdpDelete.Text = "Delete Selected Lesson";
+            this.rdpDelete.UseVisualStyleBackColor = true;
+            this.rdpDelete.CheckedChanged += new System.EventHandler(this.RdpDelete_CheckedChanged);
+            // 
+            // rdpEdit
+            // 
+            this.rdpEdit.AutoSize = true;
+            this.rdpEdit.Location = new System.Drawing.Point(6, 50);
+            this.rdpEdit.Name = "rdpEdit";
+            this.rdpEdit.Size = new System.Drawing.Size(125, 17);
+            this.rdpEdit.TabIndex = 35;
+            this.rdpEdit.TabStop = true;
+            this.rdpEdit.Text = "Edit Selected Lesson";
+            this.rdpEdit.UseVisualStyleBackColor = true;
+            this.rdpEdit.CheckedChanged += new System.EventHandler(this.RdpEdit_CheckedChanged);
+            // 
             // LessonsInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gbEditDelete);
+            this.Controls.Add(this.btnEditLesson);
+            this.Controls.Add(this.btnDeleteLesson);
+            this.Controls.Add(this.lblSelected);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dgvLessons);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAddLesson);
@@ -239,7 +340,11 @@
             this.Controls.Add(this.label2);
             this.Name = "LessonsInstructor";
             this.Size = new System.Drawing.Size(1000, 666);
+            this.Load += new System.EventHandler(this.LessonsInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).EndInit();
+            this.gbEditDelete.ResumeLayout(false);
+            this.gbEditDelete.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +368,13 @@
         private System.Windows.Forms.Button btnAddLesson;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnPreview;
+        private System.Windows.Forms.DataGridView dgvLessons;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSelected;
+        private System.Windows.Forms.Button btnDeleteLesson;
+        private System.Windows.Forms.Button btnEditLesson;
+        private System.Windows.Forms.GroupBox gbEditDelete;
+        private System.Windows.Forms.RadioButton rdpEdit;
+        private System.Windows.Forms.RadioButton rdpDelete;
     }
 }
