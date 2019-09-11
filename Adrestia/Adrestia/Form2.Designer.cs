@@ -32,6 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
+            this.lessonsInstructor1 = new Adrestia.LessonsInstructor();
+            this.messaging1 = new Adrestia.Messaging();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +48,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 666);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // button1
             // 
@@ -74,14 +77,33 @@
             this.btnStudents.Text = "Students";
             this.btnStudents.UseVisualStyleBackColor = true;
             // 
+            // lessonsInstructor1
+            // 
+            this.lessonsInstructor1.Location = new System.Drawing.Point(206, 12);
+            this.lessonsInstructor1.Name = "lessonsInstructor1";
+            this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
+            this.lessonsInstructor1.TabIndex = 2;
+            this.lessonsInstructor1.Load += new System.EventHandler(this.LessonsInstructor1_Load);
+            // 
+            // messaging1
+            // 
+            this.messaging1.Location = new System.Drawing.Point(196, 0);
+            this.messaging1.Name = "messaging1";
+            this.messaging1.Size = new System.Drawing.Size(988, 666);
+            this.messaging1.TabIndex = 3;
+            this.messaging1.Load += new System.EventHandler(this.Messaging1_Load);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
+            this.Controls.Add(this.messaging1);
+            this.Controls.Add(this.lessonsInstructor1);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -93,5 +115,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnStudents;
+        private LessonsInstructor lessonsInstructor1;
+        private Messaging messaging1;
     }
 }

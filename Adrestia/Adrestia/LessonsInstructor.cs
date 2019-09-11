@@ -14,7 +14,7 @@ namespace Adrestia
     public partial class LessonsInstructor : UserControl
     {
 
-        public string UserID;
+        public int UserID;
 
         //Database:
         string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marné\Documents\NWU\CMPG 223\Assignment\Adrestia\Adrestia\Adrestia\LessonTest.mdf;Integrated Security=True";
@@ -26,9 +26,10 @@ namespace Adrestia
         public int lessonStudents;
         public string selectedLesson;
         Boolean edit;
- 
+
         //Value for the InstructorID
-        public int instID = 1000;
+
+        
         
         public LessonsInstructor()
         {
@@ -69,7 +70,7 @@ namespace Adrestia
             comm.Parameters.AddWithValue("@Price", lessonPrice);
             comm.Parameters.AddWithValue("@Description", lessonDescription);
             comm.Parameters.AddWithValue("@MaxNoOfStudents", lessonStudents);
-            comm.Parameters.AddWithValue("@InstructorID", instID);
+            comm.Parameters.AddWithValue("@InstructorID", UserID);
             comm.ExecuteNonQuery();
 
             //UPDATE DATA IN DATA GRID VIEW
@@ -367,7 +368,12 @@ namespace Adrestia
                 MessageBox.Show("No Time Has Been Selected!");
                 cbxTime.Focus();
             }
+            else
+            {
+                string sTime = cbxTime.GetItemText(cbxTime.SelectedItem);
+                lessonTime = Convert.ToDateTime(sTime);
 
+            }
 
             //Select Price:
             if (cbxPrice.SelectedIndex == -1)
@@ -375,14 +381,43 @@ namespace Adrestia
                 MessageBox.Show("No Price Has Been Selected!");
                 cbxPrice.Focus();
             }
+            else
+            {
+                double price = Convert.ToDouble(cbxPrice.GetItemText(cbxPrice.SelectedItem));
+                lessonPrice = price;
+            }
+
+            //Select Students
+            int students = Convert.ToInt32(Math.Round(nudStudents.Value, 0));
+            lessonStudents = students;
 
             //Exception handeling
             if (correct == true)
             {
+                SqlConnection conn = new SqlConnection(conString);
+                conn.Open();
 
+                string sqlQuery = "UPDATE LESSON SET LessonDate = '"+ lessonDate+ "', LessonTime = '" + lessonTime + "',Price = '" + lessonPrice + "',Description = '" + lessonDescription + "',MaxNoOfStudents = '" + lessonStudents + "' WHERE LessonId = '" + selectedLesson + "'";
+                SqlCommand cmn = new SqlCommand(sqlQuery, conn);
+                cmn.ExecuteNonQuery();
+
+                //Data load into data grid view:
+                string loadQuery = @"SELECT * FROM LESSON";
+
+                SqlCommand com = new SqlCommand(loadQuery, conn);
+                DataSet ds = new DataSet();
+                SqlDataAdapter adap = new SqlDataAdapter();
+                adap.SelectCommand = com;
+                adap.Fill(ds, "LESSON");
+
+                dgvLessons.DataSource = ds;
+                dgvLessons.DataMember = "LESSON";
+                conn.Close();
             }
+        }
 
-
+        private void DgvLessons_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

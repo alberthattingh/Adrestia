@@ -50,8 +50,8 @@
             this.btnDeleteLesson = new System.Windows.Forms.Button();
             this.btnEditLesson = new System.Windows.Forms.Button();
             this.gbEditDelete = new System.Windows.Forms.GroupBox();
-            this.rdpDelete = new System.Windows.Forms.RadioButton();
             this.rdpEdit = new System.Windows.Forms.RadioButton();
+            this.rdpDelete = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).BeginInit();
             this.gbEditDelete.SuspendLayout();
@@ -229,6 +229,7 @@
             this.dgvLessons.Name = "dgvLessons";
             this.dgvLessons.Size = new System.Drawing.Size(744, 157);
             this.dgvLessons.TabIndex = 29;
+            this.dgvLessons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLessons_CellContentClick);
             this.dgvLessons.SelectionChanged += new System.EventHandler(this.DgvLessons_SelectionChanged);
             // 
             // label6
@@ -281,18 +282,6 @@
             this.gbEditDelete.TabStop = false;
             this.gbEditDelete.Text = "Edit/Delete";
             // 
-            // rdpDelete
-            // 
-            this.rdpDelete.AutoSize = true;
-            this.rdpDelete.Location = new System.Drawing.Point(6, 19);
-            this.rdpDelete.Name = "rdpDelete";
-            this.rdpDelete.Size = new System.Drawing.Size(138, 17);
-            this.rdpDelete.TabIndex = 35;
-            this.rdpDelete.TabStop = true;
-            this.rdpDelete.Text = "Delete Selected Lesson";
-            this.rdpDelete.UseVisualStyleBackColor = true;
-            this.rdpDelete.CheckedChanged += new System.EventHandler(this.RdpDelete_CheckedChanged);
-            // 
             // rdpEdit
             // 
             this.rdpEdit.AutoSize = true;
@@ -304,6 +293,18 @@
             this.rdpEdit.Text = "Edit Selected Lesson";
             this.rdpEdit.UseVisualStyleBackColor = true;
             this.rdpEdit.CheckedChanged += new System.EventHandler(this.RdpEdit_CheckedChanged);
+            // 
+            // rdpDelete
+            // 
+            this.rdpDelete.AutoSize = true;
+            this.rdpDelete.Location = new System.Drawing.Point(6, 19);
+            this.rdpDelete.Name = "rdpDelete";
+            this.rdpDelete.Size = new System.Drawing.Size(138, 17);
+            this.rdpDelete.TabIndex = 35;
+            this.rdpDelete.TabStop = true;
+            this.rdpDelete.Text = "Delete Selected Lesson";
+            this.rdpDelete.UseVisualStyleBackColor = true;
+            this.rdpDelete.CheckedChanged += new System.EventHandler(this.RdpDelete_CheckedChanged);
             // 
             // LessonsInstructor
             // 

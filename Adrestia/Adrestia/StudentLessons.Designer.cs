@@ -31,8 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStudentLessons = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbLessonSum = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnBook = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLessons)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             this.dgvStudentLessons.Name = "dgvStudentLessons";
             this.dgvStudentLessons.Size = new System.Drawing.Size(609, 187);
             this.dgvStudentLessons.TabIndex = 1;
+            this.dgvStudentLessons.SelectionChanged += new System.EventHandler(this.DgvStudentLessons_SelectionChanged);
             // 
             // label2
             // 
@@ -63,13 +65,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Available Lessons:";
             // 
-            // listBox1
+            // lbLessonSum
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(623, 82);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(357, 186);
-            this.listBox1.TabIndex = 3;
+            this.lbLessonSum.FormattingEnabled = true;
+            this.lbLessonSum.Location = new System.Drawing.Point(623, 82);
+            this.lbLessonSum.Name = "lbLessonSum";
+            this.lbLessonSum.Size = new System.Drawing.Size(357, 186);
+            this.lbLessonSum.TabIndex = 3;
             // 
             // label3
             // 
@@ -80,12 +82,23 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Lesson Sumary";
             // 
+            // btnBook
+            // 
+            this.btnBook.Location = new System.Drawing.Point(624, 274);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(75, 23);
+            this.btnBook.TabIndex = 5;
+            this.btnBook.Text = "Book";
+            this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.Click += new System.EventHandler(this.BtnBook_Click);
+            // 
             // StudentLessons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnBook);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbLessonSum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvStudentLessons);
             this.Controls.Add(this.label1);
@@ -103,7 +116,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvStudentLessons;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbLessonSum;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnBook;
     }
 }

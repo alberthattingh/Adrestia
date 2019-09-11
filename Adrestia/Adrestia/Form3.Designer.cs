@@ -32,6 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
+            this.messaging1 = new Adrestia.Messaging();
+            this.studentLessons1 = new Adrestia.StudentLessons();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,11 +76,27 @@
             this.btnStudents.Text = "Students";
             this.btnStudents.UseVisualStyleBackColor = true;
             // 
+            // messaging1
+            // 
+            this.messaging1.Location = new System.Drawing.Point(194, -3);
+            this.messaging1.Name = "messaging1";
+            this.messaging1.Size = new System.Drawing.Size(988, 666);
+            this.messaging1.TabIndex = 2;
+            // 
+            // studentLessons1
+            // 
+            this.studentLessons1.Location = new System.Drawing.Point(194, 0);
+            this.studentLessons1.Name = "studentLessons1";
+            this.studentLessons1.Size = new System.Drawing.Size(1000, 666);
+            this.studentLessons1.TabIndex = 3;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
+            this.Controls.Add(this.studentLessons1);
+            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.panel1);
             this.Name = "Form3";
             this.Text = "Form3";
@@ -93,5 +111,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnStudents;
+        private Messaging messaging1;
+        private StudentLessons studentLessons1;
     }
 }
