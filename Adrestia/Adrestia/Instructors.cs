@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Adrestia
 {
-    public partial class Instructors : Form
+    public partial class Instructors : UserControl
     {
         public string connectionString = Security.ConnectionString;
         public SqlConnection connection;
@@ -29,23 +29,10 @@ namespace Adrestia
         {
             NewInstructor newInstructorForm = new NewInstructor();
             newInstructorForm.ShowDialog();
-            PopulateGridView();
+            DisplayGridView();
         }
 
-        private void Instructors_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                connection = new SqlConnection(connectionString);
-                PopulateGridView();
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("DB Error: " + er.Message);
-            }
-        }
-
-        public void PopulateGridView()
+        public void DisplayGridView()
         {
             connection.Open();
 
@@ -64,7 +51,7 @@ namespace Adrestia
             connection.Close();
         }
 
-        public void PopulateGridView(string query)
+        public void DisplayGridView(string query)
         {
             connection.Open();
 
@@ -121,12 +108,12 @@ namespace Adrestia
             txtChangeDetails.Clear();
             txtChangeDetails.Focus();
 
-            PopulateGridView();
+            DisplayGridView();
         }
 
-        private void BtnDeleteInstructor_Click(object sender, EventArgs e)
+        private void BtnRemoveInstructor_Click(object sender, EventArgs e)
         {
-            if (txtDeleteInstructor.Text == "")
+            if (txtRemove.Text == "")
             {
                 MessageBox.Show("Enter the InstructorID of the instructor you wish to remove into the textbox below.");
             }
@@ -136,25 +123,25 @@ namespace Adrestia
                 {
                     connection.Open();
 
-                    // Check if studentID in table
-                    string sql = "SELECT COUNT(*) FROM [INSTRUCTOR] WHERE InstructorID = '" + txtDeleteInstructor.Text + "';";
+                    // Check if instructorId in table
+                    string sql = "SELECT COUNT(*) FROM [INSTRUCTOR] WHERE InstructorID = '" + txtRemove.Text + "';";
                     command = new SqlCommand(sql, connection);
                     int exists = (int)command.ExecuteScalar();
 
                     if (exists == 0)
                     {
-                        MessageBox.Show("There aren't any instructors with the Instructor ID: " + txtDeleteInstructor.Text);
+                        MessageBox.Show("There aren't any instructors with the Instructor ID: " + txtRemove.Text);
                         connection.Close();
-                        txtDeleteInstructor.Clear();
-                        txtDeleteInstructor.Focus();
+                        txtRemove.Clear();
+                        txtRemove.Focus();
                         return;
                     }
 
-                    sql = "DELETE FROM [INSTRUCTOR] WHERE InstructorID = '" + txtDeleteInstructor.Text + "';";
+                    sql = "DELETE FROM [INSTRUCTOR] WHERE InstructorID = '" + txtRemove.Text + "';";
                     command = new SqlCommand(sql, connection);
                     command.ExecuteNonQuery();
 
-                    sql = "DELETE FROM [USER] WHERE UserID = '" + txtDeleteInstructor.Text + "';";
+                    sql = "DELETE FROM [USER] WHERE UserID = '" + txtRemove.Text + "';";
                     command = new SqlCommand(sql, connection);
                     command.ExecuteNonQuery();
 
@@ -167,9 +154,22 @@ namespace Adrestia
                 }
             }
 
-            txtDeleteInstructor.Clear();
-            txtDeleteInstructor.Focus();
-            PopulateGridView();
+            txtRemove.Clear();
+            txtRemove.Focus();
+            DisplayGridView();
+        }
+
+        private void Instructors_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                DisplayGridView();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show("DB Error: " + er.Message);
+            }
         }
     }
 }

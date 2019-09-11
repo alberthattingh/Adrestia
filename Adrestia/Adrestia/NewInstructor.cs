@@ -59,7 +59,7 @@ namespace Adrestia
 
         private void BtnAddInstructor_Click(object sender, EventArgs e)
         {
-            // Add the newly created user as a student
+            // Add the newly created user as a instructor
             connection.Open();
 
             int instructorId = int.Parse(txtInstructorID.Text);

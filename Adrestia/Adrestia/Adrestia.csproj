@@ -111,17 +111,17 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Instructors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Instructors.Designer.cs">
+      <DependentUpon>Instructors.cs</DependentUpon>
+    </Compile>
     <Compile Include="LessonsInstructor.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LessonsInstructor.Designer.cs">
       <DependentUpon>LessonsInstructor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Instructors.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Instructors.Designer.cs">
-      <DependentUpon>Instructors.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -216,11 +216,11 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LessonsInstructor.resx">
-      <DependentUpon>LessonsInstructor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Instructors.resx">
       <DependentUpon>Instructors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LessonsInstructor.resx">
+      <DependentUpon>LessonsInstructor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -292,15 +292,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
