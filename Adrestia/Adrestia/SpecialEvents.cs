@@ -13,18 +13,22 @@ namespace Adrestia
 {
     public partial class SpecialEvents : UserControl
     {
+        public SpecialEvents()
+        {
+            InitializeComponent();
+        }
+
+        // public variables
         public string connectionString = Security.ConnectionString;
         public SqlConnection connection;
         public SqlDataAdapter adapter;
         public SqlCommand command;
         public DataSet ds;
         public SqlDataReader reader;
+        int selectedEvent;
 
-        public SpecialEvents()
-        {
-            InitializeComponent();
-        }
 
+        // Create connection to database and populate the gridview
         private void SpecialEvents_Load(object sender, EventArgs e)
         {
             try
@@ -32,139 +36,182 @@ namespace Adrestia
                 connection = new SqlConnection(connectionString);
                 PopulateGridView();
             }
-            catch (Exception er)
+            catch (Exception error)
             {
-                MessageBox.Show("DB Error: " + er.Message);
+                MessageBox.Show("Error: " + error.Message);
             }
         }
 
+
+        // Method to populate the Gridview
         public void PopulateGridView()
         {
-            connection.Open();
+            try
+            {
+                connection.Open();
 
-            string sql = "SELECT * FROM SPECIAL_EVENT";
-            command = new SqlCommand(sql, connection);
-            ds = new DataSet();
+                string sql = "SELECT * FROM SPECIAL_EVENT";
+                command = new SqlCommand(sql, connection);
+                ds = new DataSet();
 
-            adapter = new SqlDataAdapter();
-            adapter.SelectCommand = command;
-            adapter.Fill(ds, "EventTable");
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, "EventTable");
 
-            dataGridView1.DataMember = "EventTable";
-            dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "EventTable";
+                dataGridView1.DataSource = ds;
 
-            adapter.Dispose();
-            connection.Close();
+                adapter.Dispose();
+                connection.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
+            
         }
 
+
+        // Populates the gridview when button is clicked
         private void BtnShowAll_Click(object sender, EventArgs e)
         {
-            PopulateGridView();
+            try
+            {
+                PopulateGridView();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
         }
 
+        
+        // Shows the upcoming events in the gridview when button is clicked
         private void BtnShowUpcoming_Click(object sender, EventArgs e)
         {
-            connection.Open();
+            try
+            {
+                connection.Open();
 
-            string sql = "SELECT * FROM SPECIAL_EVENT WHERE EventDate >='" + DateTime.Today + "';";
-            command = new SqlCommand(sql, connection);
-            ds = new DataSet();
+                string sql = "SELECT * FROM SPECIAL_EVENT WHERE EventDate >='" + DateTime.Today + "';";
+                command = new SqlCommand(sql, connection);
+                ds = new DataSet();
 
-            adapter = new SqlDataAdapter();
-            adapter.SelectCommand = command;
-            adapter.Fill(ds, "EventTable");
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, "EventTable");
 
-            dataGridView1.DataMember = "EventTable";
-            dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "EventTable";
+                dataGridView1.DataSource = ds;
 
-            adapter.Dispose();
-            connection.Close();
+                adapter.Dispose();
+                connection.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
         }
 
+        // Show the form to create a new special event
         private void BtnNewEvent_Click(object sender, EventArgs e)
         {
-            NewEvent eventForm =new NewEvent();
-            eventForm.ShowDialog();
-            PopulateGridView();
+            try
+            {
+                NewEvent eventForm = new NewEvent();
+                eventForm.ShowDialog();
+                PopulateGridView();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
+            
         }
 
+
+        // Edit an existing special event
         private void BtnEditEvent_Click(object sender, EventArgs e)
         {
-            if (txtEdit.Text == "")
+            try
             {
-                MessageBox.Show("Enter the EventID of the event you wish to edit into the textbox below.");
-                txtEdit.Focus();
-                return;
+                EditEvent editEventForm = new EditEvent
+                {
+                    eventID = selectedEvent
+                };
+                editEventForm.ShowDialog();
+                PopulateGridView();
             }
-
-            connection.Open();
-            string sql = "SELECT * FROM [SPECIAL_EVENT] WHERE EventID = '" + txtEdit.Text + "';";
-            command = new SqlCommand(sql, connection);
-            reader = command.ExecuteReader();
-
-            if (!reader.HasRows)
+            catch (Exception error)
             {
-                MessageBox.Show("There aren't any events with the EventID: " + txtEdit.Text);
-                txtEdit.Clear();
-                txtEdit.Focus();
-                connection.Close();
-                return;
+                MessageBox.Show("Error: " + error.Message);
             }
-            connection.Close();
-
-            EditEvent editEventForm = new EditEvent
-            {
-                eventID = txtEdit.Text
-            };
-            editEventForm.ShowDialog();
-            txtEdit.Clear();
-            txtEdit.Focus();
-
-            PopulateGridView();
         }
 
+
+        // Delete an existing special event
         private void BtnDeleteEvent_Click(object sender, EventArgs e)
         {
-            if (txtDelete.Text == "")
+            try
             {
-                MessageBox.Show("Enter the StudentID of the student you wish to remove into the textbox below.");
-                txtDelete.Focus();
+                connection.Open();
+                string sql = "DELETE FROM SPECIAL_EVENT WHERE EventID = '" + selectedEvent + "'";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                PopulateGridView();
+
             }
-            else
+            catch (Exception error)
             {
-                try
+                MessageBox.Show("Error: " + error.Message);
+            }
+        }
+
+        // Gets eventID of selected row of datagridview
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedCells.Count > 0)
                 {
-                    connection.Open();
-
-                    string sql = "SELECT COUNT(*) FROM [SPECIAL_EVENT] WHERE EventID = '" + txtDelete.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    int exists = (int)command.ExecuteScalar();
-
-                    if (exists == 0)
-                    {
-                        MessageBox.Show("There aren't any events with the Event ID: " + txtDelete.Text);
-                        connection.Close();
-                        txtDelete.Clear();
-                        txtDelete.Focus();
-                        return;
-                    }
-
-                    sql = "DELETE FROM [SPECIAL_EVENT] WHERE EventID = '" + txtDelete.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    command.ExecuteNonQuery();
-
-                    connection.Close();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    connection.Close();
+                    int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                    selectedEvent = (int)selectedRow.Cells["EventID"].Value;
                 }
             }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
+        }
 
-            txtDelete.Clear();
-            txtDelete.Focus();
-            PopulateGridView();
+
+        // Search in datagridview
+        private void TxSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                connection.Open();
+                string sql = "SELECT * FROM SPECIAL_EVENT" +
+                    "WHERE EventID LIKE '%" + txSearch.Text + "%' OR EventDate LIKE '%" + txSearch.Text + "%' OR EventTimeLIKE '%" + txSearch.Text + "%' OR CostAdult LIKE '%" + txSearch.Text + "%' OR CostChildren LIKE '%" + txSearch.Text + "%' OR CostPensioner LIKE '%" + txSearch.Text + "%' OR + VenueID LIKE '%" + txSearch.Text + "%' OR EventTypeID LIKE '%" + txSearch.Text + "%'";
+                command = new SqlCommand(sql, connection);
+                ds = new DataSet();
+
+                adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                adapter.Fill(ds, "EventTable");
+
+                dataGridView1.DataMember = "EventTable";
+                dataGridView1.DataSource = ds;
+
+                adapter.Dispose();
+                connection.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
         }
     }
 }

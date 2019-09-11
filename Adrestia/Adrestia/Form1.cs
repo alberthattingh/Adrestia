@@ -15,10 +15,6 @@ namespace Adrestia
     {
         public string UserID;
         public string UserType;
-        private string ConnectionString = Security.ConnectionString;
-        private SqlConnection Connection;
-        private SqlDataReader Reader;
-        private SqlCommand Command;
 
         public Form1()
         {
@@ -84,6 +80,12 @@ namespace Adrestia
 
 
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            specialEvents1.Visible = true;
         }
     }
 }
