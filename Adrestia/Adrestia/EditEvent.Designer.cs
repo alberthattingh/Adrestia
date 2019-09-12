@@ -31,11 +31,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEditEvent = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lbType = new System.Windows.Forms.ListBox();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             this.btnNewType = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lbVenue = new System.Windows.Forms.ListBox();
+            this.cbxVenue = new System.Windows.Forms.ComboBox();
             this.btnNewVenue = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -61,99 +61,116 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(177, 398);
+            this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Location = new System.Drawing.Point(293, 323);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click_1);
             // 
             // btnEditEvent
             // 
-            this.btnEditEvent.Location = new System.Drawing.Point(177, 354);
+            this.btnEditEvent.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditEvent.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnEditEvent.Location = new System.Drawing.Point(112, 323);
             this.btnEditEvent.Name = "btnEditEvent";
-            this.btnEditEvent.Size = new System.Drawing.Size(75, 23);
-            this.btnEditEvent.TabIndex = 11;
+            this.btnEditEvent.Size = new System.Drawing.Size(150, 50);
+            this.btnEditEvent.TabIndex = 14;
             this.btnEditEvent.Text = "Edit";
-            this.btnEditEvent.UseVisualStyleBackColor = true;
-            this.btnEditEvent.Click += new System.EventHandler(this.BtnEditEvent_Click);
+            this.btnEditEvent.UseVisualStyleBackColor = false;
+            this.btnEditEvent.Click += new System.EventHandler(this.BtnEditEvent_Click_1);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lbType);
+            this.groupBox4.Controls.Add(this.cbxType);
             this.groupBox4.Controls.Add(this.btnNewType);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Location = new System.Drawing.Point(235, 167);
+            this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox4.Location = new System.Drawing.Point(293, 167);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 149);
-            this.groupBox4.TabIndex = 8;
+            this.groupBox4.Size = new System.Drawing.Size(250, 150);
+            this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Type of Event";
             // 
-            // lbType
+            // cbxType
             // 
-            this.lbType.FormattingEnabled = true;
-            this.lbType.Location = new System.Drawing.Point(89, 39);
-            this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(81, 17);
-            this.lbType.TabIndex = 3;
+            this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Location = new System.Drawing.Point(109, 36);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(125, 24);
+            this.cbxType.TabIndex = 12;
             // 
             // btnNewType
             // 
-            this.btnNewType.Location = new System.Drawing.Point(52, 91);
+            this.btnNewType.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNewType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewType.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnNewType.Location = new System.Drawing.Point(51, 80);
             this.btnNewType.Name = "btnNewType";
-            this.btnNewType.Size = new System.Drawing.Size(75, 23);
-            this.btnNewType.TabIndex = 2;
+            this.btnNewType.Size = new System.Drawing.Size(150, 50);
+            this.btnNewType.TabIndex = 13;
             this.btnNewType.Text = "New Type";
-            this.btnNewType.UseVisualStyleBackColor = true;
-            this.btnNewType.Click += new System.EventHandler(this.BtnNewType_Click);
+            this.btnNewType.UseVisualStyleBackColor = false;
+            this.btnNewType.Click += new System.EventHandler(this.BtnNewType_Click_1);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 39);
+            this.label9.Location = new System.Drawing.Point(9, 39);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 13);
+            this.label9.Size = new System.Drawing.Size(90, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Select Date:";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.lbVenue);
+            this.groupBox3.Controls.Add(this.cbxVenue);
             this.groupBox3.Controls.Add(this.btnNewVenue);
             this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(12, 167);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 149);
-            this.groupBox3.TabIndex = 9;
+            this.groupBox3.Size = new System.Drawing.Size(250, 150);
+            this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Venue";
             // 
-            // lbVenue
+            // cbxVenue
             // 
-            this.lbVenue.FormattingEnabled = true;
-            this.lbVenue.Location = new System.Drawing.Point(85, 39);
-            this.lbVenue.Name = "lbVenue";
-            this.lbVenue.Size = new System.Drawing.Size(81, 17);
-            this.lbVenue.TabIndex = 2;
+            this.cbxVenue.BackColor = System.Drawing.SystemColors.Window;
+            this.cbxVenue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVenue.FormattingEnabled = true;
+            this.cbxVenue.Location = new System.Drawing.Point(111, 36);
+            this.cbxVenue.Name = "cbxVenue";
+            this.cbxVenue.Size = new System.Drawing.Size(125, 24);
+            this.cbxVenue.TabIndex = 9;
             // 
             // btnNewVenue
             // 
-            this.btnNewVenue.Location = new System.Drawing.Point(54, 91);
+            this.btnNewVenue.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNewVenue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNewVenue.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnNewVenue.Location = new System.Drawing.Point(47, 80);
             this.btnNewVenue.Name = "btnNewVenue";
-            this.btnNewVenue.Size = new System.Drawing.Size(75, 23);
-            this.btnNewVenue.TabIndex = 1;
+            this.btnNewVenue.Size = new System.Drawing.Size(150, 50);
+            this.btnNewVenue.TabIndex = 10;
             this.btnNewVenue.Text = "New Venue";
-            this.btnNewVenue.UseVisualStyleBackColor = true;
-            this.btnNewVenue.Click += new System.EventHandler(this.BtnNewVenue_Click);
+            this.btnNewVenue.UseVisualStyleBackColor = false;
+            this.btnNewVenue.Click += new System.EventHandler(this.BtnNewVenue_Click_1);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 39);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.Size = new System.Drawing.Size(99, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Select venue:";
             // 
@@ -165,10 +182,11 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(235, 12);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(292, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 149);
-            this.groupBox2.TabIndex = 10;
+            this.groupBox2.Size = new System.Drawing.Size(250, 150);
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ticket Costs";
             // 
@@ -179,15 +197,15 @@
             0,
             0,
             0});
-            this.numPensioners.Location = new System.Drawing.Point(74, 114);
+            this.numPensioners.Location = new System.Drawing.Point(110, 107);
             this.numPensioners.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numPensioners.Name = "numPensioners";
-            this.numPensioners.Size = new System.Drawing.Size(120, 20);
-            this.numPensioners.TabIndex = 6;
+            this.numPensioners.Size = new System.Drawing.Size(125, 24);
+            this.numPensioners.TabIndex = 7;
             // 
             // numChildren
             // 
@@ -196,15 +214,15 @@
             0,
             0,
             0});
-            this.numChildren.Location = new System.Drawing.Point(74, 78);
+            this.numChildren.Location = new System.Drawing.Point(110, 69);
             this.numChildren.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numChildren.Name = "numChildren";
-            this.numChildren.Size = new System.Drawing.Size(120, 20);
-            this.numChildren.TabIndex = 5;
+            this.numChildren.Size = new System.Drawing.Size(125, 24);
+            this.numChildren.TabIndex = 6;
             // 
             // numAdult
             // 
@@ -213,40 +231,40 @@
             0,
             0,
             0});
-            this.numAdult.Location = new System.Drawing.Point(74, 37);
+            this.numAdult.Location = new System.Drawing.Point(110, 31);
             this.numAdult.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numAdult.Name = "numAdult";
-            this.numAdult.Size = new System.Drawing.Size(120, 20);
-            this.numAdult.TabIndex = 4;
+            this.numAdult.Size = new System.Drawing.Size(125, 24);
+            this.numAdult.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 85);
+            this.label5.Location = new System.Drawing.Point(10, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.Size = new System.Drawing.Size(69, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "Children:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 116);
+            this.label4.Location = new System.Drawing.Point(10, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(83, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Pensioners:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 44);
+            this.label3.Location = new System.Drawing.Point(10, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Adults:";
             // 
@@ -256,10 +274,11 @@
             this.groupBox1.Controls.Add(this.datePicker);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 149);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.Size = new System.Drawing.Size(250, 150);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Date and Time";
             // 
@@ -267,36 +286,36 @@
             // 
             this.timePicker.CustomFormat = "HH:MM";
             this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePicker.Location = new System.Drawing.Point(73, 87);
+            this.timePicker.Location = new System.Drawing.Point(111, 71);
             this.timePicker.Name = "timePicker";
             this.timePicker.ShowUpDown = true;
-            this.timePicker.Size = new System.Drawing.Size(107, 20);
+            this.timePicker.Size = new System.Drawing.Size(125, 24);
             this.timePicker.TabIndex = 3;
             // 
             // datePicker
             // 
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.Location = new System.Drawing.Point(73, 39);
+            this.datePicker.Location = new System.Drawing.Point(111, 33);
             this.datePicker.Name = "datePicker";
             this.datePicker.ShowUpDown = true;
-            this.datePicker.Size = new System.Drawing.Size(107, 20);
+            this.datePicker.Size = new System.Drawing.Size(125, 24);
             this.datePicker.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 93);
+            this.label2.Location = new System.Drawing.Point(7, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Time:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 39);
+            this.label1.Location = new System.Drawing.Point(7, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Date:";
             // 
@@ -304,7 +323,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(555, 384);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEditEvent);
             this.Controls.Add(this.groupBox4);
@@ -334,11 +354,11 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnEditEvent;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListBox lbType;
+        private System.Windows.Forms.ComboBox cbxType;
         private System.Windows.Forms.Button btnNewType;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox lbVenue;
+        private System.Windows.Forms.ComboBox cbxVenue;
         private System.Windows.Forms.Button btnNewVenue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;

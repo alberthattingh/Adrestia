@@ -28,6 +28,7 @@ namespace Adrestia
 
         private void TicketSales_Load(object sender, EventArgs e)
         {
+            /*
             connection.Open();
 
             string sql = "SELECT * FROM SPECIAL_EVENT";
@@ -43,10 +44,12 @@ namespace Adrestia
             }
             reader.Close();
             connection.Close();
+            */
         }
 
         private void BtnSale_Click(object sender, EventArgs e)
         {
+            /*
             connection.Open();
 
             string sql = "INSERT INTO TICKET_SALE VALUES (@date, @time, @noOfAdults, @noOfChildren, @noOfPensioners, @total, @eventId)";
@@ -60,6 +63,7 @@ namespace Adrestia
             command.Parameters.AddWithValue("@eventId", lbEventID.SelectedItem);
 
             connection.Close();
+            */
         }
 
         private void NumAdult_ValueChanged(object sender, EventArgs e)
@@ -79,6 +83,7 @@ namespace Adrestia
 
         private void CalculateTotalSale()
         {
+            /*
             connection.Open();
 
             string sql = "SELECT * FROM SPECIAL_EVENT WHERE EventID = '" + lbEventID.SelectedItem + "'";
@@ -94,6 +99,7 @@ namespace Adrestia
 
             reader.Close();
             connection.Close();
+            */
         }
     }
 }

@@ -30,62 +30,45 @@ namespace Adrestia
 
         private void HideAllControls()
         {
-            // List all controls that should be hidden here, and hide them, e.g. students control, instructors control, etc.
-            // Not buttons on side panel
-            //students1.Visible = false;
-            //lessonsInstructor1.Visible = false;
+            instructors1.Visible = false;
+            students1.Visible = false;
+            messaging1.Visible = false;
+            reporting1.Visible = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            HideAllControls();
+        }
+
+        private void BtnInstructors_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            instructors1.Visible = true;
         }
 
         private void BtnStudents_Click(object sender, EventArgs e)
         {
-            // Hide all controls
             HideAllControls();
-
-            // Make students control visible
-            //students1.Visible = true;
+            students1.Visible = true;
 
         }
 
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            // Hide all controls
-            HideAllControls();
-
-            // Make home control visible
-            // home1.Visible = true;
-        }
-
-        private void Students1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-
-        {
-
-            HideAllControls();
-
-            //lessonsInstructor1.UserID = this.UserID;
-
-            //lessonsInstructor1.Visible = true;
-
-        }
-
-
-
-        private void LessonsInstructor1_Load(object sender, EventArgs e)
-
-        {
-
-
-
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
+        private void BtnReporting_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            specialEvents1.Visible = true;
+            reporting1.Visible = true;
+        }
+
+        private void BtnMessaging_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            messaging1.Visible = true;
+        }
+
+        private void BtnBackup_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
         }
     }
 }

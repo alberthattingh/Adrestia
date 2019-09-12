@@ -41,15 +41,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxVenue = new System.Windows.Forms.ComboBox();
             this.btnNewVenue = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             this.btnNewType = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.cbxVenue = new System.Windows.Forms.ComboBox();
-            this.cbxType = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPensioners)).BeginInit();
@@ -81,7 +81,7 @@
             this.timePicker.Name = "timePicker";
             this.timePicker.ShowUpDown = true;
             this.timePicker.Size = new System.Drawing.Size(125, 24);
-            this.timePicker.TabIndex = 3;
+            this.timePicker.TabIndex = 2;
             // 
             // datePicker
             // 
@@ -90,7 +90,7 @@
             this.datePicker.Name = "datePicker";
             this.datePicker.ShowUpDown = true;
             this.datePicker.Size = new System.Drawing.Size(125, 24);
-            this.datePicker.TabIndex = 2;
+            this.datePicker.TabIndex = 1;
             // 
             // label2
             // 
@@ -122,7 +122,7 @@
             this.groupBox2.Location = new System.Drawing.Point(292, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(250, 150);
-            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ticket Costs";
             // 
@@ -213,9 +213,19 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 168);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(250, 150);
-            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Venue";
+            // 
+            // cbxVenue
+            // 
+            this.cbxVenue.BackColor = System.Drawing.SystemColors.Window;
+            this.cbxVenue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxVenue.FormattingEnabled = true;
+            this.cbxVenue.Location = new System.Drawing.Point(111, 36);
+            this.cbxVenue.Name = "cbxVenue";
+            this.cbxVenue.Size = new System.Drawing.Size(125, 24);
+            this.cbxVenue.TabIndex = 8;
             // 
             // btnNewVenue
             // 
@@ -225,7 +235,7 @@
             this.btnNewVenue.Location = new System.Drawing.Point(47, 80);
             this.btnNewVenue.Name = "btnNewVenue";
             this.btnNewVenue.Size = new System.Drawing.Size(150, 50);
-            this.btnNewVenue.TabIndex = 1;
+            this.btnNewVenue.TabIndex = 9;
             this.btnNewVenue.Text = "New Venue";
             this.btnNewVenue.UseVisualStyleBackColor = false;
             this.btnNewVenue.Click += new System.EventHandler(this.BtnNewVenue_Click);
@@ -248,9 +258,18 @@
             this.groupBox4.Location = new System.Drawing.Point(293, 168);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(250, 150);
-            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Type of Event";
+            // 
+            // cbxType
+            // 
+            this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Location = new System.Drawing.Point(109, 36);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(125, 24);
+            this.cbxType.TabIndex = 11;
             // 
             // btnNewType
             // 
@@ -260,7 +279,7 @@
             this.btnNewType.Location = new System.Drawing.Point(51, 80);
             this.btnNewType.Name = "btnNewType";
             this.btnNewType.Size = new System.Drawing.Size(150, 50);
-            this.btnNewType.TabIndex = 2;
+            this.btnNewType.TabIndex = 12;
             this.btnNewType.Text = "New Type";
             this.btnNewType.UseVisualStyleBackColor = false;
             this.btnNewType.Click += new System.EventHandler(this.BtnNewType_Click);
@@ -270,9 +289,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(9, 39);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.Size = new System.Drawing.Size(87, 17);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Select Date:";
+            this.label9.Text = "Select type:";
             // 
             // btnAddEvent
             // 
@@ -282,7 +301,7 @@
             this.btnAddEvent.Location = new System.Drawing.Point(112, 324);
             this.btnAddEvent.Name = "btnAddEvent";
             this.btnAddEvent.Size = new System.Drawing.Size(150, 50);
-            this.btnAddEvent.TabIndex = 5;
+            this.btnAddEvent.TabIndex = 13;
             this.btnAddEvent.Text = "Add";
             this.btnAddEvent.UseVisualStyleBackColor = false;
             this.btnAddEvent.Click += new System.EventHandler(this.BtnAddEvent_Click);
@@ -295,29 +314,10 @@
             this.btnCancel.Location = new System.Drawing.Point(293, 324);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 6;
+            this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // cbxVenue
-            // 
-            this.cbxVenue.BackColor = System.Drawing.SystemColors.Window;
-            this.cbxVenue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxVenue.FormattingEnabled = true;
-            this.cbxVenue.Location = new System.Drawing.Point(111, 36);
-            this.cbxVenue.Name = "cbxVenue";
-            this.cbxVenue.Size = new System.Drawing.Size(125, 24);
-            this.cbxVenue.TabIndex = 2;
-            // 
-            // cbxType
-            // 
-            this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxType.FormattingEnabled = true;
-            this.cbxType.Location = new System.Drawing.Point(109, 36);
-            this.cbxType.Name = "cbxType";
-            this.cbxType.Size = new System.Drawing.Size(125, 24);
-            this.cbxType.TabIndex = 3;
             // 
             // NewEvent
             // 

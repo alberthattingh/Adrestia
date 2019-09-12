@@ -17,7 +17,7 @@ namespace Adrestia
         public string UserID;
 
         //Database:
-        string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marné\Documents\NWU\CMPG 223\Assignment\Adrestia\Adrestia\Adrestia\LessonTest.mdf;Integrated Security=True";
+        string conString = Security.ConnectionString;
         //Public Variables
         public DateTime lessonDate;
         public DateTime lessonTime;

@@ -36,51 +36,62 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(59, 124);
+            this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Location = new System.Drawing.Point(173, 82);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnAddType
             // 
-            this.btnAddType.Location = new System.Drawing.Point(59, 80);
+            this.btnAddType.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddType.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnAddType.Location = new System.Drawing.Point(12, 82);
             this.btnAddType.Name = "btnAddType";
-            this.btnAddType.Size = new System.Drawing.Size(75, 23);
-            this.btnAddType.TabIndex = 7;
+            this.btnAddType.Size = new System.Drawing.Size(150, 50);
+            this.btnAddType.TabIndex = 2;
             this.btnAddType.Text = "Add";
-            this.btnAddType.UseVisualStyleBackColor = true;
+            this.btnAddType.UseVisualStyleBackColor = false;
             this.btnAddType.Click += new System.EventHandler(this.BtnAddType_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 40);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(36, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Description:";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(81, 37);
+            this.txtDescription.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDescription.Location = new System.Drawing.Point(147, 35);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(100, 20);
-            this.txtDescription.TabIndex = 10;
+            this.txtDescription.Size = new System.Drawing.Size(150, 24);
+            this.txtDescription.TabIndex = 1;
             // 
             // NewEventType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(207, 175);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(335, 146);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddType);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "NewEventType";
             this.Text = "NewEventType";
+            this.Load += new System.EventHandler(this.NewEventType_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,36 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnTicketSales = new System.Windows.Forms.Button();
             this.btnCustom = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbWeekly = new System.Windows.Forms.RadioButton();
-            this.rbMonthly = new System.Windows.Forms.RadioButton();
-            this.rbYearly = new System.Windows.Forms.RadioButton();
             this.rbAll = new System.Windows.Forms.RadioButton();
-            this.groupBox1.SuspendLayout();
+            this.rbYearly = new System.Windows.Forms.RadioButton();
+            this.rbMonthly = new System.Windows.Forms.RadioButton();
+            this.rbWeekly = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(20, 64);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(771, 586);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Report";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -75,32 +68,30 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Reporting";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(745, 560);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // btnTicketSales
             // 
+            this.btnTicketSales.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnTicketSales.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTicketSales.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnTicketSales.Location = new System.Drawing.Point(27, 143);
             this.btnTicketSales.Name = "btnTicketSales";
-            this.btnTicketSales.Size = new System.Drawing.Size(139, 46);
+            this.btnTicketSales.Size = new System.Drawing.Size(150, 50);
             this.btnTicketSales.TabIndex = 3;
             this.btnTicketSales.Text = "Generate";
-            this.btnTicketSales.UseVisualStyleBackColor = true;
+            this.btnTicketSales.UseVisualStyleBackColor = false;
             this.btnTicketSales.Click += new System.EventHandler(this.BtnTicketSales_Click);
             // 
             // btnCustom
             // 
-            this.btnCustom.Location = new System.Drawing.Point(824, 288);
+            this.btnCustom.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCustom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCustom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCustom.Location = new System.Drawing.Point(808, 392);
             this.btnCustom.Name = "btnCustom";
-            this.btnCustom.Size = new System.Drawing.Size(139, 46);
+            this.btnCustom.Size = new System.Drawing.Size(150, 50);
             this.btnCustom.TabIndex = 4;
             this.btnCustom.Text = "Custom Report";
-            this.btnCustom.UseVisualStyleBackColor = true;
+            this.btnCustom.UseVisualStyleBackColor = false;
             this.btnCustom.Click += new System.EventHandler(this.BtnCustom_Click);
             // 
             // groupBox2
@@ -110,82 +101,137 @@
             this.groupBox2.Controls.Add(this.rbMonthly);
             this.groupBox2.Controls.Add(this.rbWeekly);
             this.groupBox2.Controls.Add(this.btnTicketSales);
-            this.groupBox2.Location = new System.Drawing.Point(797, 64);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(781, 150);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 207);
+            this.groupBox2.Size = new System.Drawing.Size(216, 207);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ticket Sales";
             // 
-            // rbWeekly
-            // 
-            this.rbWeekly.AutoSize = true;
-            this.rbWeekly.Location = new System.Drawing.Point(27, 37);
-            this.rbWeekly.Name = "rbWeekly";
-            this.rbWeekly.Size = new System.Drawing.Size(61, 17);
-            this.rbWeekly.TabIndex = 4;
-            this.rbWeekly.TabStop = true;
-            this.rbWeekly.Text = "Weekly";
-            this.rbWeekly.UseVisualStyleBackColor = true;
-            // 
-            // rbMonthly
-            // 
-            this.rbMonthly.AutoSize = true;
-            this.rbMonthly.Location = new System.Drawing.Point(27, 60);
-            this.rbMonthly.Name = "rbMonthly";
-            this.rbMonthly.Size = new System.Drawing.Size(62, 17);
-            this.rbMonthly.TabIndex = 5;
-            this.rbMonthly.TabStop = true;
-            this.rbMonthly.Text = "Monthly";
-            this.rbMonthly.UseVisualStyleBackColor = true;
-            // 
-            // rbYearly
-            // 
-            this.rbYearly.AutoSize = true;
-            this.rbYearly.Location = new System.Drawing.Point(27, 83);
-            this.rbYearly.Name = "rbYearly";
-            this.rbYearly.Size = new System.Drawing.Size(54, 17);
-            this.rbYearly.TabIndex = 6;
-            this.rbYearly.TabStop = true;
-            this.rbYearly.Text = "Yearly";
-            this.rbYearly.UseVisualStyleBackColor = true;
-            // 
             // rbAll
             // 
             this.rbAll.AutoSize = true;
-            this.rbAll.Location = new System.Drawing.Point(27, 106);
+            this.rbAll.Location = new System.Drawing.Point(27, 105);
             this.rbAll.Name = "rbAll";
-            this.rbAll.Size = new System.Drawing.Size(36, 17);
+            this.rbAll.Size = new System.Drawing.Size(44, 21);
             this.rbAll.TabIndex = 7;
             this.rbAll.TabStop = true;
             this.rbAll.Text = "All";
             this.rbAll.UseVisualStyleBackColor = true;
             // 
+            // rbYearly
+            // 
+            this.rbYearly.AutoSize = true;
+            this.rbYearly.Location = new System.Drawing.Point(27, 81);
+            this.rbYearly.Name = "rbYearly";
+            this.rbYearly.Size = new System.Drawing.Size(67, 21);
+            this.rbYearly.TabIndex = 6;
+            this.rbYearly.TabStop = true;
+            this.rbYearly.Text = "Yearly";
+            this.rbYearly.UseVisualStyleBackColor = true;
+            // 
+            // rbMonthly
+            // 
+            this.rbMonthly.AutoSize = true;
+            this.rbMonthly.Location = new System.Drawing.Point(27, 57);
+            this.rbMonthly.Name = "rbMonthly";
+            this.rbMonthly.Size = new System.Drawing.Size(79, 21);
+            this.rbMonthly.TabIndex = 5;
+            this.rbMonthly.TabStop = true;
+            this.rbMonthly.Text = "Monthly";
+            this.rbMonthly.UseVisualStyleBackColor = true;
+            // 
+            // rbWeekly
+            // 
+            this.rbWeekly.AutoSize = true;
+            this.rbWeekly.Location = new System.Drawing.Point(27, 33);
+            this.rbWeekly.Name = "rbWeekly";
+            this.rbWeekly.Size = new System.Drawing.Size(76, 21);
+            this.rbWeekly.TabIndex = 4;
+            this.rbWeekly.TabStop = true;
+            this.rbWeekly.Text = "Weekly";
+            this.rbWeekly.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.SteelBlue;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 150);
+            this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridView1.Size = new System.Drawing.Size(750, 500);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(349, 98);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(150, 24);
+            this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(266, 98);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 22);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Search:";
+            // 
             // Reporting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCustom);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
             this.Name = "Reporting";
             this.Size = new System.Drawing.Size(1000, 666);
             this.Load += new System.EventHandler(this.Reporting_Load);
-            this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTicketSales;
@@ -195,5 +241,8 @@
         private System.Windows.Forms.RadioButton rbYearly;
         private System.Windows.Forms.RadioButton rbMonthly;
         private System.Windows.Forms.RadioButton rbWeekly;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
