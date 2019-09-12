@@ -14,7 +14,7 @@ namespace Adrestia
     public partial class LessonsInstructor : UserControl
     {
 
-        public string UserID;
+        public int UserID;
 
         //Database:
         string conString = Security.ConnectionString;
@@ -25,9 +25,11 @@ namespace Adrestia
         public string lessonDescription;
         public int lessonStudents;
         public string selectedLesson;
- 
+        Boolean edit;
+
         //Value for the InstructorID
-        public int instID = 1000;
+
+        
         
         public LessonsInstructor()
         {
@@ -68,7 +70,7 @@ namespace Adrestia
             comm.Parameters.AddWithValue("@Price", lessonPrice);
             comm.Parameters.AddWithValue("@Description", lessonDescription);
             comm.Parameters.AddWithValue("@MaxNoOfStudents", lessonStudents);
-            comm.Parameters.AddWithValue("@InstructorID", instID);
+            comm.Parameters.AddWithValue("@InstructorID", UserID);
             comm.ExecuteNonQuery();
 
             //UPDATE DATA IN DATA GRID VIEW
@@ -217,8 +219,12 @@ namespace Adrestia
 
                 DataGridViewRow selectedRow = dgvLessons.Rows[selectedrowindex];
 
-               selectedLesson = Convert.ToString(selectedRow.Cells["LessonId"].Value);
-               lblSelected.Text = "Selected Lesson: " + selectedLesson;
+                selectedLesson = Convert.ToString(selectedRow.Cells["LessonId"].Value);
+                lblSelected.Text = "Selected Lesson: " + selectedLesson;
+                rdpEdit.Checked = false;
+                rdpDelete.Checked = false;
+                btnEditLesson.Enabled = false;
+                btnDeleteLesson.Enabled = false;
 
             }
         }
@@ -267,59 +273,71 @@ namespace Adrestia
 
         private void RdpEdit_CheckedChanged(object sender, EventArgs e)
         {
-            btnEditLesson.Enabled = true;
-            btnDeleteLesson.Enabled = false;
-            //Clear everything
-            //Variables:
-            lessonDescription = "";
-            lessonPrice = 0.00;
-            lessonDate = DateTime.Today;
-            lessonTime = DateTime.Now;
-            lessonStudents = 1;
-            //Butttons
-            btnPreview.Enabled = true;
-            btnAddLesson.Enabled = false;
-            cbxPrice.DropDownStyle = ComboBoxStyle.DropDown;
-            cbxTime.DropDownStyle = ComboBoxStyle.DropDown;
-            //Objects
-            lbFinal.Items.Clear();
-            monthCalendar1.ShowToday = true;
-            cbxPrice.Text = "";
-            cbxTime.Text = "";
-            tbDescription.Text = "";
-            nudStudents.Value = 1;
-
-            //Read data into controls
-            SqlConnection conn = new SqlConnection(conString);
-            conn.Open();
-
-            try
+            if(rdpEdit.Checked == false)
             {
-                SqlDataReader reader;
-                string sqlQuery, output = "";
+                edit = false;
+            }
+            else
+            {
+                edit = true;
+            }
+            if(edit == true)
+            {
+                btnEditLesson.Enabled = true;
+                btnDeleteLesson.Enabled = false;
+                //Clear everything
+                //Variables:
+                lessonDescription = "";
+                lessonPrice = 0.00;
+                lessonDate = DateTime.Today;
+                lessonTime = DateTime.Now;
+                lessonStudents = 1;
+                //Butttons
+                btnPreview.Enabled = true;
+                btnAddLesson.Enabled = false;
+                cbxPrice.DropDownStyle = ComboBoxStyle.DropDown;
+                cbxTime.DropDownStyle = ComboBoxStyle.DropDown;
+                //Objects
+                lbFinal.Items.Clear();
+                monthCalendar1.ShowToday = true;
+                cbxPrice.Text = "";
+                cbxTime.Text = "";
+                tbDescription.Text = "";
+                nudStudents.Value = 1;
 
-                sqlQuery = "SELECT * From LESSON";
-                SqlCommand cmn = new SqlCommand(sqlQuery, conn);
-                reader = cmn.ExecuteReader();
+                //Read data into controls
+                SqlConnection conn = new SqlConnection(conString);
+                conn.Open();
 
-                while (reader.Read())
+                try
                 {
-                    tbDescription.Text = reader.GetValue(4).ToString();
-                    cbxPrice.Text = reader.GetValue(3).ToString();
-                    cbxTime.Text = reader.GetValue(2).ToString();
-                    nudStudents.Value = Convert.ToInt32(reader.GetValue(5));
+                    SqlDataReader reader;
+                    string sqlQuery, output = "";
 
+                    sqlQuery = "SELECT * From LESSON WHERE LessonId = '" + selectedLesson + "'";
+                    SqlCommand cmn = new SqlCommand(sqlQuery, conn);
+                    reader = cmn.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        tbDescription.Text = reader.GetValue(4).ToString();
+                        cbxPrice.Text = reader.GetValue(3).ToString();
+                        cbxTime.Text = reader.GetValue(2).ToString();
+                        nudStudents.Value = Convert.ToInt32(reader.GetValue(5));
+
+                    }
+                }
+                catch (SqlException err)
+                {
+                    MessageBox.Show(err.Message);
                 }
             }
-            catch (SqlException err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            
         }
 
         private void BtnEditLesson_Click(object sender, EventArgs e)
         {
-           /* //Exception handeling
+            //Exception handeling
             Boolean correct = true;
 
             //Select Description
@@ -350,7 +368,12 @@ namespace Adrestia
                 MessageBox.Show("No Time Has Been Selected!");
                 cbxTime.Focus();
             }
+            else
+            {
+                string sTime = cbxTime.GetItemText(cbxTime.SelectedItem);
+                lessonTime = Convert.ToDateTime(sTime);
 
+            }
 
             //Select Price:
             if (cbxPrice.SelectedIndex == -1)
@@ -358,12 +381,44 @@ namespace Adrestia
                 MessageBox.Show("No Price Has Been Selected!");
                 cbxPrice.Focus();
             }
+            else
+            {
+                double price = Convert.ToDouble(cbxPrice.GetItemText(cbxPrice.SelectedItem));
+                lessonPrice = price;
+            }
+
+            //Select Students
+            int students = Convert.ToInt32(Math.Round(nudStudents.Value, 0));
+            lessonStudents = students;
 
             //Exception handeling
             if (correct == true)
             {
+                SqlConnection conn = new SqlConnection(conString);
+                conn.Open();
 
-            }**/
+                string sqlQuery = "UPDATE LESSON SET LessonDate = '"+ lessonDate+ "', LessonTime = '" + lessonTime + "',Price = '" + lessonPrice + "',Description = '" + lessonDescription + "',MaxNoOfStudents = '" + lessonStudents + "' WHERE LessonId = '" + selectedLesson + "'";
+                SqlCommand cmn = new SqlCommand(sqlQuery, conn);
+                cmn.ExecuteNonQuery();
+
+                //Data load into data grid view:
+                string loadQuery = @"SELECT * FROM LESSON";
+
+                SqlCommand com = new SqlCommand(loadQuery, conn);
+                DataSet ds = new DataSet();
+                SqlDataAdapter adap = new SqlDataAdapter();
+                adap.SelectCommand = com;
+                adap.Fill(ds, "LESSON");
+
+                dgvLessons.DataSource = ds;
+                dgvLessons.DataMember = "LESSON";
+                conn.Close();
+            }
+        }
+
+        private void DgvLessons_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

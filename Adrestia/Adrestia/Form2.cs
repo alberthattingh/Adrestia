@@ -28,5 +28,28 @@ namespace Adrestia
         }
 
      
+
+        private void LessonsInstructor1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            lessonsInstructor1.UserID = int.Parse(this.UserID);
+            messaging1.userID = int.Parse(this.UserID);
+            messaging1.userType = int.Parse(this.UserType);
+            
+    }
+
+        private void Messaging1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

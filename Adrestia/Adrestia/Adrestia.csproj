@@ -180,6 +180,12 @@
     <Compile Include="SpecialEvents.Designer.cs">
       <DependentUpon>SpecialEvents.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentLessons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentLessons.Designer.cs">
+      <DependentUpon>StudentLessons.cs</DependentUpon>
+    </Compile>
     <Compile Include="Students.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SpecialEvents.resx">
       <DependentUpon>SpecialEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentLessons.resx">
+      <DependentUpon>StudentLessons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Students.resx">
       <DependentUpon>Students.cs</DependentUpon>
