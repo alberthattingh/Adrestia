@@ -185,33 +185,5 @@ namespace Adrestia
                 MessageBox.Show("Error: " + error.Message);
             }
         }
-
-
-        // Search in datagridview
-        private void TxSearch_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                connection.Open();
-                string sql = "SELECT * FROM SPECIAL_EVENT" +
-                    "WHERE EventID LIKE '%" + txSearch.Text + "%' OR EventDate LIKE '%" + txSearch.Text + "%' OR EventTimeLIKE '%" + txSearch.Text + "%' OR CostAdult LIKE '%" + txSearch.Text + "%' OR CostChildren LIKE '%" + txSearch.Text + "%' OR CostPensioner LIKE '%" + txSearch.Text + "%' OR + VenueID LIKE '%" + txSearch.Text + "%' OR EventTypeID LIKE '%" + txSearch.Text + "%'";
-                command = new SqlCommand(sql, connection);
-                ds = new DataSet();
-
-                adapter = new SqlDataAdapter();
-                adapter.SelectCommand = command;
-                adapter.Fill(ds, "EventTable");
-
-                dataGridView1.DataMember = "EventTable";
-                dataGridView1.DataSource = ds;
-
-                adapter.Dispose();
-                connection.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error: " + error.Message);
-            }
-        }
     }
 }

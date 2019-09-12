@@ -30,43 +30,61 @@ namespace Adrestia
         //Add event record to database
         private void BtnAddEvent_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            string venueID = "";
-            string typeID = "";
-
-            string sql = "SELECT EventTypeID FROM EVENT_TYPE WHERE Description ='" + cbxType.SelectedItem.ToString() + "'";
-            command = new SqlCommand(sql, connection);
-            reader = command.ExecuteReader();
-            while(reader.Read())
+            if (cbxType.SelectedIndex < 0 && cbxVenue.SelectedIndex < 0)
             {
-                typeID = reader.GetValue(0).ToString();
+                MessageBox.Show("Please select an event venue and event type!");
+                cbxVenue.Focus();
             }
-            reader.Close();
-
-             sql = "SELECT VenueID FROM VENUE WHERE Description ='" + cbxVenue.SelectedItem.ToString() + "'";
-            command = new SqlCommand(sql, connection);
-            reader = command.ExecuteReader();
-            while (reader.Read())
+            else if (cbxType.SelectedIndex < 0)
             {
-                venueID = reader.GetValue(0).ToString();
+                MessageBox.Show("Please select an event type!");
+                cbxType.Focus();
             }
-            reader.Close();
-               
-            
-            //if(cbxType.)
-            sql = "INSERT INTO SPECIAL_EVENT VALUES (@date, @time, @costAdult, @costChildren, @costPensioner, @venue, @type)";
-            command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@date", datePicker.Value.ToShortDateString());
-            command.Parameters.AddWithValue("@time", timePicker.Value.ToShortTimeString());
-            command.Parameters.AddWithValue("@costAdult", numAdult.Value);
-            command.Parameters.AddWithValue("@costChildren", numChildren.Value);
-            command.Parameters.AddWithValue("@costPensioner", numPensioners.Value);
-            command.Parameters.AddWithValue("@venue", int.Parse(venueID));
-            command.Parameters.AddWithValue("@type", int.Parse(typeID));
-            command.ExecuteNonQuery();
+            else if (cbxVenue.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select an event venue!");
+                cbxVenue.Focus();
 
-            connection.Close();
-            this.Close();
+            }
+            else
+            {
+                connection.Open();
+                string venueID = "";
+                string typeID = "";
+
+                string sql = "SELECT EventTypeID FROM EVENT_TYPE WHERE Description ='" + cbxType.SelectedItem.ToString() + "'";
+                command = new SqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    typeID = reader.GetValue(0).ToString();
+                }
+                reader.Close();
+
+                sql = "SELECT VenueID FROM VENUE WHERE Description ='" + cbxVenue.SelectedItem.ToString() + "'";
+                command = new SqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    venueID = reader.GetValue(0).ToString();
+                }
+                reader.Close();
+
+
+                sql = "INSERT INTO SPECIAL_EVENT VALUES (@date, @time, @costAdult, @costChildren, @costPensioner, @venue, @type)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@date", datePicker.Value.ToShortDateString());
+                command.Parameters.AddWithValue("@time", timePicker.Value.ToShortTimeString());
+                command.Parameters.AddWithValue("@costAdult", numAdult.Value);
+                command.Parameters.AddWithValue("@costChildren", numChildren.Value);
+                command.Parameters.AddWithValue("@costPensioner", numPensioners.Value);
+                command.Parameters.AddWithValue("@venue", int.Parse(venueID));
+                command.Parameters.AddWithValue("@type", int.Parse(typeID));
+                command.ExecuteNonQuery();
+
+                connection.Close();
+                this.Close();
+            }
         }
 
 
@@ -104,6 +122,8 @@ namespace Adrestia
         //Load event types and venues into comboboxes
         private void NewEvent_Load(object sender, EventArgs e)
         {
+            datePicker.Focus();
+
             connection = new SqlConnection(connectionString);
             connection.Open();
 

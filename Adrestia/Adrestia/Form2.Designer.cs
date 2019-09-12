@@ -29,69 +29,122 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnStudents = new System.Windows.Forms.Button();
+            this.btnTicketsSales = new System.Windows.Forms.Button();
+            this.btnMessaging = new System.Windows.Forms.Button();
+            this.btnSpecialEvents = new System.Windows.Forms.Button();
+            this.btnLessons = new System.Windows.Forms.Button();
+            this.messaging1 = new Adrestia.Messaging();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.specialEvents1 = new Adrestia.SpecialEvents();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.btnStudents);
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnTicketsSales);
+            this.panel1.Controls.Add(this.btnMessaging);
+            this.panel1.Controls.Add(this.btnSpecialEvents);
+            this.panel1.Controls.Add(this.btnLessons);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 666);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // btnTicketsSales
             // 
-            this.button1.Location = new System.Drawing.Point(0, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTicketsSales.FlatAppearance.BorderSize = 0;
+            this.btnTicketsSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicketsSales.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicketsSales.ForeColor = System.Drawing.Color.White;
+            this.btnTicketsSales.Location = new System.Drawing.Point(0, 300);
+            this.btnTicketsSales.Name = "btnTicketsSales";
+            this.btnTicketsSales.Size = new System.Drawing.Size(200, 75);
+            this.btnTicketsSales.TabIndex = 6;
+            this.btnTicketsSales.Text = "Ticket Sales";
+            this.btnTicketsSales.UseVisualStyleBackColor = true;
             // 
-            // btnHome
+            // btnMessaging
             // 
-            this.btnHome.Location = new System.Drawing.Point(0, 43);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(200, 71);
-            this.btnHome.TabIndex = 1;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnMessaging.FlatAppearance.BorderSize = 0;
+            this.btnMessaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMessaging.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessaging.ForeColor = System.Drawing.Color.White;
+            this.btnMessaging.Location = new System.Drawing.Point(-3, 400);
+            this.btnMessaging.Name = "btnMessaging";
+            this.btnMessaging.Size = new System.Drawing.Size(200, 75);
+            this.btnMessaging.TabIndex = 5;
+            this.btnMessaging.Text = "Messaging";
+            this.btnMessaging.UseVisualStyleBackColor = true;
             // 
-            // btnStudents
+            // btnSpecialEvents
             // 
-            this.btnStudents.Location = new System.Drawing.Point(0, 114);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(200, 71);
-            this.btnStudents.TabIndex = 1;
-            this.btnStudents.Text = "Students";
-            this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnSpecialEvents.FlatAppearance.BorderSize = 0;
+            this.btnSpecialEvents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSpecialEvents.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpecialEvents.ForeColor = System.Drawing.Color.White;
+            this.btnSpecialEvents.Location = new System.Drawing.Point(0, 200);
+            this.btnSpecialEvents.Name = "btnSpecialEvents";
+            this.btnSpecialEvents.Size = new System.Drawing.Size(200, 75);
+            this.btnSpecialEvents.TabIndex = 4;
+            this.btnSpecialEvents.Text = "Special Events";
+            this.btnSpecialEvents.UseVisualStyleBackColor = true;
+            // 
+            // btnLessons
+            // 
+            this.btnLessons.FlatAppearance.BorderSize = 0;
+            this.btnLessons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLessons.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLessons.ForeColor = System.Drawing.Color.White;
+            this.btnLessons.Location = new System.Drawing.Point(0, 100);
+            this.btnLessons.Name = "btnLessons";
+            this.btnLessons.Size = new System.Drawing.Size(200, 75);
+            this.btnLessons.TabIndex = 3;
+            this.btnLessons.Text = "Lessons";
+            this.btnLessons.UseVisualStyleBackColor = true;
+            // 
+            // messaging1
+            // 
+            this.messaging1.Location = new System.Drawing.Point(200, 0);
+            this.messaging1.Name = "messaging1";
+            this.messaging1.Size = new System.Drawing.Size(988, 666);
+            this.messaging1.TabIndex = 2;
+            // 
+            // specialEvents1
+            // 
+            this.specialEvents1.AutoSize = true;
+            this.specialEvents1.BackColor = System.Drawing.Color.White;
+            this.specialEvents1.Location = new System.Drawing.Point(200, 0);
+            this.specialEvents1.Name = "specialEvents1";
+            this.specialEvents1.Size = new System.Drawing.Size(1000, 666);
+            this.specialEvents1.TabIndex = 3;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
+            this.Controls.Add(this.specialEvents1);
+            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnStudents;
+        private Messaging messaging1;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button btnLessons;
+        private System.Windows.Forms.Button btnMessaging;
+        private System.Windows.Forms.Button btnSpecialEvents;
+        private System.Windows.Forms.Button btnTicketsSales;
+        private SpecialEvents specialEvents1;
     }
 }
