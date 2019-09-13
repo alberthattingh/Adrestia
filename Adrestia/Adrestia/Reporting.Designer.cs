@@ -42,6 +42,7 @@
             this.rbWeekly = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnExportToPdf = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -200,6 +202,19 @@
             this.btnExportToPdf.UseVisualStyleBackColor = false;
             this.btnExportToPdf.Click += new System.EventHandler(this.BtnExportToPdf_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
+            this.btnExit.Location = new System.Drawing.Point(952, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 45);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // Reporting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,5 +249,6 @@
         private System.Windows.Forms.RadioButton rbWeekly;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnExportToPdf;
+        private System.Windows.Forms.Button btnExit;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnReporting = new System.Windows.Forms.Button();
@@ -35,16 +36,18 @@
             this.btnMessaging = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnInstructors = new System.Windows.Forms.Button();
-            this.students1 = new Adrestia.Students();
-            this.instructors1 = new Adrestia.Instructors();
-            this.ticketSales1 = new Adrestia.TicketSales();
             this.reporting1 = new Adrestia.Reporting();
+            this.ticketSales1 = new Adrestia.TicketSales();
+            this.instructors1 = new Adrestia.Instructors();
+            this.students1 = new Adrestia.Students();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.btnBackup);
             this.panel2.Controls.Add(this.btnReporting);
             this.panel2.Controls.Add(this.btnTicketSales);
@@ -117,7 +120,7 @@
             this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudents.ForeColor = System.Drawing.Color.White;
-            this.btnStudents.Location = new System.Drawing.Point(0, 50);
+            this.btnStudents.Location = new System.Drawing.Point(0, 63);
             this.btnStudents.Name = "btnStudents";
             this.btnStudents.Size = new System.Drawing.Size(200, 75);
             this.btnStudents.TabIndex = 7;
@@ -139,27 +142,6 @@
             this.btnInstructors.UseVisualStyleBackColor = true;
             this.btnInstructors.Click += new System.EventHandler(this.BtnInstructors_Click);
             // 
-            // students1
-            // 
-            this.students1.Location = new System.Drawing.Point(200, 0);
-            this.students1.Name = "students1";
-            this.students1.Size = new System.Drawing.Size(1000, 666);
-            this.students1.TabIndex = 1;
-            // 
-            // instructors1
-            // 
-            this.instructors1.Location = new System.Drawing.Point(200, 0);
-            this.instructors1.Name = "instructors1";
-            this.instructors1.Size = new System.Drawing.Size(1000, 666);
-            this.instructors1.TabIndex = 2;
-            // 
-            // ticketSales1
-            // 
-            this.ticketSales1.Location = new System.Drawing.Point(200, 0);
-            this.ticketSales1.Name = "ticketSales1";
-            this.ticketSales1.Size = new System.Drawing.Size(1000, 666);
-            this.ticketSales1.TabIndex = 3;
-            // 
             // reporting1
             // 
             this.reporting1.BackColor = System.Drawing.Color.White;
@@ -167,6 +149,43 @@
             this.reporting1.Name = "reporting1";
             this.reporting1.Size = new System.Drawing.Size(1000, 666);
             this.reporting1.TabIndex = 4;
+            // 
+            // ticketSales1
+            // 
+            this.ticketSales1.BackColor = System.Drawing.Color.White;
+            this.ticketSales1.Location = new System.Drawing.Point(200, 0);
+            this.ticketSales1.Name = "ticketSales1";
+            this.ticketSales1.Size = new System.Drawing.Size(1000, 666);
+            this.ticketSales1.TabIndex = 3;
+            // 
+            // instructors1
+            // 
+            this.instructors1.BackColor = System.Drawing.Color.White;
+            this.instructors1.Location = new System.Drawing.Point(200, 0);
+            this.instructors1.Name = "instructors1";
+            this.instructors1.Size = new System.Drawing.Size(1000, 666);
+            this.instructors1.TabIndex = 2;
+            // 
+            // students1
+            // 
+            this.students1.BackColor = System.Drawing.Color.White;
+            this.students1.Location = new System.Drawing.Point(200, 0);
+            this.students1.Name = "students1";
+            this.students1.Size = new System.Drawing.Size(1000, 666);
+            this.students1.TabIndex = 1;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 54);
+            this.btnLogout.TabIndex = 13;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // Form1
             // 
@@ -176,7 +195,11 @@
             this.Controls.Add(this.instructors1);
             this.Controls.Add(this.students1);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Adrestia";
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -197,6 +220,7 @@
         private Instructors instructors1;
         private TicketSales ticketSales1;
         private Reporting reporting1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

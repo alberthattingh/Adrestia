@@ -149,5 +149,10 @@ namespace Adrestia
                 MessageBox.Show("Error: " + error.Message);
             }
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -71,5 +71,10 @@ namespace Adrestia
             HideAllControls();
             reporting1.Visible = true;
         }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

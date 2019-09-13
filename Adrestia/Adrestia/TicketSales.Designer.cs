@@ -33,25 +33,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numPensioners = new System.Windows.Forms.NumericUpDown();
+            this.numChildren = new System.Windows.Forms.NumericUpDown();
             this.numAdult = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.numChildren = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblSale = new System.Windows.Forms.Label();
             this.btnSale = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.timePicker = new System.Windows.Forms.DateTimePicker();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.btnClear = new System.Windows.Forms.Button();
             this.cbxEventID = new System.Windows.Forms.ComboBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPensioners)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numChildren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -114,6 +116,19 @@
             this.numPensioners.TabIndex = 12;
             this.numPensioners.ValueChanged += new System.EventHandler(this.NumPensioners_ValueChanged);
             // 
+            // numChildren
+            // 
+            this.numChildren.Location = new System.Drawing.Point(354, 48);
+            this.numChildren.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numChildren.Name = "numChildren";
+            this.numChildren.Size = new System.Drawing.Size(150, 24);
+            this.numChildren.TabIndex = 11;
+            this.numChildren.ValueChanged += new System.EventHandler(this.NumChildren_ValueChanged);
+            // 
             // numAdult
             // 
             this.numAdult.Location = new System.Drawing.Point(110, 50);
@@ -135,19 +150,6 @@
             this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Adults:";
-            // 
-            // numChildren
-            // 
-            this.numChildren.Location = new System.Drawing.Point(354, 48);
-            this.numChildren.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numChildren.Name = "numChildren";
-            this.numChildren.Size = new System.Drawing.Size(150, 24);
-            this.numChildren.TabIndex = 11;
-            this.numChildren.ValueChanged += new System.EventHandler(this.NumChildren_ValueChanged);
             // 
             // label4
             // 
@@ -214,14 +216,6 @@
             this.timePicker.Size = new System.Drawing.Size(150, 24);
             this.timePicker.TabIndex = 11;
             // 
-            // datePicker
-            // 
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.Location = new System.Drawing.Point(143, 50);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(150, 24);
-            this.datePicker.TabIndex = 10;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -239,6 +233,14 @@
             this.label8.Size = new System.Drawing.Size(45, 17);
             this.label8.TabIndex = 9;
             this.label8.Text = "Time:";
+            // 
+            // datePicker
+            // 
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datePicker.Location = new System.Drawing.Point(143, 50);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(150, 24);
+            this.datePicker.TabIndex = 10;
             // 
             // btnClear
             // 
@@ -262,6 +264,19 @@
             this.cbxEventID.Size = new System.Drawing.Size(150, 24);
             this.cbxEventID.TabIndex = 15;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
+            this.btnExit.Location = new System.Drawing.Point(952, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 45);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // TicketSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,8 +298,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPensioners)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numChildren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAdult)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -313,5 +328,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox cbxEventID;
+        private System.Windows.Forms.Button btnExit;
     }
 }

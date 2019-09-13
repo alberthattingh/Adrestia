@@ -400,5 +400,10 @@ namespace Adrestia
             ///label1.Text = lbLessonSum.SelectedItem.ToString();
 
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
