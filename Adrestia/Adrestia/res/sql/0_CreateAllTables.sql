@@ -37,12 +37,12 @@ CREATE TABLE [USER] (
  */
 
 CREATE TABLE [STUDENT](
-	[StudentID] [int]			NOT NULL,
-	[FirstName] [varchar](30)	NULL,
-	[LastName]	[varchar](30)	NULL,
-	[CellNo]	[varchar](13)	NULL,
-	[Email]		[varchar](50)	NULL,
-	[Credits]	[money]			NULL,
+	[StudentID] [int]				NOT NULL,
+	[FirstName] [varchar](30)		NULL,
+	[LastName]	[varchar](30)		NULL,
+	[CellNo]	[varchar](13)		NULL,
+	[Email]		[varchar](50)		NULL,
+	[Credits]	DECIMAL(18,2)		NULL,
 
 	CONSTRAINT	PK_Student			PRIMARY KEY (StudentID),
 	CONSTRAINT	FK_Student_UserID	FOREIGN KEY (StudentID)	REFERENCES [USER] (UserID)
@@ -55,12 +55,12 @@ CREATE TABLE [STUDENT](
  */
 
 CREATE TABLE INSTRUCTOR(
-	[InstructorID]	[int]			NOT NULL,
-	[FirstName]		[varchar](30)	NULL,
-	[LastName]		[varchar](30)	NULL,
-	[CellNo]		[varchar](13)	NULL,
-	[Email]			[varchar](50)	NULL,
-	[Salary]		[money]			NULL,
+	[InstructorID]	[int]				NOT NULL,
+	[FirstName]		[varchar](30)		NULL,
+	[LastName]		[varchar](30)		NULL,
+	[CellNo]		[varchar](13)		NULL,
+	[Email]			[varchar](50)		NULL,
+	[Salary]		DECIMAL(18,2)		NULL,
 
 	CONSTRAINT	PK_Instructor			PRIMARY KEY ([InstructorID]),
 	CONSTRAINT	FK_Instructor_UserID	FOREIGN KEY ([InstructorID])	REFERENCES [USER] (UserID)
@@ -74,11 +74,11 @@ CREATE TABLE INSTRUCTOR(
 
 CREATE TABLE LESSON(
 	LessonID			[int]			NOT NULL	IDENTITY(1,1),
-	LessonDate			[varchar](30)	NULL,
-	LessonTime			[varchar](30)	NULL,
-	Price				[varchar](13)	NULL,
+	LessonDate			DATE			NULL,
+	LessonTime			TIME			NULL,
+	Price				DECIMAL(18,2)	NULL,
 	[Description]		[varchar](50)	NULL,
-	MaxNoOfStudents		[money]			NULL,
+	AvailablePlaces		INT				NULL,
 	InstructorID		[int],
 
 	CONSTRAINT	PK_Lesson				PRIMARY KEY (LessonID),
@@ -137,19 +137,24 @@ CREATE TABLE SPECIAL_EVENT(
 	EventID				INT			NOT NULL	IDENTITY(1,1),
 	EventDate			DATE,
 	EventTime			TIME,
-	CostAdult			MONEY,
-	CostChildren		MONEY,
-	CostPensioner		MONEY,
+	CostAdult			DECIMAL(18,2),
+	CostChildren		DECIMAL(18,2),
+	CostPensioner		DECIMAL(18,2),
+	Organizer			INT,
 	VenueID				INT,
 	EventTypeID			INT,
 
-	CONSTRAINT PK_SpecialEvent			PRIMARY KEY (EventID),
+	CONSTRAINT PK_SpecialEvent				PRIMARY KEY (EventID),
 
-	CONSTRAINT FK_SpecialEvent_Venue	FOREIGN KEY	(VenueID)		REFERENCES	VENUE		(VenueID)
+	CONSTRAINT FK_SpecialEvent_Organizer	FOREIGN KEY	(Organizer)		REFERENCES	INSTRUCTOR		(InstructorID)
 		ON DELETE	NO ACTION
 		ON UPDATE	CASCADE,
 
-	CONSTRAINT FK_SpecialEvent_Type		FOREIGN KEY	(EventTypeID)	REFERENCES	EVENT_TYPE	(EventTypeID)
+	CONSTRAINT FK_SpecialEvent_Venue		FOREIGN KEY	(VenueID)		REFERENCES	VENUE		(VenueID)
+		ON DELETE	NO ACTION
+		ON UPDATE	CASCADE,
+
+	CONSTRAINT FK_SpecialEvent_Type			FOREIGN KEY	(EventTypeID)	REFERENCES	EVENT_TYPE	(EventTypeID)
 		ON DELETE	NO ACTION
 		ON UPDATE	NO ACTION
 	);
@@ -165,7 +170,7 @@ CREATE TABLE TICKET_SALE(
 	NoOfAdults		INT,
 	NoOfChildren	INT,
 	NoOfPensioners	INT,
-	TotalOfSale		MONEY,
+	TotalOfSale		DECIMAL(18,2),
 	EventID			INT,
 
 	CONSTRAINT		PK_TicketSale			PRIMARY KEY (SaleID),
