@@ -93,7 +93,7 @@ namespace Adrestia
             {
                 first = reader.GetString(1);
                 last = reader.GetString(2);
-                current = (double) reader.GetValue(5);
+                current = double.Parse(reader.GetValue(5).ToString());
                 if (reader.GetValue(0).Equals(comboStudentID.SelectedItem))
                 {
                     txtFirst.Text = first;
