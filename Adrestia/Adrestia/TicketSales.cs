@@ -106,7 +106,7 @@ namespace Adrestia
             numAdult.Value = 0;
             cbxEventID.SelectionLength = 0;
             datePicker.Value = DateTime.Today;
-            timePicker.Value = (DateTime)DateTime.Now.TimeOfDay;
+            //timePicker.Value = (DateTime)DateTime.Now.TimeOfDay;
 
         }
     }
