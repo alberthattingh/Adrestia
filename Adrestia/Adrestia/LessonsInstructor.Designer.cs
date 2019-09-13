@@ -55,6 +55,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lbStudents = new System.Windows.Forms.ListBox();
             this.btnStudents = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).BeginInit();
             this.gbEditDelete.SuspendLayout();
@@ -336,10 +337,24 @@
             this.btnStudents.UseVisualStyleBackColor = true;
             this.btnStudents.Click += new System.EventHandler(this.Button1_Click_1);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
+            this.btnExit.Location = new System.Drawing.Point(949, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 45);
+            this.btnExit.TabIndex = 38;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // LessonsInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnStudents);
             this.Controls.Add(this.lbStudents);
             this.Controls.Add(this.label9);
@@ -405,5 +420,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox lbStudents;
         private System.Windows.Forms.Button btnStudents;
+        private System.Windows.Forms.Button btnExit;
     }
 }

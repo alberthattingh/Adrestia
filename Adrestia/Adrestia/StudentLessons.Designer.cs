@@ -38,6 +38,7 @@
             this.lbBookedLessons = new System.Windows.Forms.ListBox();
             this.btnCancelBooking = new System.Windows.Forms.Button();
             this.btnShowBooked = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLessons)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,10 +135,24 @@
             this.btnShowBooked.UseVisualStyleBackColor = true;
             this.btnShowBooked.Click += new System.EventHandler(this.BtnShowBooked_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
+            this.btnExit.Location = new System.Drawing.Point(952, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 45);
+            this.btnExit.TabIndex = 10;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // StudentLessons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnShowBooked);
             this.Controls.Add(this.btnCancelBooking);
             this.Controls.Add(this.lbBookedLessons);
@@ -169,5 +184,6 @@
         private System.Windows.Forms.ListBox lbBookedLessons;
         private System.Windows.Forms.Button btnCancelBooking;
         private System.Windows.Forms.Button btnShowBooked;
+        private System.Windows.Forms.Button btnExit;
     }
 }

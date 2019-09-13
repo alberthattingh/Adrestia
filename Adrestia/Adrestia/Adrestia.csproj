@@ -312,5 +312,8 @@
   <ItemGroup>
     <None Include="res\images\LogoutIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\images\CloseIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
