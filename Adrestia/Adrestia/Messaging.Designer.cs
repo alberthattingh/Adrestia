@@ -36,12 +36,14 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.rdbReceived = new System.Windows.Forms.RadioButton();
             this.rdbSent = new System.Windows.Forms.RadioButton();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -119,6 +121,19 @@
             this.rdbSent.UseVisualStyleBackColor = true;
             this.rdbSent.CheckedChanged += new System.EventHandler(this.RdbSent_CheckedChanged);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
+            this.btnExit.Location = new System.Drawing.Point(935, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(50, 45);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // Messaging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,5 +165,6 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.RadioButton rdbReceived;
         private System.Windows.Forms.RadioButton rdbSent;
+        private System.Windows.Forms.Button btnExit;
     }
 }

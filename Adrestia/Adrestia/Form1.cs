@@ -70,5 +70,10 @@ namespace Adrestia
         {
             HideAllControls();
         }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

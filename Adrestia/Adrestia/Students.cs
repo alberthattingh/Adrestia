@@ -183,5 +183,10 @@ namespace Adrestia
             credit.ShowDialog();
             PopulateGridView();
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -171,5 +171,10 @@ namespace Adrestia
                 MessageBox.Show("DB Error: " + er.Message);
             }
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

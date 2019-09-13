@@ -27,6 +27,9 @@ namespace Adrestia
             this.UserType = type;
         }
 
-     
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

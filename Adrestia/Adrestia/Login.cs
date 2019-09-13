@@ -123,5 +123,10 @@ namespace Adrestia
                 MessageBox.Show("Error: " + er.Message);
             }
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

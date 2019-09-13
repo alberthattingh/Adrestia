@@ -52,8 +52,9 @@
             this.btnDeleteLesson = new System.Windows.Forms.Button();
             this.btnEditLesson = new System.Windows.Forms.Button();
             this.gbEditDelete = new System.Windows.Forms.GroupBox();
-            this.rdpDelete = new System.Windows.Forms.RadioButton();
             this.rdpEdit = new System.Windows.Forms.RadioButton();
+            this.rdpDelete = new System.Windows.Forms.RadioButton();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).BeginInit();
             this.gbEditDelete.SuspendLayout();
@@ -288,18 +289,6 @@
             this.gbEditDelete.TabStop = false;
             this.gbEditDelete.Text = "Edit/Delete";
             // 
-            // rdpDelete
-            // 
-            this.rdpDelete.AutoSize = true;
-            this.rdpDelete.Location = new System.Drawing.Point(6, 19);
-            this.rdpDelete.Name = "rdpDelete";
-            this.rdpDelete.Size = new System.Drawing.Size(138, 17);
-            this.rdpDelete.TabIndex = 35;
-            this.rdpDelete.TabStop = true;
-            this.rdpDelete.Text = "Delete Selected Lesson";
-            this.rdpDelete.UseVisualStyleBackColor = true;
-            this.rdpDelete.CheckedChanged += new System.EventHandler(this.RdpDelete_CheckedChanged);
-            // 
             // rdpEdit
             // 
             this.rdpEdit.AutoSize = true;
@@ -312,10 +301,36 @@
             this.rdpEdit.UseVisualStyleBackColor = true;
             this.rdpEdit.CheckedChanged += new System.EventHandler(this.RdpEdit_CheckedChanged);
             // 
+            // rdpDelete
+            // 
+            this.rdpDelete.AutoSize = true;
+            this.rdpDelete.Location = new System.Drawing.Point(6, 19);
+            this.rdpDelete.Name = "rdpDelete";
+            this.rdpDelete.Size = new System.Drawing.Size(138, 17);
+            this.rdpDelete.TabIndex = 35;
+            this.rdpDelete.TabStop = true;
+            this.rdpDelete.Text = "Delete Selected Lesson";
+            this.rdpDelete.UseVisualStyleBackColor = true;
+            this.rdpDelete.CheckedChanged += new System.EventHandler(this.RdpDelete_CheckedChanged);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
+            this.btnExit.Location = new System.Drawing.Point(947, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(50, 45);
+            this.btnExit.TabIndex = 35;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // LessonsInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.gbEditDelete);
             this.Controls.Add(this.btnEditLesson);
             this.Controls.Add(this.btnDeleteLesson);
@@ -376,5 +391,6 @@
         private System.Windows.Forms.GroupBox gbEditDelete;
         private System.Windows.Forms.RadioButton rdpEdit;
         private System.Windows.Forms.RadioButton rdpDelete;
+        private System.Windows.Forms.Button btnExit;
     }
 }

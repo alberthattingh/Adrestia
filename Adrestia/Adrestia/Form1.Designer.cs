@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnMessaging = new System.Windows.Forms.Button();
             this.btnReporting = new System.Windows.Forms.Button();
             this.btnInstructors = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
-            this.instructors1 = new Adrestia.Instructors();
-            this.messaging1 = new Adrestia.Messaging();
-            this.students1 = new Adrestia.Students();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.reporting1 = new Adrestia.Reporting();
+            this.students1 = new Adrestia.Students();
+            this.messaging1 = new Adrestia.Messaging();
+            this.instructors1 = new Adrestia.Instructors();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnBackup);
             this.panel1.Controls.Add(this.btnMessaging);
             this.panel1.Controls.Add(this.btnReporting);
@@ -125,19 +128,26 @@
             this.btnStudents.UseVisualStyleBackColor = true;
             this.btnStudents.Click += new System.EventHandler(this.BtnStudents_Click);
             // 
-            // instructors1
+            // btnLogout
             // 
-            this.instructors1.Location = new System.Drawing.Point(200, 0);
-            this.instructors1.Name = "instructors1";
-            this.instructors1.Size = new System.Drawing.Size(1000, 666);
-            this.instructors1.TabIndex = 1;
+            this.btnLogout.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(53, 58);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
-            // messaging1
+            // reporting1
             // 
-            this.messaging1.Location = new System.Drawing.Point(200, 0);
-            this.messaging1.Name = "messaging1";
-            this.messaging1.Size = new System.Drawing.Size(988, 666);
-            this.messaging1.TabIndex = 2;
+            this.reporting1.BackColor = System.Drawing.Color.White;
+            this.reporting1.Location = new System.Drawing.Point(200, 0);
+            this.reporting1.Name = "reporting1";
+            this.reporting1.Size = new System.Drawing.Size(1000, 666);
+            this.reporting1.TabIndex = 4;
             // 
             // students1
             // 
@@ -146,12 +156,19 @@
             this.students1.Size = new System.Drawing.Size(1000, 666);
             this.students1.TabIndex = 3;
             // 
-            // reporting1
+            // messaging1
             // 
-            this.reporting1.Location = new System.Drawing.Point(200, 0);
-            this.reporting1.Name = "reporting1";
-            this.reporting1.Size = new System.Drawing.Size(1000, 666);
-            this.reporting1.TabIndex = 4;
+            this.messaging1.Location = new System.Drawing.Point(200, 0);
+            this.messaging1.Name = "messaging1";
+            this.messaging1.Size = new System.Drawing.Size(988, 666);
+            this.messaging1.TabIndex = 2;
+            // 
+            // instructors1
+            // 
+            this.instructors1.Location = new System.Drawing.Point(200, 0);
+            this.instructors1.Name = "instructors1";
+            this.instructors1.Size = new System.Drawing.Size(1000, 666);
+            this.instructors1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -164,6 +181,7 @@
             this.Controls.Add(this.instructors1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adrestia";
@@ -185,6 +203,7 @@
         private Messaging messaging1;
         private Students students1;
         private Reporting reporting1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

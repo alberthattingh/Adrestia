@@ -219,5 +219,10 @@ namespace Adrestia
                 rdbSent.Checked = false;
             }
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

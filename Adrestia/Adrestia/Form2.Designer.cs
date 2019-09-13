@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnTicketsSales = new System.Windows.Forms.Button();
             this.btnMessaging = new System.Windows.Forms.Button();
             this.btnSpecialEvents = new System.Windows.Forms.Button();
@@ -42,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnTicketsSales);
             this.panel1.Controls.Add(this.btnMessaging);
             this.panel1.Controls.Add(this.btnSpecialEvents);
@@ -51,6 +54,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 666);
             this.panel1.TabIndex = 1;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(53, 58);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // btnTicketsSales
             // 
@@ -128,7 +144,10 @@
             this.Controls.Add(this.specialEvents1);
             this.Controls.Add(this.messaging1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -146,5 +165,6 @@
         private System.Windows.Forms.Button btnSpecialEvents;
         private System.Windows.Forms.Button btnTicketsSales;
         private SpecialEvents specialEvents1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
