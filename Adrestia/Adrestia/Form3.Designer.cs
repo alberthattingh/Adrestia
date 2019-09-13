@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnEvents));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUpcoming = new System.Windows.Forms.Button();
             this.btnMessaging = new System.Windows.Forms.Button();
             this.btnBookLessons = new System.Windows.Forms.Button();
-            this.btnUpcoming = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 666);
             this.panel1.TabIndex = 1;
+            // 
+            // btnUpcoming
+            // 
+            this.btnUpcoming.FlatAppearance.BorderSize = 0;
+            this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpcoming.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpcoming.ForeColor = System.Drawing.Color.White;
+            this.btnUpcoming.Location = new System.Drawing.Point(0, 200);
+            this.btnUpcoming.Name = "btnUpcoming";
+            this.btnUpcoming.Size = new System.Drawing.Size(200, 75);
+            this.btnUpcoming.TabIndex = 5;
+            this.btnUpcoming.Text = "Upcoming Events";
+            this.btnUpcoming.UseVisualStyleBackColor = true;
+            this.btnUpcoming.Click += new System.EventHandler(this.BtnUpcoming_Click);
             // 
             // btnMessaging
             // 
@@ -75,29 +90,18 @@
             this.btnBookLessons.UseVisualStyleBackColor = true;
             this.btnBookLessons.Click += new System.EventHandler(this.BtnBookLessons_Click);
             // 
-            // btnUpcoming
-            // 
-            this.btnUpcoming.FlatAppearance.BorderSize = 0;
-            this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpcoming.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpcoming.ForeColor = System.Drawing.Color.White;
-            this.btnUpcoming.Location = new System.Drawing.Point(0, 200);
-            this.btnUpcoming.Name = "btnUpcoming";
-            this.btnUpcoming.Size = new System.Drawing.Size(200, 75);
-            this.btnUpcoming.TabIndex = 5;
-            this.btnUpcoming.Text = "Upcoming Events";
-            this.btnUpcoming.UseVisualStyleBackColor = true;
-            this.btnUpcoming.Click += new System.EventHandler(this.BtnUpcoming_Click);
-            // 
             // btnEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 200);
             this.Name = "btnEvents";
-            this.Text = "Student";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Adrestia";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

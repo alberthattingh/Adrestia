@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnReporting = new System.Windows.Forms.Button();
@@ -141,6 +142,7 @@
             // 
             // students1
             // 
+            this.students1.BackColor = System.Drawing.Color.White;
             this.students1.Location = new System.Drawing.Point(200, 0);
             this.students1.Name = "students1";
             this.students1.Size = new System.Drawing.Size(1000, 666);
@@ -148,6 +150,7 @@
             // 
             // instructors1
             // 
+            this.instructors1.BackColor = System.Drawing.Color.White;
             this.instructors1.Location = new System.Drawing.Point(200, 0);
             this.instructors1.Name = "instructors1";
             this.instructors1.Size = new System.Drawing.Size(1000, 666);
@@ -155,6 +158,7 @@
             // 
             // ticketSales1
             // 
+            this.ticketSales1.BackColor = System.Drawing.Color.White;
             this.ticketSales1.Location = new System.Drawing.Point(200, 0);
             this.ticketSales1.Name = "ticketSales1";
             this.ticketSales1.Size = new System.Drawing.Size(1000, 666);
@@ -176,7 +180,11 @@
             this.Controls.Add(this.instructors1);
             this.Controls.Add(this.students1);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Adrestia";
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
