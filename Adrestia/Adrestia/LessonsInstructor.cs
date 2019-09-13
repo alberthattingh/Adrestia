@@ -17,7 +17,8 @@ namespace Adrestia
         public int UserID;
 
         //Database:
-        string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marné\Documents\NWU\CMPG 223\Assignment\Adrestia\Adrestia\Adrestia\LessonTest.mdf;Integrated Security=True";
+        string conString = Security.ConnectionString;
+        //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marné\Documents\NWU\CMPG 223\Assignment\Adrestia\Adrestia\Adrestia\LessonTest.mdf;Integrated Security=True";
         //Public Variables
         public DateTime lessonDate;
         public DateTime lessonTime;
@@ -27,10 +28,6 @@ namespace Adrestia
         public string selectedLesson;
         Boolean edit;
 
-        //Value for the InstructorID
-
-        
-        
         public LessonsInstructor()
         {
             InitializeComponent();
@@ -419,6 +416,51 @@ namespace Adrestia
         private void DgvLessons_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            lbStudents.Items.Clear();
+            lbStudents.Items.Add("ID\t" + "NAME\t" + "SURNAME\t" + "CELLNO\t\t" + "EMAIL");
+            ///Load Booked lessons.
+            try
+            {
+                //VAR
+                int LessonID;
+                SqlConnection conn = new SqlConnection(conString);
+                conn.Open();
+
+                SqlDataReader reader;
+                string sqlQuery, output, sqlQuery2 = "";
+
+                sqlQuery = "SELECT * From LESSON_STUDENT WHERE LessonID = " + selectedLesson;
+                SqlCommand cmn = new SqlCommand(sqlQuery, conn);
+                reader = cmn.ExecuteReader();
+                int getStudentID;
+                while (reader.Read())
+                {
+                    getStudentID = (int)reader.GetValue(1);
+
+                    SqlDataReader sqlReader2;
+                    sqlQuery2 = "SELECT * FROM STUDENT WHERE StudentID =" + getStudentID;
+                    SqlCommand cmn2 = new SqlCommand(sqlQuery2, conn);
+                    cmn2 = new SqlCommand(sqlQuery2, conn);
+                    sqlReader2 = cmn2.ExecuteReader();
+
+                    while (sqlReader2.Read())
+                    {
+                        //lbBookedLessons.Items.Add(reader.GetValue(0) + "\t\t" + reader.GetValue(1).ToString());
+                        //LessonID = sqlReader2.GetInt32(1);
+                        lbStudents.Items.Add(sqlReader2.GetValue(0) + "\t" + sqlReader2.GetValue(1).ToString() + "\t" + sqlReader2.GetValue(2).ToString() + "\t\t" + sqlReader2.GetValue(3) + "\t" + sqlReader2.GetValue(4).ToString());
+                        //lbStudents.Items.Add(LessonID);
+                    }
+
+                }
+            }
+            catch (SqlException err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
     }
 }

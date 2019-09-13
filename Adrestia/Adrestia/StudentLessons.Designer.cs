@@ -34,6 +34,10 @@
             this.lbLessonSum = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbBookedLessons = new System.Windows.Forms.ListBox();
+            this.btnCancelBooking = new System.Windows.Forms.Button();
+            this.btnShowBooked = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLessons)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,10 +96,52 @@
             this.btnBook.UseVisualStyleBackColor = true;
             this.btnBook.Click += new System.EventHandler(this.BtnBook_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 304);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "My Booked Lesson:";
+            // 
+            // lbBookedLessons
+            // 
+            this.lbBookedLessons.FormattingEnabled = true;
+            this.lbBookedLessons.Location = new System.Drawing.Point(19, 320);
+            this.lbBookedLessons.Name = "lbBookedLessons";
+            this.lbBookedLessons.Size = new System.Drawing.Size(845, 212);
+            this.lbBookedLessons.TabIndex = 7;
+            this.lbBookedLessons.SelectedIndexChanged += new System.EventHandler(this.LbBookedLessons_SelectedIndexChanged);
+            // 
+            // btnCancelBooking
+            // 
+            this.btnCancelBooking.Location = new System.Drawing.Point(19, 567);
+            this.btnCancelBooking.Name = "btnCancelBooking";
+            this.btnCancelBooking.Size = new System.Drawing.Size(98, 23);
+            this.btnCancelBooking.TabIndex = 8;
+            this.btnCancelBooking.Text = "Cancel Booking";
+            this.btnCancelBooking.UseVisualStyleBackColor = true;
+            this.btnCancelBooking.Click += new System.EventHandler(this.BtnCancelBooking_Click);
+            // 
+            // btnShowBooked
+            // 
+            this.btnShowBooked.Location = new System.Drawing.Point(19, 538);
+            this.btnShowBooked.Name = "btnShowBooked";
+            this.btnShowBooked.Size = new System.Drawing.Size(144, 23);
+            this.btnShowBooked.TabIndex = 9;
+            this.btnShowBooked.Text = "Show Boooked Lessons";
+            this.btnShowBooked.UseVisualStyleBackColor = true;
+            this.btnShowBooked.Click += new System.EventHandler(this.BtnShowBooked_Click);
+            // 
             // StudentLessons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnShowBooked);
+            this.Controls.Add(this.btnCancelBooking);
+            this.Controls.Add(this.lbBookedLessons);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBook);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbLessonSum);
@@ -119,5 +165,9 @@
         private System.Windows.Forms.ListBox lbLessonSum;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox lbBookedLessons;
+        private System.Windows.Forms.Button btnCancelBooking;
+        private System.Windows.Forms.Button btnShowBooked;
     }
 }

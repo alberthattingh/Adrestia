@@ -35,6 +35,7 @@ namespace Adrestia
 
         private void Messaging_Load(object sender, EventArgs e)
         {
+            Connection = new SqlConnection(ConnectionString);
         }
 
         private void BtnGo_Click(object sender, EventArgs e)
@@ -99,10 +100,10 @@ namespace Adrestia
                     Connection.Close();
                 }
             }
-            else
+            else if (rdpInstructor.Checked == true)
             {
                 Connection.Open();
-
+                label1.Text = userID.ToString();
                 string sql2;
                 SqlDataReader reader2;
 
@@ -136,6 +137,69 @@ namespace Adrestia
                         redOutput.Text = redOutput.Text + cmbRecipient.Text + " [" + reader.GetValue(4).ToString() + " " + reader.GetValue(5).ToString() + "]: " + reader.GetValue(3).ToString() + "\n";
                     }
                     reader2.Close();
+                    Connection.Close();
+                }
+                else
+                {
+                    Connection.Open();
+
+                    string sql;
+                    SqlDataReader reader;
+
+                    sql = @"Select * from MESSAGE where Sender = '" + userID + "' and Receiver = '" + receiverID + "'";
+                    Command = new SqlCommand(sql, Connection);
+
+                    reader = Command.ExecuteReader();
+
+                    redOutput.Text = "";
+                    while (reader.Read())
+                    {
+                        redOutput.Text = redOutput.Text + "You [" + reader.GetValue(4).ToString() + " " + reader.GetValue(5).ToString() + "]: " + reader.GetValue(3).ToString() + "\n\n";
+                    }
+                    reader.Close();
+                    Connection.Close();
+                }
+            }
+            else
+            {
+                //SqlConnection conn = new SqlConnection(ConnectionString);
+                //conn.Open();
+                Connection.Open();
+                string sql2;
+                SqlDataReader reader2;
+
+                sql2 = @"Select UserID FROM [USER] WHERE UserTypeID = 1";
+                label1.Text = userID.ToString();
+                SqlCommand command2 = new SqlCommand(sql2, Connection);
+
+                reader2 = command2.ExecuteReader();
+
+                reader2.Read();
+
+                receiverID = reader2.GetValue(0).ToString();
+                reader2.Close();
+                Connection.Close();
+
+                //receiverID = "1006";
+
+                if (rdbReceived.Checked)
+                {
+                    Connection.Open();
+
+                    string sql;
+                    SqlDataReader reader;
+
+                    sql = @"Select * from MESSAGE where Receiver = '" + userID + "' and Sender = '" + receiverID + "'";
+                    Command = new SqlCommand(sql, Connection);
+
+                    reader = Command.ExecuteReader();
+
+                    redOutput.Text = "";
+                    while (reader.Read())
+                    {
+                        redOutput.Text = redOutput.Text + cmbRecipient.Text + " [" + reader.GetValue(4).ToString() + " " + reader.GetValue(5).ToString() + "]: " + reader.GetValue(3).ToString() + "\n";
+                    }
+                    reader.Close();
                     Connection.Close();
                 }
                 else
@@ -246,9 +310,6 @@ namespace Adrestia
             string message = txtMessage.Text;
             int id;
 
-//String SentTime = Convert.toShort DateTime.Now;
-
-
             Connection = new SqlConnection(ConnectionString);
             Connection.Open();
 
@@ -265,6 +326,7 @@ namespace Adrestia
                 reader3.Read();
                 id = Convert.ToInt32(reader3.GetValue(0));
                 reader3.Close();
+                
                 //Query:
                 string query = @"INSERT INTO MESSAGE VALUES(@Sender, @Receiver, @MessageText, @Date, @Time)";
                 //INSERT INTO DATABASE
@@ -297,12 +359,43 @@ namespace Adrestia
                 comm.Parameters.AddWithValue("@Time", DateTime.Now);
                 comm.ExecuteNonQuery();
             }
+            else if (rdpAdmin.Checked == true)
+            {
+                /*getID = @"Select StudentID from STUDENT where FirstName = '" + name + "'";
+                SqlCommand command2 = new SqlCommand(getID, Connection);
+
+                reader3 = command2.ExecuteReader();
+
+                reader3.Read();
+                id = Convert.ToInt32(reader3.GetValue(0));
+                reader3.Close();*/
+                id = 1006;
+                //Query:
+                string query = @"INSERT INTO MESSAGE VALUES(@Sender, @Receiver, @MessageText, @Date, @Time)";
+                //INSERT INTO DATABASE
+                SqlCommand comm = new SqlCommand(query, Connection);
+                comm.Parameters.AddWithValue("@Sender", userID);
+                comm.Parameters.AddWithValue("@Receiver", id);
+                comm.Parameters.AddWithValue("@MessageText", message);
+                comm.Parameters.AddWithValue("@Date", DateTime.Now);
+                comm.Parameters.AddWithValue("@Time", DateTime.Now);
+                comm.ExecuteNonQuery();
+            }
             Connection.Close();
         }
 
         private void TxtMessage_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RdpAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdpAdmin.Checked == true)
+            {
+                cmbReciever.Text = "Admin:";
+                cmbRecipient.Text = "Admin:";
+            }
         }
     }
 }
