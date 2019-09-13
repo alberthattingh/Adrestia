@@ -52,6 +52,9 @@
             this.gbEditDelete = new System.Windows.Forms.GroupBox();
             this.rdpEdit = new System.Windows.Forms.RadioButton();
             this.rdpDelete = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbStudents = new System.Windows.Forms.ListBox();
+            this.btnStudents = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLessons)).BeginInit();
             this.gbEditDelete.SuspendLayout();
@@ -306,10 +309,40 @@
             this.rdpDelete.UseVisualStyleBackColor = true;
             this.rdpDelete.CheckedChanged += new System.EventHandler(this.RdpDelete_CheckedChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(423, 461);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 13);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Students in Lesson:";
+            // 
+            // lbStudents
+            // 
+            this.lbStudents.FormattingEnabled = true;
+            this.lbStudents.Location = new System.Drawing.Point(426, 477);
+            this.lbStudents.Name = "lbStudents";
+            this.lbStudents.Size = new System.Drawing.Size(531, 134);
+            this.lbStudents.TabIndex = 36;
+            // 
+            // btnStudents
+            // 
+            this.btnStudents.Location = new System.Drawing.Point(426, 617);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.Size = new System.Drawing.Size(97, 23);
+            this.btnStudents.TabIndex = 37;
+            this.btnStudents.Text = "Load Students";
+            this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnStudents.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // LessonsInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnStudents);
+            this.Controls.Add(this.lbStudents);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.gbEditDelete);
             this.Controls.Add(this.btnEditLesson);
             this.Controls.Add(this.btnDeleteLesson);
@@ -369,5 +402,8 @@
         private System.Windows.Forms.GroupBox gbEditDelete;
         private System.Windows.Forms.RadioButton rdpEdit;
         private System.Windows.Forms.RadioButton rdpDelete;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ListBox lbStudents;
+        private System.Windows.Forms.Button btnStudents;
     }
 }

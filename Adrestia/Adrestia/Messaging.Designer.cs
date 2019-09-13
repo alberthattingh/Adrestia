@@ -42,9 +42,9 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.gbUser = new System.Windows.Forms.GroupBox();
+            this.rdpAdmin = new System.Windows.Forms.RadioButton();
             this.rdpStudent = new System.Windows.Forms.RadioButton();
             this.rdpInstructor = new System.Windows.Forms.RadioButton();
-            this.rdpAdmin = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
@@ -164,7 +164,6 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(363, 20);
             this.txtMessage.TabIndex = 12;
-            this.txtMessage.TextChanged += new System.EventHandler(this.TxtMessage_TextChanged);
             // 
             // btnSend
             // 
@@ -187,6 +186,18 @@
             this.gbUser.TabIndex = 14;
             this.gbUser.TabStop = false;
             this.gbUser.Text = "Select User Chat:";
+            // 
+            // rdpAdmin
+            // 
+            this.rdpAdmin.AutoSize = true;
+            this.rdpAdmin.Location = new System.Drawing.Point(255, 19);
+            this.rdpAdmin.Name = "rdpAdmin";
+            this.rdpAdmin.Size = new System.Drawing.Size(54, 17);
+            this.rdpAdmin.TabIndex = 17;
+            this.rdpAdmin.TabStop = true;
+            this.rdpAdmin.Text = "Admin";
+            this.rdpAdmin.UseVisualStyleBackColor = true;
+            this.rdpAdmin.CheckedChanged += new System.EventHandler(this.RdpAdmin_CheckedChanged);
             // 
             // rdpStudent
             // 
@@ -211,17 +222,6 @@
             this.rdpInstructor.Text = "Instructor";
             this.rdpInstructor.UseVisualStyleBackColor = true;
             this.rdpInstructor.CheckedChanged += new System.EventHandler(this.RdpInstructor_CheckedChanged);
-            // 
-            // rdpAdmin
-            // 
-            this.rdpAdmin.AutoSize = true;
-            this.rdpAdmin.Location = new System.Drawing.Point(255, 19);
-            this.rdpAdmin.Name = "rdpAdmin";
-            this.rdpAdmin.Size = new System.Drawing.Size(54, 17);
-            this.rdpAdmin.TabIndex = 17;
-            this.rdpAdmin.TabStop = true;
-            this.rdpAdmin.Text = "Admin";
-            this.rdpAdmin.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
