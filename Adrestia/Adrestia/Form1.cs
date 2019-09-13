@@ -32,13 +32,20 @@ namespace Adrestia
         {
             instructors1.Visible = false;
             students1.Visible = false;
-            messaging1.Visible = false;
+            //messaging1.Visible = false;
             reporting1.Visible = false;
+            ticketSales1.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             HideAllControls();
+        }
+
+        private void BtnStudents_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            students1.Visible = true;
         }
 
         private void BtnInstructors_Click(object sender, EventArgs e)
@@ -47,33 +54,22 @@ namespace Adrestia
             instructors1.Visible = true;
         }
 
-        private void BtnStudents_Click(object sender, EventArgs e)
+        private void BtnTicketSales_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            students1.Visible = true;
+            ticketSales1.Visible = true;
+        }
 
+        private void BtnMessaging_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            //messaging1.Visible = true;
         }
 
         private void BtnReporting_Click(object sender, EventArgs e)
         {
             HideAllControls();
             reporting1.Visible = true;
-        }
-
-        private void BtnMessaging_Click(object sender, EventArgs e)
-        {
-            HideAllControls();
-            messaging1.Visible = true;
-        }
-
-        private void BtnBackup_Click(object sender, EventArgs e)
-        {
-            HideAllControls();
-        }
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

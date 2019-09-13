@@ -10,21 +10,43 @@ using System.Windows.Forms;
 
 namespace Adrestia
 {
-    public partial class Form3 : Form
+    public partial class btnEvents : Form
     {
         public string UserID;
         public string UserType;
 
-        public Form3()
+        public btnEvents()
         {
             InitializeComponent();
         }
 
-        public Form3(string id, string type)
+        public btnEvents(string id, string type)
         {
             InitializeComponent();
             this.UserID = id;
             this.UserType = type;
+        }
+
+        private void HideAllControls()
+        {
+            //upcomingEvents1.Visible = false;
+            //students1.Visible = false;
+            //messaging1.Visible = false;
+        }
+
+        private void BtnBookLessons_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnUpcoming_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMessaging_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

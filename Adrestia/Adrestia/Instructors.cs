@@ -19,6 +19,7 @@ namespace Adrestia
         public SqlCommand command;
         public DataSet ds;
         public SqlDataReader reader;
+        int selectedInstructor;
 
         public Instructors()
         {
@@ -29,10 +30,10 @@ namespace Adrestia
         {
             NewInstructor newInstructorForm = new NewInstructor();
             newInstructorForm.ShowDialog();
-            DisplayGridView();
+            PopulateGridView();
         }
 
-        public void DisplayGridView()
+        public void PopulateGridView()
         {
             connection.Open();
 
@@ -51,7 +52,7 @@ namespace Adrestia
             connection.Close();
         }
 
-        public void DisplayGridView(string query)
+        public void PopulateGridView(string query)
         {
             connection.Open();
 
@@ -77,86 +78,41 @@ namespace Adrestia
 
         private void BtnChangeDetails_Click(object sender, EventArgs e)
         {
-            if (txtChangeDetails.Text == "")
+            try
             {
-                MessageBox.Show("Enter the InstructorID of the instructor you wish to change the details into the textbox below.");
-                txtChangeDetails.Focus();
-                return;
-            }
-
-            // This query is only to check if the userID is valid
-            connection.Open();
-            string sql = "SELECT * FROM [USER] WHERE UserID = '" + txtChangeDetails.Text + "';";
-            command = new SqlCommand(sql, connection);
-            reader = command.ExecuteReader();
-
-            if (!reader.HasRows)
-            {
-                MessageBox.Show("There aren't any instructors with the Instructor ID: " + txtChangeDetails.Text);
-                txtChangeDetails.Clear();
-                txtChangeDetails.Focus();
+                ChangeDetails editStudentForm = new ChangeDetails
+                {
+                    instructorID = selectedInstructor.ToString()
+                };
+                editStudentForm.ShowDialog();
+                PopulateGridView();
                 connection.Close();
-                return;
             }
-            connection.Close();
-
-            ChangeDetails changeDelailsForm = new ChangeDetails
+            catch (Exception error)
             {
-                instructorID = txtChangeDetails.Text
-            };
-            changeDelailsForm.ShowDialog();
-            txtChangeDetails.Clear();
-            txtChangeDetails.Focus();
-
-            DisplayGridView();
+                MessageBox.Show("Error: " + error.Message);
+            }
         }
 
         private void BtnRemoveInstructor_Click(object sender, EventArgs e)
         {
-            if (txtRemove.Text == "")
+            try
             {
-                MessageBox.Show("Enter the InstructorID of the instructor you wish to remove into the textbox below.");
+                connection.Open();
+                string sql = "DELETE FROM [INSTRUCTOR] WHERE InstructorID = '" + selectedInstructor + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                sql = "DELETE FROM [USER] WHERE UserID = '" + selectedInstructor + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                PopulateGridView();
+
             }
-            else
+            catch (Exception error)
             {
-                try
-                {
-                    connection.Open();
-
-                    // Check if instructorId in table
-                    string sql = "SELECT COUNT(*) FROM [INSTRUCTOR] WHERE InstructorID = '" + txtRemove.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    int exists = (int)command.ExecuteScalar();
-
-                    if (exists == 0)
-                    {
-                        MessageBox.Show("There aren't any instructors with the Instructor ID: " + txtRemove.Text);
-                        connection.Close();
-                        txtRemove.Clear();
-                        txtRemove.Focus();
-                        return;
-                    }
-
-                    sql = "DELETE FROM [INSTRUCTOR] WHERE InstructorID = '" + txtRemove.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    command.ExecuteNonQuery();
-
-                    sql = "DELETE FROM [USER] WHERE UserID = '" + txtRemove.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    command.ExecuteNonQuery();
-
-                    connection.Close();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    connection.Close();
-                }
+                MessageBox.Show("Error: " + error.Message);
             }
-
-            txtRemove.Clear();
-            txtRemove.Focus();
-            DisplayGridView();
         }
 
         private void Instructors_Load(object sender, EventArgs e)
@@ -164,11 +120,33 @@ namespace Adrestia
             try
             {
                 connection = new SqlConnection(connectionString);
-                DisplayGridView();
+                PopulateGridView();
             }
             catch (Exception er)
             {
                 MessageBox.Show("DB Error: " + er.Message);
+            }
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            PopulateGridView(txtSearch.Text);
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedCells.Count > 0)
+                {
+                    int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                    selectedInstructor = (int)selectedRow.Cells["InstructorID"].Value;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
             }
         }
     }

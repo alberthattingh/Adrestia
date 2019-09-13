@@ -27,29 +27,26 @@ namespace Adrestia
             this.UserType = type;
         }
 
-     
+        private void HideAllControls()
+        {
+            //messaging1.Visible = false;
+            specialEvents1.Visible = false;
+        }
 
-        private void LessonsInstructor1_Load(object sender, EventArgs e)
+        private void BtnMessaging_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Panel1_Paint(object sender, PaintEventArgs e)
+        private void BtnLessons_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void BtnSpecialEvents_Click(object sender, EventArgs e)
         {
-            lessonsInstructor1.UserID = int.Parse(this.UserID);
-            messaging1.userID = int.Parse(this.UserID);
-            messaging1.userType = int.Parse(this.UserType);
-            
-    }
-
-        private void Messaging1_Load(object sender, EventArgs e)
-        {
-
+            HideAllControls();
+            specialEvents1.Visible = true;
         }
     }
 }

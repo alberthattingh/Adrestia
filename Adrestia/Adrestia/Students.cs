@@ -19,6 +19,7 @@ namespace Adrestia
         public SqlCommand command;
         public DataSet ds;
         public SqlDataReader reader;
+        int selectedStudent;
 
         public Students()
         {
@@ -95,86 +96,41 @@ namespace Adrestia
 
         private void BtnEditStudent_Click(object sender, EventArgs e)
         {
-            if (txtEdit.Text == "")
+            try
             {
-                MessageBox.Show("Enter the StudentID of the student you wish to edit into the textbox below.");
-                txtEdit.Focus();
-                return;
-            }
-
-            // This query is only to check if the userID is valid
-            connection.Open();
-            string sql = "SELECT * FROM [USER] WHERE UserID = '" + txtEdit.Text + "';";
-            command = new SqlCommand(sql, connection);
-            reader = command.ExecuteReader();
-            
-            if (!reader.HasRows)
-            {
-                MessageBox.Show("There aren't any students with the Student ID: " + txtEdit.Text);
-                txtEdit.Clear();
-                txtEdit.Focus();
+                EditStudent editStudentForm = new EditStudent
+                {
+                    studentID = selectedStudent.ToString()
+                };
+                editStudentForm.ShowDialog();
+                PopulateGridView();
                 connection.Close();
-                return;
             }
-            connection.Close();
-
-            EditStudent editStudentForm = new EditStudent
+            catch (Exception error)
             {
-                studentID = txtEdit.Text
-            };
-            editStudentForm.ShowDialog();
-            txtEdit.Clear();
-            txtEdit.Focus();
-
-            PopulateGridView();
+                MessageBox.Show("Error: " + error.Message);
+            }
         }
 
         private void BtnDeleteStudent_Click(object sender, EventArgs e)
         {
-            if (txtDelete.Text == "")
+            try
             {
-                MessageBox.Show("Enter the StudentID of the student you wish to remove into the textbox below.");
+                connection.Open();
+                string sql = "DELETE FROM [STUDENT] WHERE StudentID = '" + selectedStudent + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                sql = "DELETE FROM [USER] WHERE UserID = '" + selectedStudent + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                PopulateGridView();
+
             }
-            else
+            catch (Exception error)
             {
-                try
-                {
-                    connection.Open();
-
-                    // Check if studentID in table
-                    string sql = "SELECT COUNT(*) FROM [STUDENT] WHERE StudentID = '" + txtDelete.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    int exists = (int)command.ExecuteScalar();
-
-                    if (exists == 0)
-                    {
-                        MessageBox.Show("There aren't any students with the Student ID: " + txtDelete.Text);
-                        connection.Close();
-                        txtDelete.Clear();
-                        txtDelete.Focus();
-                        return;
-                    }
-
-                    sql = "DELETE FROM [STUDENT] WHERE StudentID = '" + txtDelete.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    command.ExecuteNonQuery();
-
-                    sql = "DELETE FROM [USER] WHERE UserID = '" + txtDelete.Text + "';";
-                    command = new SqlCommand(sql, connection);
-                    command.ExecuteNonQuery();
-
-                    connection.Close();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    connection.Close();
-                }
+                MessageBox.Show("Error: " + error.Message);
             }
-
-            txtDelete.Clear();
-            txtDelete.Focus();
-            PopulateGridView();
         }
 
         private void BtnAddCredit_Click(object sender, EventArgs e)
@@ -182,6 +138,23 @@ namespace Adrestia
             AddCredit credit = new AddCredit();
             credit.ShowDialog();
             PopulateGridView();
+        }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedCells.Count > 0)
+                {
+                    int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                    selectedStudent = (int)selectedRow.Cells["StudentID"].Value;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
         }
     }
 }

@@ -78,7 +78,7 @@ namespace Adrestia
 
         private void BtnBook_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3();
+            btnEvents form3 = new btnEvents();
             studentID = int.Parse(form3.UserID);
 
             string sql = "INSERT INTO LESSON_STUDENT VALUES (@lesson, @student";

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System.IO;
 
 namespace Adrestia
 {
@@ -20,7 +23,6 @@ namespace Adrestia
         public DataSet ds;
         public SqlDataReader reader;
         string sqlReport;
-        char customReport;
         CustomReport customReportForm = new CustomReport();
 
         public Reporting()
@@ -34,30 +36,28 @@ namespace Adrestia
             {
                 sqlReport = "SELECT * FROM TICKET_SALE WHERE SaleDate >= '" + DateTime.Today.AddDays(-7).ToShortDateString() + "'";
             }
-            else if(rbMonthly.Checked)
+            else if (rbMonthly.Checked)
             {
                 sqlReport = "SELECT * FROM TICKET_SALE WHERE SaleDate >= '" + DateTime.Today.AddMonths(-1).ToShortDateString() + "'";
             }
-            else if(rbYearly.Checked)
+            else if (rbYearly.Checked)
             {
                 sqlReport = "SELECT * FROM TICKET_SALE WHERE SaleDate >= '" + DateTime.Today.AddYears(-1).ToShortDateString() + "'";
 
             }
-            else if(rbAll.Checked)
+            else if (rbAll.Checked)
             {
                 sqlReport = "SELECT * FROM TICKET_SALE";
             }
             PopulateGridView(this.sqlReport);
-            customReport = 'n';
         }
 
         private void BtnCustom_Click(object sender, EventArgs e)
         {
             customReportForm.ShowDialog();
-            if(customReportForm.sqlReport != "")
+            if (customReportForm.sqlReport != "")
             {
                 PopulateGridView(customReportForm.sqlReport);
-                customReport = 'y';
             }
 
         }
@@ -65,6 +65,7 @@ namespace Adrestia
         private void Reporting_Load(object sender, EventArgs e)
         {
             connection = new SqlConnection(connectionString);
+            rbWeekly.Checked = true;
         }
 
         public void PopulateGridView(string sqlReport)
@@ -95,15 +96,51 @@ namespace Adrestia
 
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
+        private void BtnExportToPdf_Click(object sender, EventArgs e)
         {
-            if(customReport == 'y')
+            //Creating iTextSharp Table from the DataTable data
+            PdfPTable pdfTable = new PdfPTable(dataGridView1.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 30;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.DefaultCell.BorderWidth = 1;
+
+            //Adding Header row
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
             {
-                customReportForm.sqlReport += "";
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdfTable.AddCell(cell);
             }
-            else if (customReport == 'n')
+
+            //Adding DataRow
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                this.sqlReport += "";
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    try
+                    {
+                        pdfTable.AddCell(cell.Value.ToString());
+                    }
+                    catch { }
+                }
+            }
+
+            //Exporting to PDF
+            string folderPath = "C:\\PDFs\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                stream.Close();
+
             }
         }
     }

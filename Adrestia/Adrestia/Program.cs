@@ -35,7 +35,7 @@ namespace Adrestia
                 else if (loginForm.UserType.Equals("2"))
                     Application.Run(new Form2(loginForm.UserID, loginForm.UserType));
                 else if (loginForm.UserType.Equals("3"))
-                    Application.Run(new Form3(loginForm.UserID, loginForm.UserType));
+                    Application.Run(new btnEvents(loginForm.UserID, loginForm.UserType));
                 else
                 {
                     MessageBox.Show("An unknown error occured. The program will now be terminated.");

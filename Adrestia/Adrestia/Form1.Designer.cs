@@ -28,149 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnStudents = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.btnStudents);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 666);
-            this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(62, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Lessons";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.Location = new System.Drawing.Point(0, 43);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(200, 71);
-            this.btnHome.TabIndex = 1;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.BtnHome_Click);
-            // 
-            // btnStudents
-            // 
-            this.btnStudents.Location = new System.Drawing.Point(0, 114);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(200, 71);
-            this.btnStudents.TabIndex = 1;
-            this.btnStudents.Text = "Students";
-            this.btnStudents.UseVisualStyleBackColor = true;
-            this.btnStudents.Click += new System.EventHandler(this.BtnStudents_Click);
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 666);
-            this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Adrestia";
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
-        }
-
-        #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnMessaging;
-        private System.Windows.Forms.Button btnReporting;
-        private System.Windows.Forms.Button btnInstructors;
-        private System.Windows.Forms.Button btnStudents;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button button1;
-    }
-}
-
-
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnBackup = new System.Windows.Forms.Button();
-            this.btnMessaging = new System.Windows.Forms.Button();
             this.btnReporting = new System.Windows.Forms.Button();
-            this.btnInstructors = new System.Windows.Forms.Button();
+            this.btnTicketSales = new System.Windows.Forms.Button();
+            this.btnMessaging = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
-            this.instructors1 = new Adrestia.Instructors();
-            this.messaging1 = new Adrestia.Messaging();
+            this.btnInstructors = new System.Windows.Forms.Button();
             this.students1 = new Adrestia.Students();
+            this.instructors1 = new Adrestia.Instructors();
+            this.ticketSales1 = new Adrestia.TicketSales();
             this.reporting1 = new Adrestia.Reporting();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.btnBackup);
-            this.panel1.Controls.Add(this.btnMessaging);
-            this.panel1.Controls.Add(this.btnReporting);
-            this.panel1.Controls.Add(this.btnInstructors);
-            this.panel1.Controls.Add(this.btnStudents);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 666);
-            this.panel1.TabIndex = 0;
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Controls.Add(this.btnBackup);
+            this.panel2.Controls.Add(this.btnReporting);
+            this.panel2.Controls.Add(this.btnTicketSales);
+            this.panel2.Controls.Add(this.btnMessaging);
+            this.panel2.Controls.Add(this.btnStudents);
+            this.panel2.Controls.Add(this.btnInstructors);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 666);
+            this.panel2.TabIndex = 0;
             // 
             // btnBackup
             // 
             this.btnBackup.FlatAppearance.BorderSize = 0;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.btnBackup.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBackup.Location = new System.Drawing.Point(0, 500);
+            this.btnBackup.Location = new System.Drawing.Point(0, 550);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(200, 75);
-            this.btnBackup.TabIndex = 4;
+            this.btnBackup.TabIndex = 12;
             this.btnBackup.Text = "Backup Data";
             this.btnBackup.UseVisualStyleBackColor = true;
-            this.btnBackup.Click += new System.EventHandler(this.BtnBackup_Click);
-            // 
-            // btnMessaging
-            // 
-            this.btnMessaging.FlatAppearance.BorderSize = 0;
-            this.btnMessaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMessaging.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.btnMessaging.ForeColor = System.Drawing.Color.White;
-            this.btnMessaging.Location = new System.Drawing.Point(0, 400);
-            this.btnMessaging.Name = "btnMessaging";
-            this.btnMessaging.Size = new System.Drawing.Size(200, 75);
-            this.btnMessaging.TabIndex = 3;
-            this.btnMessaging.Text = "Messaging";
-            this.btnMessaging.UseVisualStyleBackColor = true;
-            this.btnMessaging.Click += new System.EventHandler(this.BtnMessaging_Click);
             // 
             // btnReporting
             // 
             this.btnReporting.FlatAppearance.BorderSize = 0;
             this.btnReporting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporting.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.btnReporting.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporting.ForeColor = System.Drawing.Color.White;
-            this.btnReporting.Location = new System.Drawing.Point(0, 300);
+            this.btnReporting.Location = new System.Drawing.Point(0, 450);
             this.btnReporting.Name = "btnReporting";
             this.btnReporting.Size = new System.Drawing.Size(200, 75);
-            this.btnReporting.TabIndex = 2;
+            this.btnReporting.TabIndex = 11;
             this.btnReporting.Text = "Reporting";
             this.btnReporting.UseVisualStyleBackColor = true;
             this.btnReporting.Click += new System.EventHandler(this.BtnReporting_Click);
+            // 
+            // btnTicketSales
+            // 
+            this.btnTicketSales.FlatAppearance.BorderSize = 0;
+            this.btnTicketSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicketSales.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTicketSales.ForeColor = System.Drawing.Color.White;
+            this.btnTicketSales.Location = new System.Drawing.Point(0, 250);
+            this.btnTicketSales.Name = "btnTicketSales";
+            this.btnTicketSales.Size = new System.Drawing.Size(200, 75);
+            this.btnTicketSales.TabIndex = 10;
+            this.btnTicketSales.Text = "Ticket Sales";
+            this.btnTicketSales.UseVisualStyleBackColor = true;
+            this.btnTicketSales.Click += new System.EventHandler(this.BtnTicketSales_Click);
+            // 
+            // btnMessaging
+            // 
+            this.btnMessaging.FlatAppearance.BorderSize = 0;
+            this.btnMessaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMessaging.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessaging.ForeColor = System.Drawing.Color.White;
+            this.btnMessaging.Location = new System.Drawing.Point(0, 350);
+            this.btnMessaging.Name = "btnMessaging";
+            this.btnMessaging.Size = new System.Drawing.Size(200, 75);
+            this.btnMessaging.TabIndex = 9;
+            this.btnMessaging.Text = "Messaging";
+            this.btnMessaging.UseVisualStyleBackColor = true;
+            this.btnMessaging.Click += new System.EventHandler(this.BtnMessaging_Click);
+            // 
+            // btnStudents
+            // 
+            this.btnStudents.FlatAppearance.BorderSize = 0;
+            this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudents.ForeColor = System.Drawing.Color.White;
+            this.btnStudents.Location = new System.Drawing.Point(0, 50);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.Size = new System.Drawing.Size(200, 75);
+            this.btnStudents.TabIndex = 7;
+            this.btnStudents.Text = "Students";
+            this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnStudents.Click += new System.EventHandler(this.BtnStudents_Click);
             // 
             // btnInstructors
             // 
@@ -178,51 +131,38 @@
             this.btnInstructors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInstructors.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstructors.ForeColor = System.Drawing.Color.White;
-            this.btnInstructors.Location = new System.Drawing.Point(0, 100);
+            this.btnInstructors.Location = new System.Drawing.Point(0, 150);
             this.btnInstructors.Name = "btnInstructors";
             this.btnInstructors.Size = new System.Drawing.Size(200, 75);
-            this.btnInstructors.TabIndex = 1;
+            this.btnInstructors.TabIndex = 8;
             this.btnInstructors.Text = "Instructors";
             this.btnInstructors.UseVisualStyleBackColor = true;
             this.btnInstructors.Click += new System.EventHandler(this.BtnInstructors_Click);
-            // 
-            // btnStudents
-            // 
-            this.btnStudents.FlatAppearance.BorderSize = 0;
-            this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.btnStudents.ForeColor = System.Drawing.Color.White;
-            this.btnStudents.Location = new System.Drawing.Point(0, 200);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(200, 75);
-            this.btnStudents.TabIndex = 0;
-            this.btnStudents.Text = "Students";
-            this.btnStudents.UseVisualStyleBackColor = true;
-            this.btnStudents.Click += new System.EventHandler(this.BtnStudents_Click);
-            // 
-            // instructors1
-            // 
-            this.instructors1.Location = new System.Drawing.Point(200, 0);
-            this.instructors1.Name = "instructors1";
-            this.instructors1.Size = new System.Drawing.Size(1000, 666);
-            this.instructors1.TabIndex = 1;
-            // 
-            // messaging1
-            // 
-            this.messaging1.Location = new System.Drawing.Point(200, 0);
-            this.messaging1.Name = "messaging1";
-            this.messaging1.Size = new System.Drawing.Size(988, 666);
-            this.messaging1.TabIndex = 2;
             // 
             // students1
             // 
             this.students1.Location = new System.Drawing.Point(200, 0);
             this.students1.Name = "students1";
             this.students1.Size = new System.Drawing.Size(1000, 666);
-            this.students1.TabIndex = 3;
+            this.students1.TabIndex = 1;
+            // 
+            // instructors1
+            // 
+            this.instructors1.Location = new System.Drawing.Point(200, 0);
+            this.instructors1.Name = "instructors1";
+            this.instructors1.Size = new System.Drawing.Size(1000, 666);
+            this.instructors1.TabIndex = 2;
+            // 
+            // ticketSales1
+            // 
+            this.ticketSales1.Location = new System.Drawing.Point(200, 0);
+            this.ticketSales1.Name = "ticketSales1";
+            this.ticketSales1.Size = new System.Drawing.Size(1000, 666);
+            this.ticketSales1.TabIndex = 3;
             // 
             // reporting1
             // 
+            this.reporting1.BackColor = System.Drawing.Color.White;
             this.reporting1.Location = new System.Drawing.Point(200, 0);
             this.reporting1.Name = "reporting1";
             this.reporting1.Size = new System.Drawing.Size(1000, 666);
@@ -230,24 +170,33 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
             this.Controls.Add(this.reporting1);
-            this.Controls.Add(this.students1);
-            this.Controls.Add(this.messaging1);
+            this.Controls.Add(this.ticketSales1);
             this.Controls.Add(this.instructors1);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.students1);
+            this.Controls.Add(this.panel2);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adrestia";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
-        private Instructors instructors1;
+        }
+
+        #endregion
+
+
+     
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnMessaging;
+        private System.Windows.Forms.Button btnInstructors;
+        private System.Windows.Forms.Button btnStudents;
+        private System.Windows.Forms.Button btnTicketSales;
         private System.Windows.Forms.Button btnBackup;
-        private Messaging messaging1;
+        private System.Windows.Forms.Button btnReporting;
         private Students students1;
+        private Instructors instructors1;
+        private TicketSales ticketSales1;
         private Reporting reporting1;
+    }
+}
+

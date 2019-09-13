@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTicketsSales = new System.Windows.Forms.Button();
             this.btnMessaging = new System.Windows.Forms.Button();
             this.btnSpecialEvents = new System.Windows.Forms.Button();
             this.btnLessons = new System.Windows.Forms.Button();
-            this.messaging1 = new Adrestia.Messaging();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.specialEvents1 = new Adrestia.SpecialEvents();
             this.panel1.SuspendLayout();
@@ -42,7 +40,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.btnTicketsSales);
             this.panel1.Controls.Add(this.btnMessaging);
             this.panel1.Controls.Add(this.btnSpecialEvents);
             this.panel1.Controls.Add(this.btnLessons);
@@ -52,31 +49,19 @@
             this.panel1.Size = new System.Drawing.Size(200, 666);
             this.panel1.TabIndex = 1;
             // 
-            // btnTicketsSales
-            // 
-            this.btnTicketsSales.FlatAppearance.BorderSize = 0;
-            this.btnTicketsSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicketsSales.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTicketsSales.ForeColor = System.Drawing.Color.White;
-            this.btnTicketsSales.Location = new System.Drawing.Point(0, 300);
-            this.btnTicketsSales.Name = "btnTicketsSales";
-            this.btnTicketsSales.Size = new System.Drawing.Size(200, 75);
-            this.btnTicketsSales.TabIndex = 6;
-            this.btnTicketsSales.Text = "Ticket Sales";
-            this.btnTicketsSales.UseVisualStyleBackColor = true;
-            // 
             // btnMessaging
             // 
             this.btnMessaging.FlatAppearance.BorderSize = 0;
             this.btnMessaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMessaging.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMessaging.ForeColor = System.Drawing.Color.White;
-            this.btnMessaging.Location = new System.Drawing.Point(-3, 400);
+            this.btnMessaging.Location = new System.Drawing.Point(0, 300);
             this.btnMessaging.Name = "btnMessaging";
             this.btnMessaging.Size = new System.Drawing.Size(200, 75);
             this.btnMessaging.TabIndex = 5;
             this.btnMessaging.Text = "Messaging";
             this.btnMessaging.UseVisualStyleBackColor = true;
+            this.btnMessaging.Click += new System.EventHandler(this.BtnMessaging_Click);
             // 
             // btnSpecialEvents
             // 
@@ -90,6 +75,7 @@
             this.btnSpecialEvents.TabIndex = 4;
             this.btnSpecialEvents.Text = "Special Events";
             this.btnSpecialEvents.UseVisualStyleBackColor = true;
+            this.btnSpecialEvents.Click += new System.EventHandler(this.BtnSpecialEvents_Click);
             // 
             // btnLessons
             // 
@@ -103,13 +89,7 @@
             this.btnLessons.TabIndex = 3;
             this.btnLessons.Text = "Lessons";
             this.btnLessons.UseVisualStyleBackColor = true;
-            // 
-            // messaging1
-            // 
-            this.messaging1.Location = new System.Drawing.Point(200, 0);
-            this.messaging1.Name = "messaging1";
-            this.messaging1.Size = new System.Drawing.Size(988, 666);
-            this.messaging1.TabIndex = 2;
+            this.btnLessons.Click += new System.EventHandler(this.BtnLessons_Click);
             // 
             // specialEvents1
             // 
@@ -126,7 +106,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
             this.Controls.Add(this.specialEvents1);
-            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -139,12 +118,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Messaging messaging1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Button btnLessons;
         private System.Windows.Forms.Button btnMessaging;
         private System.Windows.Forms.Button btnSpecialEvents;
-        private System.Windows.Forms.Button btnTicketsSales;
         private SpecialEvents specialEvents1;
     }
 }

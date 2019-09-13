@@ -28,7 +28,8 @@ namespace Adrestia
 
         private void TicketSales_Load(object sender, EventArgs e)
         {
-            /*
+            connection = new SqlConnection(connectionString);
+
             connection.Open();
 
             string sql = "SELECT * FROM SPECIAL_EVENT";
@@ -36,20 +37,18 @@ namespace Adrestia
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if (!lbEventID.Items.Contains(reader.GetValue(0)))
+                if (!cbxEventID.Items.Contains(reader.GetValue(0)))
                 {
-                    lbEventID.Items.Add(reader.GetValue(0));
+                    cbxEventID.Items.Add(reader.GetValue(0));
                 }
 
             }
             reader.Close();
             connection.Close();
-            */
         }
 
         private void BtnSale_Click(object sender, EventArgs e)
         {
-            /*
             connection.Open();
 
             string sql = "INSERT INTO TICKET_SALE VALUES (@date, @time, @noOfAdults, @noOfChildren, @noOfPensioners, @total, @eventId)";
@@ -60,10 +59,10 @@ namespace Adrestia
             command.Parameters.AddWithValue("@noOfChildren", numChildren.Value);
             command.Parameters.AddWithValue("@noOfPensioners", numPensioners.Value);
             command.Parameters.AddWithValue("@total", totalSale);
-            command.Parameters.AddWithValue("@eventId", lbEventID.SelectedItem);
-
+            command.Parameters.AddWithValue("@eventId", cbxEventID.SelectedItem);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Sale Successfull!");
             connection.Close();
-            */
         }
 
         private void NumAdult_ValueChanged(object sender, EventArgs e)
@@ -83,10 +82,9 @@ namespace Adrestia
 
         private void CalculateTotalSale()
         {
-            /*
             connection.Open();
 
-            string sql = "SELECT * FROM SPECIAL_EVENT WHERE EventID = '" + lbEventID.SelectedItem + "'";
+            string sql = "SELECT * FROM SPECIAL_EVENT WHERE EventID = '" + cbxEventID.SelectedItem + "'";
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
             reader.Read();
@@ -99,7 +97,17 @@ namespace Adrestia
 
             reader.Close();
             connection.Close();
-            */
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            numAdult.Value = 0;
+            numAdult.Value = 0;
+            numAdult.Value = 0;
+            cbxEventID.SelectionLength = 0;
+            datePicker.Value = DateTime.Today;
+            timePicker.Value = (DateTime)DateTime.Now.TimeOfDay;
+
         }
     }
 }

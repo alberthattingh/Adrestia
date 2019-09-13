@@ -1,6 +1,6 @@
 ﻿namespace Adrestia
 {
-    partial class Form3
+    partial class btnEvents
     {
         /// <summary>
         /// Required designer variable.
@@ -29,24 +29,37 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMessaging = new System.Windows.Forms.Button();
             this.btnBookLessons = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.messaging1 = new Adrestia.Messaging();
+            this.btnUpcoming = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnUpcoming);
+            this.panel1.Controls.Add(this.btnMessaging);
             this.panel1.Controls.Add(this.btnBookLessons);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 666);
             this.panel1.TabIndex = 1;
+            // 
+            // btnMessaging
+            // 
+            this.btnMessaging.FlatAppearance.BorderSize = 0;
+            this.btnMessaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMessaging.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMessaging.ForeColor = System.Drawing.Color.White;
+            this.btnMessaging.Location = new System.Drawing.Point(0, 300);
+            this.btnMessaging.Name = "btnMessaging";
+            this.btnMessaging.Size = new System.Drawing.Size(200, 75);
+            this.btnMessaging.TabIndex = 4;
+            this.btnMessaging.Text = "Messaging";
+            this.btnMessaging.UseVisualStyleBackColor = true;
+            this.btnMessaging.Click += new System.EventHandler(this.BtnMessaging_Click);
             // 
             // btnBookLessons
             // 
@@ -60,48 +73,30 @@
             this.btnBookLessons.TabIndex = 2;
             this.btnBookLessons.Text = "Book Lesson";
             this.btnBookLessons.UseVisualStyleBackColor = true;
+            this.btnBookLessons.Click += new System.EventHandler(this.BtnBookLessons_Click);
             // 
-            // button1
+            // btnUpcoming
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 75);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Upcoming Events";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpcoming.FlatAppearance.BorderSize = 0;
+            this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpcoming.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpcoming.ForeColor = System.Drawing.Color.White;
+            this.btnUpcoming.Location = new System.Drawing.Point(0, 200);
+            this.btnUpcoming.Name = "btnUpcoming";
+            this.btnUpcoming.Size = new System.Drawing.Size(200, 75);
+            this.btnUpcoming.TabIndex = 5;
+            this.btnUpcoming.Text = "Upcoming Events";
+            this.btnUpcoming.UseVisualStyleBackColor = true;
+            this.btnUpcoming.Click += new System.EventHandler(this.BtnUpcoming_Click);
             // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 300);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 75);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Messaging";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // messaging1
-            // 
-            this.messaging1.Location = new System.Drawing.Point(200, 0);
-            this.messaging1.Name = "messaging1";
-            this.messaging1.Size = new System.Drawing.Size(988, 666);
-            this.messaging1.TabIndex = 2;
-            // 
-            // Form3
+            // btnEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
-            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.panel1);
-            this.Name = "Form3";
+            this.Location = new System.Drawing.Point(0, 200);
+            this.Name = "btnEvents";
             this.Text = "Student";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -111,9 +106,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMessaging;
         private System.Windows.Forms.Button btnBookLessons;
-        private Messaging messaging1;
+        private System.Windows.Forms.Button btnUpcoming;
     }
 }
