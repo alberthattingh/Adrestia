@@ -33,12 +33,14 @@
             this.btnUpcoming = new System.Windows.Forms.Button();
             this.btnMessaging = new System.Windows.Forms.Button();
             this.btnBookLessons = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnUpcoming);
             this.panel1.Controls.Add(this.btnMessaging);
             this.panel1.Controls.Add(this.btnBookLessons);
@@ -90,6 +92,19 @@
             this.btnBookLessons.UseVisualStyleBackColor = true;
             this.btnBookLessons.Click += new System.EventHandler(this.BtnBookLessons_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 54);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
             // btnEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,5 +128,6 @@
         private System.Windows.Forms.Button btnMessaging;
         private System.Windows.Forms.Button btnBookLessons;
         private System.Windows.Forms.Button btnUpcoming;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

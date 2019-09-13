@@ -73,6 +73,16 @@ namespace Adrestia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoutIcon {
+            get {
+                object obj = ResourceManager.GetObject("LogoutIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TempLogo {
             get {
                 object obj = ResourceManager.GetObject("TempLogo", resourceCulture);

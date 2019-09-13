@@ -35,12 +35,14 @@
             this.btnLessons = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.specialEvents1 = new Adrestia.SpecialEvents();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnMessaging);
             this.panel1.Controls.Add(this.btnSpecialEvents);
             this.panel1.Controls.Add(this.btnLessons);
@@ -101,6 +103,19 @@
             this.specialEvents1.Size = new System.Drawing.Size(1000, 666);
             this.specialEvents1.TabIndex = 3;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 54);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,5 +142,6 @@
         private System.Windows.Forms.Button btnMessaging;
         private System.Windows.Forms.Button btnSpecialEvents;
         private SpecialEvents specialEvents1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
