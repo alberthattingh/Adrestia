@@ -32,7 +32,7 @@ namespace Adrestia
         {
             instructors1.Visible = false;
             students1.Visible = false;
-            //messaging1.Visible = false;
+            messaging1.Visible = false;
             reporting1.Visible = false;
             ticketSales1.Visible = false;
         }
@@ -63,7 +63,7 @@ namespace Adrestia
         private void BtnMessaging_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            //messaging1.Visible = true;
+            messaging1.Visible = true;
         }
 
         private void BtnReporting_Click(object sender, EventArgs e)

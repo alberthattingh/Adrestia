@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnReporting = new System.Windows.Forms.Button();
             this.btnTicketSales = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@
             this.ticketSales1 = new Adrestia.TicketSales();
             this.instructors1 = new Adrestia.Instructors();
             this.students1 = new Adrestia.Students();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.messaging1 = new Adrestia.Messaging();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 666);
             this.panel2.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 54);
+            this.btnLogout.TabIndex = 13;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // btnBackup
             // 
@@ -174,22 +188,17 @@
             this.students1.Size = new System.Drawing.Size(1000, 666);
             this.students1.TabIndex = 1;
             // 
-            // btnLogout
+            // messaging1
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
-            this.btnLogout.Location = new System.Drawing.Point(3, 3);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(50, 54);
-            this.btnLogout.TabIndex = 13;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            this.messaging1.Location = new System.Drawing.Point(200, 0);
+            this.messaging1.Name = "messaging1";
+            this.messaging1.Size = new System.Drawing.Size(988, 666);
+            this.messaging1.TabIndex = 5;
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1184, 666);
+            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.reporting1);
             this.Controls.Add(this.ticketSales1);
             this.Controls.Add(this.instructors1);
@@ -221,6 +230,7 @@
         private TicketSales ticketSales1;
         private Reporting reporting1;
         private System.Windows.Forms.Button btnLogout;
+        private Messaging messaging1;
     }
 }
 

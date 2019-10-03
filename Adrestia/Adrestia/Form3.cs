@@ -30,23 +30,26 @@ namespace Adrestia
         private void HideAllControls()
         {
             //upcomingEvents1.Visible = false;
-            //students1.Visible = false;
-            //messaging1.Visible = false;
+            studentLessons1.Visible = false;
+            messaging1.Visible = false;
         }
 
         private void BtnBookLessons_Click(object sender, EventArgs e)
         {
-
+            HideAllControls();
+            studentLessons1.Visible = true;
         }
 
         private void BtnUpcoming_Click(object sender, EventArgs e)
         {
-
+            HideAllControls();
+            //studentLessons1.Visible = true;
         }
 
         private void BtnMessaging_Click(object sender, EventArgs e)
         {
-
+            HideAllControls();
+            messaging1.Visible = true;
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)

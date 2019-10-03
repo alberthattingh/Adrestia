@@ -49,20 +49,33 @@ namespace Adrestia
 
         private void BtnSale_Click(object sender, EventArgs e)
         {
-            connection.Open();
+            if(cbxEventID.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please Choose an event ID!");
+                cbxEventID.Focus();
+            }
+            else if(numAdult.Value <= 0 && numChildren.Value <=0 && numPensioners.Value <= 0)
+            {
+                MessageBox.Show("There are 0 tickets specified!");
+                numAdult.Focus();
+            }
+            else
+            {
+                connection.Open();
 
-            string sql = "INSERT INTO TICKET_SALE VALUES (@date, @time, @noOfAdults, @noOfChildren, @noOfPensioners, @total, @eventId)";
-            command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@date", datePicker.Value.ToShortDateString());
-            command.Parameters.AddWithValue("@time", timePicker.Value.ToShortTimeString());
-            command.Parameters.AddWithValue("@noOfAdults", numAdult.Value);
-            command.Parameters.AddWithValue("@noOfChildren", numChildren.Value);
-            command.Parameters.AddWithValue("@noOfPensioners", numPensioners.Value);
-            command.Parameters.AddWithValue("@total", totalSale);
-            command.Parameters.AddWithValue("@eventId", cbxEventID.SelectedItem);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Sale Successfull!");
-            connection.Close();
+                string sql = "INSERT INTO TICKET_SALE VALUES (@date, @time, @noOfAdults, @noOfChildren, @noOfPensioners, @total, @eventId)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@date", datePicker.Value.ToShortDateString());
+                command.Parameters.AddWithValue("@time", timePicker.Value.ToShortTimeString());
+                command.Parameters.AddWithValue("@noOfAdults", numAdult.Value);
+                command.Parameters.AddWithValue("@noOfChildren", numChildren.Value);
+                command.Parameters.AddWithValue("@noOfPensioners", numPensioners.Value);
+                command.Parameters.AddWithValue("@total", totalSale);
+                command.Parameters.AddWithValue("@eventId", cbxEventID.SelectedItem);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Sale Successfull!");
+                connection.Close();
+            }
         }
 
         private void NumAdult_ValueChanged(object sender, EventArgs e)

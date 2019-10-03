@@ -71,29 +71,56 @@ namespace Adrestia
                 txtPass.Focus();
                 return;
             }
-
-            connection.Open();
-
-            
-            if (txtPass.Text != Security.GetSHA1Hash(DEFAULT_PASSWORD))
+            if (txtFirst.Text == "" && txtLast.Text == "" && txtCell.Text == "" && txtEmail.Text == "")
             {
-                string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
-                string sql1 = "UPDATE [USER] SET Password = '" + hashedPassword + "' WHERE UserID = '" + studentID + "';";
-                command = new SqlCommand(sql1, connection);
-                command.ExecuteNonQuery();
+                MessageBox.Show("Please enter the details of the student!");
+                txtFirst.Focus();
             }
-              
-            string sql2 = "UPDATE STUDENT SET FirstName = '" + txtFirst.Text + "', " +
-                "LastName = '" + txtLast.Text + "', " +
-                "CellNo = '" + txtCell.Text +"', " +
-                "Email = '" + txtEmail.Text + "' " +
-                "WHERE StudentID = '" + studentID + "';";
+            else if (txtFirst.Text == "")
+            {
+                MessageBox.Show("Please enter the first name of the student!");
+                txtFirst.Focus();
+            }
+            else if (txtLast.Text == "")
+            {
+                MessageBox.Show("Please enter the last name of the student!");
+                txtLast.Focus();
+            }
+            else if (txtCell.Text == "")
+            {
+                MessageBox.Show("Please enter the cell number of the student!");
+                txtCell.Focus();
+            }
+            else if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Please enter the email address of the student!");
+                txtEmail.Focus();
+            }
+            else
+            {
+                connection.Open();
 
-            command = new SqlCommand(sql2, connection);
-            command.ExecuteNonQuery();
 
-            connection.Close();
-            this.Close();
+                if (txtPass.Text != Security.GetSHA1Hash(DEFAULT_PASSWORD))
+                {
+                    string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
+                    string sql1 = "UPDATE [USER] SET Password = '" + hashedPassword + "' WHERE UserID = '" + studentID + "';";
+                    command = new SqlCommand(sql1, connection);
+                    command.ExecuteNonQuery();
+                }
+
+                string sql2 = "UPDATE STUDENT SET FirstName = '" + txtFirst.Text + "', " +
+                    "LastName = '" + txtLast.Text + "', " +
+                    "CellNo = '" + txtCell.Text + "', " +
+                    "Email = '" + txtEmail.Text + "' " +
+                    "WHERE StudentID = '" + studentID + "';";
+
+                command = new SqlCommand(sql2, connection);
+                command.ExecuteNonQuery();
+
+                connection.Close();
+                this.Close();
+            }
         }
     }
 }

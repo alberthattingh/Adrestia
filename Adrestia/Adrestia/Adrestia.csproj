@@ -195,6 +195,12 @@
     <Compile Include="Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpcomingEvents.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UpcomingEvents.Designer.cs">
+      <DependentUpon>UpcomingEvents.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCredit.resx">
       <DependentUpon>AddCredit.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,6 +320,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\images\CloseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database5.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database5_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database5.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

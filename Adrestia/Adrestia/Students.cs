@@ -98,13 +98,18 @@ namespace Adrestia
         {
             try
             {
-                EditStudent editStudentForm = new EditStudent
+                if (selectedStudent != 0)
                 {
-                    studentID = selectedStudent.ToString()
-                };
-                editStudentForm.ShowDialog();
-                PopulateGridView();
-                connection.Close();
+                    EditStudent editStudentForm = new EditStudent
+                    {
+                        studentID = selectedStudent.ToString()
+                    };
+                    editStudentForm.ShowDialog();
+                    PopulateGridView();
+                    connection.Close();
+                }
+                else
+                    MessageBox.Show("Please select a student");
             }
             catch (Exception error)
             {
@@ -116,15 +121,23 @@ namespace Adrestia
         {
             try
             {
-                connection.Open();
-                string sql = "DELETE FROM [STUDENT] WHERE StudentID = '" + selectedStudent + "';";
-                command = new SqlCommand(sql, connection);
-                command.ExecuteNonQuery();
-                sql = "DELETE FROM [USER] WHERE UserID = '" + selectedStudent + "';";
-                command = new SqlCommand(sql, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
-                PopulateGridView();
+                if (selectedStudent != 0)
+                {
+                    if (MessageBox.Show("Are you sure you want to delete the student?", "Delete Student", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        connection.Open();
+                        string sql = "DELETE FROM [STUDENT] WHERE StudentID = '" + selectedStudent + "';";
+                        command = new SqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
+                        sql = "DELETE FROM [USER] WHERE UserID = '" + selectedStudent + "';";
+                        command = new SqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        PopulateGridView();
+                    }
+                }
+                else
+                    MessageBox.Show("Please select a student");
 
             }
             catch (Exception error)
@@ -153,7 +166,8 @@ namespace Adrestia
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error: " + error.Message);
+                MessageBox.Show("Please choose a row with values!");
+                selectedStudent = 0;
             }
         }
 

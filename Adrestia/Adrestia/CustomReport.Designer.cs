@@ -248,8 +248,9 @@
             // gbUsers
             // 
             this.gbUsers.Controls.Add(this.cbUserType);
+            this.gbUsers.Controls.Add(this.gbInstructors);
             this.gbUsers.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbUsers.Location = new System.Drawing.Point(219, 20);
+            this.gbUsers.Location = new System.Drawing.Point(225, 20);
             this.gbUsers.Name = "gbUsers";
             this.gbUsers.Size = new System.Drawing.Size(200, 325);
             this.gbUsers.TabIndex = 1;
@@ -276,7 +277,7 @@
             this.gbInstructors.Controls.Add(this.cbIFirstName);
             this.gbInstructors.Controls.Add(this.gbBackupLog);
             this.gbInstructors.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbInstructors.Location = new System.Drawing.Point(425, 20);
+            this.gbInstructors.Location = new System.Drawing.Point(0, 0);
             this.gbInstructors.Name = "gbInstructors";
             this.gbInstructors.Size = new System.Drawing.Size(200, 325);
             this.gbInstructors.TabIndex = 2;
@@ -343,7 +344,7 @@
             this.gbBackupLog.Controls.Add(this.cbBackupTime);
             this.gbBackupLog.Controls.Add(this.cbBackupDate);
             this.gbBackupLog.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbBackupLog.Location = new System.Drawing.Point(110, 0);
+            this.gbBackupLog.Location = new System.Drawing.Point(0, 0);
             this.gbBackupLog.Name = "gbBackupLog";
             this.gbBackupLog.Size = new System.Drawing.Size(200, 325);
             this.gbBackupLog.TabIndex = 12;
@@ -380,7 +381,7 @@
             this.gbMessaging.Controls.Add(this.cbMessageDate);
             this.gbMessaging.Controls.Add(this.cbSender);
             this.gbMessaging.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbMessaging.Location = new System.Drawing.Point(584, 351);
+            this.gbMessaging.Location = new System.Drawing.Point(0, 6);
             this.gbMessaging.Name = "gbMessaging";
             this.gbMessaging.Size = new System.Drawing.Size(200, 325);
             this.gbMessaging.TabIndex = 12;
@@ -448,11 +449,12 @@
             this.gbTicketSales.Controls.Add(this.cbNoOfAdults);
             this.gbTicketSales.Controls.Add(this.cbTotalOfSale);
             this.gbTicketSales.Controls.Add(this.cbSalesEventID);
+            this.gbTicketSales.Controls.Add(this.gbEventVenues);
             this.gbTicketSales.Controls.Add(this.cnNoOfPensioners);
             this.gbTicketSales.Controls.Add(this.cnNoOfChildren);
             this.gbTicketSales.Controls.Add(this.cbSaleDate);
             this.gbTicketSales.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbTicketSales.Location = new System.Drawing.Point(94, 344);
+            this.gbTicketSales.Location = new System.Drawing.Point(0, 1);
             this.gbTicketSales.Name = "gbTicketSales";
             this.gbTicketSales.Size = new System.Drawing.Size(200, 325);
             this.gbTicketSales.TabIndex = 11;
@@ -543,8 +545,9 @@
             this.gbStudents.Controls.Add(this.cbSEmail);
             this.gbStudents.Controls.Add(this.cbCredits);
             this.gbStudents.Controls.Add(this.cbSFirstName);
+            this.gbStudents.Controls.Add(this.gbTicketSales);
             this.gbStudents.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbStudents.Location = new System.Drawing.Point(996, 6);
+            this.gbStudents.Location = new System.Drawing.Point(225, 13);
             this.gbStudents.Name = "gbStudents";
             this.gbStudents.Size = new System.Drawing.Size(200, 325);
             this.gbStudents.TabIndex = 6;
@@ -610,7 +613,7 @@
             // 
             this.gbEventTypes.Controls.Add(this.cbEventTypeDesc);
             this.gbEventTypes.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbEventTypes.Location = new System.Drawing.Point(790, 13);
+            this.gbEventTypes.Location = new System.Drawing.Point(225, 14);
             this.gbEventTypes.Name = "gbEventTypes";
             this.gbEventTypes.Size = new System.Drawing.Size(200, 325);
             this.gbEventTypes.TabIndex = 9;
@@ -637,9 +640,9 @@
             this.gbLessons.Controls.Add(this.cbplacesAvailable);
             this.gbLessons.Controls.Add(this.cbLessonDate);
             this.gbLessons.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbLessons.Location = new System.Drawing.Point(790, 343);
+            this.gbLessons.Location = new System.Drawing.Point(225, 20);
             this.gbLessons.Name = "gbLessons";
-            this.gbLessons.Size = new System.Drawing.Size(200, 325);
+            this.gbLessons.Size = new System.Drawing.Size(200, 318);
             this.gbLessons.TabIndex = 7;
             this.gbLessons.TabStop = false;
             this.gbLessons.Text = "Lessons";
@@ -720,7 +723,7 @@
             this.gbSpecialEvents.Controls.Add(this.cbPensionerCost);
             this.gbSpecialEvents.Controls.Add(this.cbEventDate);
             this.gbSpecialEvents.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbSpecialEvents.Location = new System.Drawing.Point(996, 337);
+            this.gbSpecialEvents.Location = new System.Drawing.Point(225, 20);
             this.gbSpecialEvents.Name = "gbSpecialEvents";
             this.gbSpecialEvents.Size = new System.Drawing.Size(200, 325);
             this.gbSpecialEvents.TabIndex = 8;
@@ -806,10 +809,11 @@
             // 
             // gbEventVenues
             // 
+            this.gbEventVenues.Controls.Add(this.gbMessaging);
             this.gbEventVenues.Controls.Add(this.cbMaxSeats);
             this.gbEventVenues.Controls.Add(this.cbVenueDesc);
             this.gbEventVenues.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbEventVenues.Location = new System.Drawing.Point(378, 351);
+            this.gbEventVenues.Location = new System.Drawing.Point(0, 0);
             this.gbEventVenues.Name = "gbEventVenues";
             this.gbEventVenues.Size = new System.Drawing.Size(200, 325);
             this.gbEventVenues.TabIndex = 10;
@@ -872,14 +876,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1208, 607);
-            this.Controls.Add(this.gbMessaging);
+            this.ClientSize = new System.Drawing.Size(447, 403);
             this.Controls.Add(this.gbLessons);
-            this.Controls.Add(this.gbInstructors);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.gbSpecialEvents);
-            this.Controls.Add(this.gbEventVenues);
-            this.Controls.Add(this.gbTicketSales);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.gbStudents);
             this.Controls.Add(this.gbEventTypes);

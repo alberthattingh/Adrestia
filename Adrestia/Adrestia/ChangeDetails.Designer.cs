@@ -130,7 +130,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(150, 24);
-            this.txtPassword.TabIndex = 8;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtConPassword
@@ -140,7 +140,7 @@
             this.txtConPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtConPassword.Name = "txtConPassword";
             this.txtConPassword.Size = new System.Drawing.Size(150, 24);
-            this.txtConPassword.TabIndex = 9;
+            this.txtConPassword.TabIndex = 2;
             this.txtConPassword.UseSystemPasswordChar = true;
             // 
             // txtFirstname
@@ -151,7 +151,7 @@
             this.txtFirstname.Multiline = true;
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(150, 24);
-            this.txtFirstname.TabIndex = 10;
+            this.txtFirstname.TabIndex = 3;
             // 
             // txtLastname
             // 
@@ -161,7 +161,7 @@
             this.txtLastname.Multiline = true;
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(150, 24);
-            this.txtLastname.TabIndex = 11;
+            this.txtLastname.TabIndex = 4;
             // 
             // txtCellNo
             // 
@@ -171,7 +171,7 @@
             this.txtCellNo.Multiline = true;
             this.txtCellNo.Name = "txtCellNo";
             this.txtCellNo.Size = new System.Drawing.Size(150, 24);
-            this.txtCellNo.TabIndex = 12;
+            this.txtCellNo.TabIndex = 5;
             // 
             // btnSave
             // 
@@ -183,7 +183,7 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 50);
-            this.btnSave.TabIndex = 13;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -197,7 +197,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 14;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -221,7 +221,7 @@
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 24);
-            this.txtEmail.TabIndex = 16;
+            this.txtEmail.TabIndex = 6;
             // 
             // ChangeDetails
             // 

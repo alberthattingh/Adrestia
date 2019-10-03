@@ -63,37 +63,64 @@ namespace Adrestia
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+        
             if (txtPassword.Text != txtConPassword.Text)
             {
                 MessageBox.Show("Passwords do not match!");
                 txtConPassword.Clear();
                 txtPassword.Clear();
                 txtPassword.Focus();
-                return;
             }
-
-            connection.Open();
-
-
-            if (txtPassword.Text != Security.GetSHA1Hash(DEFAULT_PASSWORD))
+            else if (txtFirstname.Text == "" && txtLastname.Text == "" && txtCellNo.Text == "" && txtEmail.Text == "")
             {
-                string hashedPassword = Security.GetSHA1Hash(txtPassword.Text);
-                string sql1 = "UPDATE [USER] SET Password = '" + hashedPassword + "' WHERE UserID = '" + instructorID + "';";
-                command = new SqlCommand(sql1, connection);
-                command.ExecuteNonQuery();
+                MessageBox.Show("Please enter the details of the instructor!");
+                txtFirstname.Focus();
             }
+            else if (txtFirstname.Text == "")
+            {
+                MessageBox.Show("Please enter the first name of the instructor!");
+                txtFirstname.Focus();
+            }
+            else if (txtLastname.Text == "")
+            {
+                MessageBox.Show("Please enter the last name of the instructor!");
+                txtLastname.Focus();
+            }
+            else if (txtCellNo.Text == "")
+            {
+                MessageBox.Show("Please enter the cell number of the instructor!");
+                txtCellNo.Focus();
+            }
+            else if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Please enter the email address of the instructor!");
+                txtEmail.Focus();
+            }
+            else
+            {
+                connection.Open();
 
-            string sql2 = "UPDATE INSTRUCTOR SET FirstName = '" + txtFirstname.Text + "', " +
-                "LastName = '" + txtLastname.Text + "', " +
-                "CellNo = '" + txtCellNo.Text + "', " +
-                "Email = '" + txtEmail.Text + "' " +
-                "WHERE InstructorID = '" + instructorID + "';";
 
-            command = new SqlCommand(sql2, connection);
-            command.ExecuteNonQuery();
+                if (txtPassword.Text != Security.GetSHA1Hash(DEFAULT_PASSWORD))
+                {
+                    string hashedPassword = Security.GetSHA1Hash(txtPassword.Text);
+                    string sql1 = "UPDATE [USER] SET Password = '" + hashedPassword + "' WHERE UserID = '" + instructorID + "';";
+                    command = new SqlCommand(sql1, connection);
+                    command.ExecuteNonQuery();
+                }
 
-            connection.Close();
-            this.Close();
+                string sql2 = "UPDATE INSTRUCTOR SET FirstName = '" + txtFirstname.Text + "', " +
+                    "LastName = '" + txtLastname.Text + "', " +
+                    "CellNo = '" + txtCellNo.Text + "', " +
+                    "Email = '" + txtEmail.Text + "' " +
+                    "WHERE InstructorID = '" + instructorID + "';";
+
+                command = new SqlCommand(sql2, connection);
+                command.ExecuteNonQuery();
+
+                connection.Close();
+                this.Close();
+            }
         }
     }
 }
