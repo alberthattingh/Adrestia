@@ -42,6 +42,7 @@
             this.instructors1 = new Adrestia.Instructors();
             this.students1 = new Adrestia.Students();
             this.messaging1 = new Adrestia.Messaging();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +86,7 @@
             this.btnBackup.TabIndex = 12;
             this.btnBackup.Text = "Backup Data";
             this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.BtnBackup_Click);
             // 
             // btnReporting
             // 
@@ -190,10 +192,15 @@
             // 
             // messaging1
             // 
+            this.messaging1.BackColor = System.Drawing.Color.White;
             this.messaging1.Location = new System.Drawing.Point(200, 0);
             this.messaging1.Name = "messaging1";
             this.messaging1.Size = new System.Drawing.Size(988, 666);
             this.messaging1.TabIndex = 5;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -231,6 +238,7 @@
         private Reporting reporting1;
         private System.Windows.Forms.Button btnLogout;
         private Messaging messaging1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

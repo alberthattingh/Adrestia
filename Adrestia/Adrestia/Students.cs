@@ -43,7 +43,7 @@ namespace Adrestia
         {
             connection.Open();
 
-            string sql = "SELECT * FROM STUDENT";
+            string sql = "SELECT * FROM [USER] WHERE UserTypeID = 3";
             command = new SqlCommand(sql, connection);
             ds = new DataSet();
 
@@ -62,8 +62,8 @@ namespace Adrestia
         {
             connection.Open();
 
-            string sql = "SELECT * FROM STUDENT " +
-                "WHERE StudentID LIKE '%" + query + "%' OR " +
+            string sql = "SELECT UserID, FirstName, LastName, CellNo, Email, UserTypeID FROM [USER] " +
+                "WHERE UserID LIKE '%" + query + "%' OR " +
                 "FirstName LIKE '%" + query + "%' OR " +
                 "LastName LIKE '%" + query + "%' OR " +
                 "Email LIKE '%" + query + "%'";

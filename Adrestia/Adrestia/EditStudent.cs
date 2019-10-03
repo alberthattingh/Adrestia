@@ -46,17 +46,10 @@ namespace Adrestia
 
             reader.Read();
             txtPass.Text = txtConfirm.Text = reader.GetValue(1).ToString();
-            reader.Close();
-
-            string sql2 = "SELECT * FROM [STUDENT] WHERE StudentID = '" + studentID + "';";
-            command = new SqlCommand(sql2, connection);
-            reader = command.ExecuteReader();
-
-            reader.Read();
-            txtFirst.Text = reader.GetValue(1).ToString();
-            txtLast.Text = reader.GetValue(2).ToString();
-            txtCell.Text = reader.GetValue(3).ToString();
-            txtEmail.Text = reader.GetValue(4).ToString();
+            txtFirst.Text = reader.GetValue(2).ToString();
+            txtLast.Text = reader.GetValue(3).ToString();
+            txtCell.Text = reader.GetValue(4).ToString();
+            txtEmail.Text = reader.GetValue(5).ToString();
             reader.Close();
             connection.Close();
         }
@@ -109,11 +102,11 @@ namespace Adrestia
                     command.ExecuteNonQuery();
                 }
 
-                string sql2 = "UPDATE STUDENT SET FirstName = '" + txtFirst.Text + "', " +
+                string sql2 = "UPDATE [USER] SET FirstName = '" + txtFirst.Text + "', " +
                     "LastName = '" + txtLast.Text + "', " +
                     "CellNo = '" + txtCell.Text + "', " +
                     "Email = '" + txtEmail.Text + "' " +
-                    "WHERE StudentID = '" + studentID + "';";
+                    "WHERE UserID = '" + studentID + "';";
 
                 command = new SqlCommand(sql2, connection);
                 command.ExecuteNonQuery();

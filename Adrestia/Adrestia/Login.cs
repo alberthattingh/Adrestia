@@ -66,7 +66,7 @@ namespace Adrestia
 
                 if (user.Equals(userID) && pass.Equals(hashedPassword))
                 {
-                    this.UserType = Reader.GetValue(2).ToString();
+                    this.UserType = Reader.GetValue(6).ToString();
                     this.UserID = userID;
                     validUser = true;
                     break;
