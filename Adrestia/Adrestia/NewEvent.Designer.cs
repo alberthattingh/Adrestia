@@ -50,6 +50,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnEditVenue = new System.Windows.Forms.Button();
+            this.btnEditType = new System.Windows.Forms.Button();
+            this.btnDeleteType = new System.Windows.Forms.Button();
+            this.btnDeleteVenue = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPensioners)).BeginInit();
@@ -133,7 +137,7 @@
             0,
             0,
             0});
-            this.numPensioners.Location = new System.Drawing.Point(110, 107);
+            this.numPensioners.Location = new System.Drawing.Point(110, 109);
             this.numPensioners.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -150,7 +154,7 @@
             0,
             0,
             0});
-            this.numChildren.Location = new System.Drawing.Point(110, 69);
+            this.numChildren.Location = new System.Drawing.Point(110, 71);
             this.numChildren.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -167,7 +171,7 @@
             0,
             0,
             0});
-            this.numAdult.Location = new System.Drawing.Point(110, 31);
+            this.numAdult.Location = new System.Drawing.Point(110, 29);
             this.numAdult.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -206,13 +210,15 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnDeleteVenue);
+            this.groupBox3.Controls.Add(this.btnEditVenue);
             this.groupBox3.Controls.Add(this.cbxVenue);
             this.groupBox3.Controls.Add(this.btnNewVenue);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(12, 168);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 150);
+            this.groupBox3.Size = new System.Drawing.Size(250, 202);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Venue";
@@ -232,11 +238,11 @@
             this.btnNewVenue.BackColor = System.Drawing.Color.SteelBlue;
             this.btnNewVenue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewVenue.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnNewVenue.Location = new System.Drawing.Point(47, 80);
+            this.btnNewVenue.Location = new System.Drawing.Point(10, 80);
             this.btnNewVenue.Name = "btnNewVenue";
-            this.btnNewVenue.Size = new System.Drawing.Size(150, 50);
+            this.btnNewVenue.Size = new System.Drawing.Size(100, 50);
             this.btnNewVenue.TabIndex = 9;
-            this.btnNewVenue.Text = "New Venue";
+            this.btnNewVenue.Text = "New";
             this.btnNewVenue.UseVisualStyleBackColor = false;
             this.btnNewVenue.Click += new System.EventHandler(this.BtnNewVenue_Click);
             // 
@@ -251,13 +257,15 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnDeleteType);
+            this.groupBox4.Controls.Add(this.btnEditType);
             this.groupBox4.Controls.Add(this.cbxType);
             this.groupBox4.Controls.Add(this.btnNewType);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox4.Location = new System.Drawing.Point(293, 168);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 150);
+            this.groupBox4.Size = new System.Drawing.Size(250, 202);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Type of Event";
@@ -266,7 +274,7 @@
             // 
             this.cbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxType.FormattingEnabled = true;
-            this.cbxType.Location = new System.Drawing.Point(109, 36);
+            this.cbxType.Location = new System.Drawing.Point(109, 32);
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(125, 24);
             this.cbxType.TabIndex = 11;
@@ -276,11 +284,11 @@
             this.btnNewType.BackColor = System.Drawing.Color.SteelBlue;
             this.btnNewType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNewType.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnNewType.Location = new System.Drawing.Point(51, 80);
+            this.btnNewType.Location = new System.Drawing.Point(12, 80);
             this.btnNewType.Name = "btnNewType";
-            this.btnNewType.Size = new System.Drawing.Size(150, 50);
+            this.btnNewType.Size = new System.Drawing.Size(100, 50);
             this.btnNewType.TabIndex = 12;
-            this.btnNewType.Text = "New Type";
+            this.btnNewType.Text = "New";
             this.btnNewType.UseVisualStyleBackColor = false;
             this.btnNewType.Click += new System.EventHandler(this.BtnNewType_Click);
             // 
@@ -298,7 +306,7 @@
             this.btnAddEvent.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAddEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddEvent.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnAddEvent.Location = new System.Drawing.Point(112, 324);
+            this.btnAddEvent.Location = new System.Drawing.Point(112, 376);
             this.btnAddEvent.Name = "btnAddEvent";
             this.btnAddEvent.Size = new System.Drawing.Size(150, 50);
             this.btnAddEvent.TabIndex = 13;
@@ -311,7 +319,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(293, 324);
+            this.btnCancel.Location = new System.Drawing.Point(292, 376);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 14;
@@ -319,12 +327,64 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // btnEditVenue
+            // 
+            this.btnEditVenue.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditVenue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditVenue.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnEditVenue.Location = new System.Drawing.Point(136, 80);
+            this.btnEditVenue.Name = "btnEditVenue";
+            this.btnEditVenue.Size = new System.Drawing.Size(100, 50);
+            this.btnEditVenue.TabIndex = 10;
+            this.btnEditVenue.Text = "Edit";
+            this.btnEditVenue.UseVisualStyleBackColor = false;
+            this.btnEditVenue.Click += new System.EventHandler(this.BtnEditVenue_Click);
+            // 
+            // btnEditType
+            // 
+            this.btnEditType.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditType.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnEditType.Location = new System.Drawing.Point(134, 80);
+            this.btnEditType.Name = "btnEditType";
+            this.btnEditType.Size = new System.Drawing.Size(100, 50);
+            this.btnEditType.TabIndex = 13;
+            this.btnEditType.Text = "Edit";
+            this.btnEditType.UseVisualStyleBackColor = false;
+            this.btnEditType.Click += new System.EventHandler(this.BtnEditType_Click);
+            // 
+            // btnDeleteType
+            // 
+            this.btnDeleteType.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDeleteType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeleteType.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteType.Location = new System.Drawing.Point(73, 136);
+            this.btnDeleteType.Name = "btnDeleteType";
+            this.btnDeleteType.Size = new System.Drawing.Size(100, 50);
+            this.btnDeleteType.TabIndex = 14;
+            this.btnDeleteType.Text = "Delete";
+            this.btnDeleteType.UseVisualStyleBackColor = false;
+            this.btnDeleteType.Click += new System.EventHandler(this.BtnDeleteType_Click);
+            // 
+            // btnDeleteVenue
+            // 
+            this.btnDeleteVenue.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDeleteVenue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeleteVenue.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.btnDeleteVenue.Location = new System.Drawing.Point(74, 136);
+            this.btnDeleteVenue.Name = "btnDeleteVenue";
+            this.btnDeleteVenue.Size = new System.Drawing.Size(100, 50);
+            this.btnDeleteVenue.TabIndex = 11;
+            this.btnDeleteVenue.Text = "Delete";
+            this.btnDeleteVenue.UseVisualStyleBackColor = false;
+            this.btnDeleteVenue.Click += new System.EventHandler(this.BtnDeleteVenue_Click);
+            // 
             // NewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(555, 384);
+            this.ClientSize = new System.Drawing.Size(555, 439);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddEvent);
             this.Controls.Add(this.groupBox4);
@@ -373,5 +433,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cbxVenue;
         private System.Windows.Forms.ComboBox cbxType;
+        private System.Windows.Forms.Button btnDeleteVenue;
+        private System.Windows.Forms.Button btnEditVenue;
+        private System.Windows.Forms.Button btnDeleteType;
+        private System.Windows.Forms.Button btnEditType;
     }
 }

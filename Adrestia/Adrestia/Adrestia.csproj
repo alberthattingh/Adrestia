@@ -90,11 +90,23 @@
     <Compile Include="EditEvent.Designer.cs">
       <DependentUpon>EditEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditEventType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEventType.Designer.cs">
+      <DependentUpon>EditEventType.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditStudent.Designer.cs">
       <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditVenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditVenue.Designer.cs">
+      <DependentUpon>EditVenue.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -219,8 +231,14 @@
     <EmbeddedResource Include="EditEvent.resx">
       <DependentUpon>EditEvent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditEventType.resx">
+      <DependentUpon>EditEventType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditStudent.resx">
       <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditVenue.resx">
+      <DependentUpon>EditVenue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

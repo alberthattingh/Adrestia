@@ -60,20 +60,6 @@ namespace Adrestia
                 }
                 reader.Close();
 
-                sql = "SELECT * FROM SPECIAL_EVENT WHERE EventID = '" + eventID + "'";
-                command = new SqlCommand(sql, connection);
-                reader = command.ExecuteReader();
-                reader.Read();
-
-                //datePicker.Value = (DateTime)reader.GetValue(1);
-                //timePicker.Value = (DateTime)((TimeSpan)reader.GetValue(2));
-                //numAdult.Value = decimal.Parse(reader.GetValue(3).ToString());
-                //numChildren.Value = decimal.Parse(reader.GetValue(4).ToString());
-                //numPensioners.Value = decimal.Parse(reader.GetValue(5).ToString());
-                //cbxVenue.SelectedItem = reader.GetValue(6);
-                //cbxType.SelectedItem = reader.GetValue(7);
-
-
                 connection.Close();
             }
             catch (Exception error)

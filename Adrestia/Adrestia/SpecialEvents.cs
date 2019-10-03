@@ -135,12 +135,17 @@ namespace Adrestia
         {
             try
             {
-                EditEvent editEventForm = new EditEvent
+                if (selectedEvent != 0)
                 {
-                    eventID = selectedEvent
-                };
-                editEventForm.ShowDialog();
-                PopulateGridView();
+                    EditEvent editEventForm = new EditEvent
+                    {
+                        eventID = selectedEvent
+                    };
+                    editEventForm.ShowDialog();
+                    PopulateGridView();
+                }
+                else
+                    MessageBox.Show("Please select an event");
             }
             catch (Exception error)
             {
@@ -154,12 +159,21 @@ namespace Adrestia
         {
             try
             {
-                connection.Open();
-                string sql = "DELETE FROM SPECIAL_EVENT WHERE EventID = '" + selectedEvent + "'";
-                command = new SqlCommand(sql, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
-                PopulateGridView();
+
+                if (selectedEvent != 0)
+                {
+                    if (MessageBox.Show("Are you sure you want to delete the student?", "Delete Student", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        connection.Open();
+                        string sql = "DELETE FROM SPECIAL_EVENT WHERE EventID = '" + selectedEvent + "'";
+                        command = new SqlCommand(sql, connection);
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        PopulateGridView();
+                    }
+                }
+                else
+                    MessageBox.Show("Please select an event");
 
             }
             catch (Exception error)
@@ -182,7 +196,8 @@ namespace Adrestia
             }
             catch (Exception error)
             {
-                MessageBox.Show("Error: " + error.Message);
+                MessageBox.Show("Please choose a row with values!");
+                selectedEvent = 0;
             }
         }
 

@@ -178,5 +178,115 @@ namespace Adrestia
             connection.Close();
 
         }
+
+        private void BtnEditVenue_Click(object sender, EventArgs e)
+        {
+            if (cbxVenue.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a venue to edit");
+            }
+            else
+            {
+                EditVenue editvenue = new EditVenue();
+                editvenue.ShowDialog();
+
+                connection.Open();
+                string sql = "SELECT * FROM VENUE";
+                command = new SqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!cbxVenue.Items.Contains(reader.GetValue(1)))
+                    {
+                        cbxVenue.Items.Add(reader.GetValue(1));
+                    }
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+        }
+
+        private void BtnDeleteVenue_Click(object sender, EventArgs e)
+        {
+            if(cbxVenue.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a venue to delete");
+            }
+            else
+            {
+                connection.Open();
+                string sql = "DELETE FROM VENUE WHERE VenueID = '" + cbxVenue.SelectedItem.ToString() + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                sql = "SELECT * FROM VENUE";
+                command = new SqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!cbxVenue.Items.Contains(reader.GetValue(1)))
+                    {
+                        cbxVenue.Items.Add(reader.GetValue(1));
+                    }
+
+                }
+                reader.Close();
+                connection.Close();
+            }
+        }
+
+        private void BtnEditType_Click(object sender, EventArgs e)
+        {
+            if (cbxType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a venue to edit");
+            }
+            else
+            {
+                EditEventType editType = new EditEventType();
+                editType.ShowDialog();
+
+                connection.Open();
+                string sql = "SELECT * FROM EVENT_TYPE";
+                command = new SqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!cbxType.Items.Contains(reader.GetValue(1)))
+                    {
+                        cbxType.Items.Add(reader.GetValue(1));
+                    }
+                }
+                reader.Close();
+                connection.Close();
+            }
+        }
+
+        private void BtnDeleteType_Click(object sender, EventArgs e)
+        {
+            if (cbxType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose an event type to delete");
+            }
+            else
+            {
+                connection.Open();
+                string sql = "DELETE FROM EVENT_TYPE WHERE EventID = '" + cbxType.SelectedItem.ToString() + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                sql = "SELECT * FROM EVENT_TYPE";
+                command = new SqlCommand(sql, connection);
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!cbxType.Items.Contains(reader.GetValue(1)))
+                    {
+                        cbxType.Items.Add(reader.GetValue(1));
+                    }
+                }
+                reader.Close();
+                connection.Close();
+            }
+        }
     }
 }
