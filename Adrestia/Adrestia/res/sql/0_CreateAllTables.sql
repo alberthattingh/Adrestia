@@ -25,6 +25,10 @@ CREATE TABLE [USER_TYPE] (
 CREATE TABLE [USER] (
 	UserID		INT				NOT NULL	IDENTITY(1000,1)	PRIMARY KEY,
 	[Password]	VARCHAR(40)		NOT NULL,
+	[FirstName] [varchar](30)		NULL,
+	[LastName]	[varchar](30)		NULL,
+	[CellNo]	[varchar](13)		NULL,
+	[Email]		[varchar](50)		NULL,
 	UserTypeID	INT,
 	
 	CONSTRAINT FK_User_Type	FOREIGN KEY	(UserTypeID)	REFERENCES	USER_TYPE(UserTypeID)
@@ -38,10 +42,6 @@ CREATE TABLE [USER] (
 
 CREATE TABLE [STUDENT](
 	[StudentID] [int]				NOT NULL,
-	[FirstName] [varchar](30)		NULL,
-	[LastName]	[varchar](30)		NULL,
-	[CellNo]	[varchar](13)		NULL,
-	[Email]		[varchar](50)		NULL,
 	[Credits]	DECIMAL(18,2)		NULL,
 
 	CONSTRAINT	PK_Student			PRIMARY KEY (StudentID),
@@ -56,10 +56,6 @@ CREATE TABLE [STUDENT](
 
 CREATE TABLE INSTRUCTOR(
 	[InstructorID]	[int]				NOT NULL,
-	[FirstName]		[varchar](30)		NULL,
-	[LastName]		[varchar](30)		NULL,
-	[CellNo]		[varchar](13)		NULL,
-	[Email]			[varchar](50)		NULL,
 	[Salary]		DECIMAL(18,2)		NULL,
 
 	CONSTRAINT	PK_Instructor			PRIMARY KEY ([InstructorID]),
