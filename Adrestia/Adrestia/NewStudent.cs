@@ -39,7 +39,6 @@ namespace Adrestia
 
         private int GetStudentID()
         {
-            connection.Open();
             string sql = "SELECT MAX(UserID) FROM [USER]";
             command = new SqlCommand(sql, connection);
             int id;
@@ -52,8 +51,6 @@ namespace Adrestia
             {
                 id = 1000;
             }
-            
-            connection.Close();
             return id;
         }
 
@@ -88,16 +85,25 @@ namespace Adrestia
             {
 
                 connection.Open();
+                string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
 
-                int studentId = int.Parse(txtID.Text);
 
-                string sql2 = "INSERT INTO STUDENT VALUES (@id, @first, @last, @cell, @email, @credits)";
-                command = new SqlCommand(sql2, connection);
-                command.Parameters.AddWithValue("@id", studentId);
+
+                int studentId = GetStudentID();
+
+                string sql = "INSERT INTO [USER] VALUES (@pw, @first, @last, @cell, @email, @type)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@pw", hashedPassword);
                 command.Parameters.AddWithValue("@first", txtFirst.Text);
                 command.Parameters.AddWithValue("@last", txtLast.Text);
                 command.Parameters.AddWithValue("@cell", txtCell.Text);
                 command.Parameters.AddWithValue("@email", txtEmail.Text);
+                command.Parameters.AddWithValue("@type", TYPE_STUDENT);
+                command.ExecuteNonQuery();
+
+                sql = "INSERT INTO STUDENT VALUES (@id, @Credits)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", studentId);
                 command.Parameters.AddWithValue("@credits", 0.0);
                 command.ExecuteNonQuery();
 
@@ -110,21 +116,8 @@ namespace Adrestia
         {           
             try
             {
-                // Add new user
                 connection = new SqlConnection(connectionString);
-                connection.Open();
-
                 txtPass.Text = DEFAULT_PASSWORD;
-                string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
-
-                string sql1 = "INSERT INTO [USER] VALUES (@pw, @type)";
-                command = new SqlCommand(sql1, connection);
-                command.Parameters.AddWithValue("@pw", hashedPassword);
-                command.Parameters.AddWithValue("@type", TYPE_STUDENT);
-                command.ExecuteNonQuery();
-                connection.Close();
-                               
-                txtID.Text = GetStudentID().ToString();
             }
             catch (Exception err)
             {

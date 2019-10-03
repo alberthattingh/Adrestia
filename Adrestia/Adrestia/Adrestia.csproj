@@ -340,12 +340,12 @@
     <None Include="res\images\CloseIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database5.mdf">
+    <Content Include="Database6.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database5_log.ldf">
+    <Content Include="Database6_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database5.mdf</DependentUpon>
+      <DependentUpon>Database6.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

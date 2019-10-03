@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace Adrestia
 {
@@ -15,6 +17,9 @@ namespace Adrestia
     {
         public string UserID;
         public string UserType;
+        public SqlConnection connection;
+        public SqlCommand command;
+        public string backupFileName = @"/Backup/";
 
         public Form1()
         {
@@ -39,6 +44,7 @@ namespace Adrestia
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            connection = new SqlConnection(Security.ConnectionString);
             HideAllControls();
         }
 
@@ -75,6 +81,15 @@ namespace Adrestia
         private void BtnLogout_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void BtnBackup_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            string sql = "BACKUP DATABASE adrestia TO DISK = '" + backupFileName + "' WITH DIFFERENTIAL;";
+            command = new SqlCommand(sql, connection);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Database backup up successfull!");
         }
     }
 }
