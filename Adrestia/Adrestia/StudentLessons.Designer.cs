@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvStudentLessons = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.lbLessonSum = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,78 +39,74 @@
             this.lbBookedLessons = new System.Windows.Forms.ListBox();
             this.btnCancelBooking = new System.Windows.Forms.Button();
             this.btnShowBooked = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvStudentLessons = new System.Windows.Forms.DataGridView();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLessons)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Students: Book Lessons";
-            // 
-            // dgvStudentLessons
-            // 
-            this.dgvStudentLessons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentLessons.Location = new System.Drawing.Point(8, 82);
-            this.dgvStudentLessons.Name = "dgvStudentLessons";
-            this.dgvStudentLessons.Size = new System.Drawing.Size(609, 187);
-            this.dgvStudentLessons.TabIndex = 1;
-            this.dgvStudentLessons.SelectionChanged += new System.EventHandler(this.DgvStudentLessons_SelectionChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(5, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(131, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Available Lessons:";
             // 
             // lbLessonSum
             // 
+            this.lbLessonSum.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.lbLessonSum.FormattingEnabled = true;
+            this.lbLessonSum.ItemHeight = 16;
             this.lbLessonSum.Location = new System.Drawing.Point(623, 82);
             this.lbLessonSum.Name = "lbLessonSum";
-            this.lbLessonSum.Size = new System.Drawing.Size(357, 186);
+            this.lbLessonSum.Size = new System.Drawing.Size(357, 180);
             this.lbLessonSum.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(620, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.Size = new System.Drawing.Size(105, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Lesson Sumary";
             // 
             // btnBook
             // 
-            this.btnBook.Location = new System.Drawing.Point(624, 274);
+            this.btnBook.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBook.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBook.ForeColor = System.Drawing.Color.White;
+            this.btnBook.Location = new System.Drawing.Point(724, 268);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(75, 23);
+            this.btnBook.Size = new System.Drawing.Size(150, 50);
             this.btnBook.TabIndex = 5;
             this.btnBook.Text = "Book";
-            this.btnBook.UseVisualStyleBackColor = true;
+            this.btnBook.UseVisualStyleBackColor = false;
             this.btnBook.Click += new System.EventHandler(this.BtnBook_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 304);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(16, 319);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.Size = new System.Drawing.Size(136, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "My Booked Lesson:";
             // 
             // lbBookedLessons
             // 
+            this.lbBookedLessons.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.lbBookedLessons.FormattingEnabled = true;
-            this.lbBookedLessons.Location = new System.Drawing.Point(19, 320);
+            this.lbBookedLessons.ItemHeight = 16;
+            this.lbBookedLessons.Location = new System.Drawing.Point(19, 339);
             this.lbBookedLessons.Name = "lbBookedLessons";
             this.lbBookedLessons.Size = new System.Drawing.Size(845, 212);
             this.lbBookedLessons.TabIndex = 7;
@@ -117,23 +114,42 @@
             // 
             // btnCancelBooking
             // 
-            this.btnCancelBooking.Location = new System.Drawing.Point(19, 567);
+            this.btnCancelBooking.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelBooking.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancelBooking.ForeColor = System.Drawing.Color.White;
+            this.btnCancelBooking.Location = new System.Drawing.Point(187, 576);
             this.btnCancelBooking.Name = "btnCancelBooking";
-            this.btnCancelBooking.Size = new System.Drawing.Size(98, 23);
+            this.btnCancelBooking.Size = new System.Drawing.Size(150, 50);
             this.btnCancelBooking.TabIndex = 8;
             this.btnCancelBooking.Text = "Cancel Booking";
-            this.btnCancelBooking.UseVisualStyleBackColor = true;
+            this.btnCancelBooking.UseVisualStyleBackColor = false;
             this.btnCancelBooking.Click += new System.EventHandler(this.BtnCancelBooking_Click);
             // 
             // btnShowBooked
             // 
-            this.btnShowBooked.Location = new System.Drawing.Point(19, 538);
+            this.btnShowBooked.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShowBooked.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShowBooked.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnShowBooked.ForeColor = System.Drawing.Color.White;
+            this.btnShowBooked.Location = new System.Drawing.Point(19, 576);
             this.btnShowBooked.Name = "btnShowBooked";
-            this.btnShowBooked.Size = new System.Drawing.Size(144, 23);
+            this.btnShowBooked.Size = new System.Drawing.Size(150, 50);
             this.btnShowBooked.TabIndex = 9;
             this.btnShowBooked.Text = "Show Boooked Lessons";
-            this.btnShowBooked.UseVisualStyleBackColor = true;
+            this.btnShowBooked.UseVisualStyleBackColor = false;
             this.btnShowBooked.Click += new System.EventHandler(this.BtnShowBooked_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1000, 48);
+            this.panel1.TabIndex = 10;
             // 
             // btnExit
             // 
@@ -141,18 +157,65 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
-            this.btnExit.Location = new System.Drawing.Point(952, 0);
+            this.btnExit.Location = new System.Drawing.Point(949, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(48, 45);
-            this.btnExit.TabIndex = 10;
+            this.btnExit.TabIndex = 13;
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(398, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 28);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Book Lessons";
+            // 
+            // dgvStudentLessons
+            // 
+            this.dgvStudentLessons.BackgroundColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentLessons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvStudentLessons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentLessons.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvStudentLessons.EnableHeadersVisualStyles = false;
+            this.dgvStudentLessons.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvStudentLessons.Location = new System.Drawing.Point(8, 86);
+            this.dgvStudentLessons.Name = "dgvStudentLessons";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentLessons.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvStudentLessons.Size = new System.Drawing.Size(609, 187);
+            this.dgvStudentLessons.TabIndex = 11;
             // 
             // StudentLessons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnExit);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dgvStudentLessons);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnShowBooked);
             this.Controls.Add(this.btnCancelBooking);
             this.Controls.Add(this.lbBookedLessons);
@@ -161,11 +224,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbLessonSum);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvStudentLessons);
-            this.Controls.Add(this.label1);
             this.Name = "StudentLessons";
             this.Size = new System.Drawing.Size(1000, 666);
             this.Load += new System.EventHandler(this.StudentLessons_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLessons)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -173,9 +236,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvStudentLessons;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lbLessonSum;
         private System.Windows.Forms.Label label3;
@@ -184,6 +244,9 @@
         private System.Windows.Forms.ListBox lbBookedLessons;
         private System.Windows.Forms.Button btnCancelBooking;
         private System.Windows.Forms.Button btnShowBooked;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvStudentLessons;
     }
 }

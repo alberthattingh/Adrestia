@@ -36,6 +36,7 @@ namespace Adrestia
         private void Messaging_Load(object sender, EventArgs e)
         {
             Connection = new SqlConnection(ConnectionString);
+            rdpStudent.Checked = true;
         }
 
         private void BtnGo_Click(object sender, EventArgs e)

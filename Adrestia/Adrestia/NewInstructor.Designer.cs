@@ -97,7 +97,7 @@
             this.btnAddInstructor.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddInstructor.Name = "btnAddInstructor";
             this.btnAddInstructor.Size = new System.Drawing.Size(150, 50);
-            this.btnAddInstructor.TabIndex = 11;
+            this.btnAddInstructor.TabIndex = 4;
             this.btnAddInstructor.Text = "Add Instructor";
             this.btnAddInstructor.UseVisualStyleBackColor = false;
             this.btnAddInstructor.Click += new System.EventHandler(this.BtnAddInstructor_Click);
@@ -111,7 +111,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -135,7 +135,7 @@
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 24);
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 3;
             // 
             // label5
             // 
@@ -156,7 +156,7 @@
             this.txtCellNo.Multiline = true;
             this.txtCellNo.Name = "txtCellNo";
             this.txtCellNo.Size = new System.Drawing.Size(150, 24);
-            this.txtCellNo.TabIndex = 16;
+            this.txtCellNo.TabIndex = 2;
             // 
             // txtLastname
             // 
@@ -166,7 +166,7 @@
             this.txtLastname.Multiline = true;
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(150, 24);
-            this.txtLastname.TabIndex = 17;
+            this.txtLastname.TabIndex = 1;
             // 
             // label4
             // 
@@ -198,7 +198,7 @@
             this.txtFirstname.Multiline = true;
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(150, 24);
-            this.txtFirstname.TabIndex = 20;
+            this.txtFirstname.TabIndex = 0;
             // 
             // NewInstructor
             // 

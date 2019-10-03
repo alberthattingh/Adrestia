@@ -55,7 +55,7 @@
             this.btnCancel.Location = new System.Drawing.Point(169, 294);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -70,7 +70,7 @@
             this.btnSave.Location = new System.Drawing.Point(12, 294);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 50);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -142,7 +142,7 @@
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 24);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 7;
             // 
             // txtCell
             // 
@@ -151,7 +151,7 @@
             this.txtCell.Multiline = true;
             this.txtCell.Name = "txtCell";
             this.txtCell.Size = new System.Drawing.Size(150, 24);
-            this.txtCell.TabIndex = 2;
+            this.txtCell.TabIndex = 6;
             // 
             // txtLast
             // 
@@ -160,7 +160,7 @@
             this.txtLast.Multiline = true;
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(150, 24);
-            this.txtLast.TabIndex = 1;
+            this.txtLast.TabIndex = 5;
             // 
             // txtFirst
             // 
@@ -169,7 +169,7 @@
             this.txtFirst.Multiline = true;
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(150, 24);
-            this.txtFirst.TabIndex = 0;
+            this.txtFirst.TabIndex = 4;
             // 
             // txtPass
             // 
@@ -177,7 +177,7 @@
             this.txtPass.Location = new System.Drawing.Point(168, 61);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(150, 24);
-            this.txtPass.TabIndex = 5;
+            this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtID
@@ -188,7 +188,7 @@
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(150, 24);
-            this.txtID.TabIndex = 8;
+            this.txtID.TabIndex = 1;
             // 
             // txtConfirm
             // 
@@ -196,7 +196,7 @@
             this.txtConfirm.Location = new System.Drawing.Point(168, 100);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(150, 24);
-            this.txtConfirm.TabIndex = 6;
+            this.txtConfirm.TabIndex = 3;
             this.txtConfirm.UseSystemPasswordChar = true;
             // 
             // label7

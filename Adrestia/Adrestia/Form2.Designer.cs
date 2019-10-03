@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnMessaging = new System.Windows.Forms.Button();
             this.btnSpecialEvents = new System.Windows.Forms.Button();
             this.btnLessons = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.specialEvents1 = new Adrestia.SpecialEvents();
-            this.btnLogout = new System.Windows.Forms.Button();
+            this.messaging1 = new Adrestia.Messaging();
+            this.lessonsInstructor1 = new Adrestia.LessonsInstructor();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 666);
             this.panel1.TabIndex = 1;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
+            this.btnLogout.Location = new System.Drawing.Point(3, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(50, 54);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // btnMessaging
             // 
@@ -103,24 +118,27 @@
             this.specialEvents1.Size = new System.Drawing.Size(1000, 666);
             this.specialEvents1.TabIndex = 3;
             // 
-            // btnLogout
+            // messaging1
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Image = global::Adrestia.Properties.Resources.LogoutIcon;
-            this.btnLogout.Location = new System.Drawing.Point(3, 3);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(50, 54);
-            this.btnLogout.TabIndex = 14;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
+            this.messaging1.Location = new System.Drawing.Point(200, 0);
+            this.messaging1.Name = "messaging1";
+            this.messaging1.Size = new System.Drawing.Size(988, 666);
+            this.messaging1.TabIndex = 4;
+            // 
+            // lessonsInstructor1
+            // 
+            this.lessonsInstructor1.Location = new System.Drawing.Point(200, 0);
+            this.lessonsInstructor1.Name = "lessonsInstructor1";
+            this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
+            this.lessonsInstructor1.TabIndex = 5;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
+            this.Controls.Add(this.lessonsInstructor1);
+            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.specialEvents1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -143,5 +161,7 @@
         private System.Windows.Forms.Button btnSpecialEvents;
         private SpecialEvents specialEvents1;
         private System.Windows.Forms.Button btnLogout;
+        private Messaging messaging1;
+        private LessonsInstructor lessonsInstructor1;
     }
 }

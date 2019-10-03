@@ -59,23 +59,51 @@ namespace Adrestia
 
         private void BtnAddInstructor_Click(object sender, EventArgs e)
         {
-            // Add the newly created user as a instructor
-            connection.Open();
+            if (txtFirstname.Text == "" && txtLastname.Text == "" && txtCellNo.Text == "" && txtEmail.Text == "")
+            {
+                MessageBox.Show("Please enter the details of the instructor!");
+                txtFirstname.Focus();
+            }
+            else if (txtFirstname.Text == "")
+            {
+                MessageBox.Show("Please enter the first name of the instructor!");
+                txtFirstname.Focus();
+            }
+            else if (txtLastname.Text == "")
+            {
+                MessageBox.Show("Please enter the last name of the instructor!");
+                txtLastname.Focus();
+            }
+            else if (txtCellNo.Text == "")
+            {
+                MessageBox.Show("Please enter the cell number of the instructor!");
+                txtCellNo.Focus();
+            }
+            else if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Please enter the email address of the instructor!");
+                txtEmail.Focus();
+            }
+            else
+            {
+                // Add the newly created user as a instructor
+                connection.Open();
 
-            int instructorId = int.Parse(txtInstructorID.Text);
+                int instructorId = int.Parse(txtInstructorID.Text);
 
-            string sql2 = "INSERT INTO INSTRUCTOR VALUES (@id, @first, @last, @cell, @email, @salary)";
-            command = new SqlCommand(sql2, connection);
-            command.Parameters.AddWithValue("@id", instructorId);
-            command.Parameters.AddWithValue("@first", txtFirstname.Text);
-            command.Parameters.AddWithValue("@last", txtLastname.Text);
-            command.Parameters.AddWithValue("@cell", txtCellNo.Text);
-            command.Parameters.AddWithValue("@email", txtEmail.Text);
-            command.Parameters.AddWithValue("@salary", 0.0);
-            command.ExecuteNonQuery();
+                string sql2 = "INSERT INTO INSTRUCTOR VALUES (@id, @first, @last, @cell, @email, @salary)";
+                command = new SqlCommand(sql2, connection);
+                command.Parameters.AddWithValue("@id", instructorId);
+                command.Parameters.AddWithValue("@first", txtFirstname.Text);
+                command.Parameters.AddWithValue("@last", txtLastname.Text);
+                command.Parameters.AddWithValue("@cell", txtCellNo.Text);
+                command.Parameters.AddWithValue("@email", txtEmail.Text);
+                command.Parameters.AddWithValue("@salary", 0.0);
+                command.ExecuteNonQuery();
 
-            connection.Close();
-            this.Close();
+                connection.Close();
+                this.Close();
+            }
         }
 
         private void NewInstructor_Load(object sender, EventArgs e)

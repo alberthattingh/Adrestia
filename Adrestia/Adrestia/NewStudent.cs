@@ -59,23 +59,51 @@ namespace Adrestia
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            // Add the newly created user as a student
-            connection.Open();
-                    
-            int studentId = int.Parse(txtID.Text);
+            if (txtFirst.Text == "" && txtLast.Text == "" && txtCell.Text == "" && txtEmail.Text == "")
+            {
+                MessageBox.Show("Please enter the details of the student!");
+                txtFirst.Focus();
+            }
+            else if (txtFirst.Text == "")
+            {
+                MessageBox.Show("Please enter the first name of the student!");
+                txtFirst.Focus();
+            }
+            else if (txtLast.Text == "")
+            {
+                MessageBox.Show("Please enter the last name of the student!");
+                txtLast.Focus();
+            }
+            else if (txtCell.Text == "")
+            {
+                MessageBox.Show("Please enter the cell number of the student!");
+                txtCell.Focus();
+            }
+            else if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Please enter the email address of the student!");
+                txtEmail.Focus();
+            }
+            else
+            {
 
-            string sql2 = "INSERT INTO STUDENT VALUES (@id, @first, @last, @cell, @email, @credits)";
-            command = new SqlCommand(sql2, connection);
-            command.Parameters.AddWithValue("@id", studentId);
-            command.Parameters.AddWithValue("@first", txtFirst.Text);
-            command.Parameters.AddWithValue("@last", txtLast.Text);
-            command.Parameters.AddWithValue("@cell", txtCell.Text);
-            command.Parameters.AddWithValue("@email", txtEmail.Text);
-            command.Parameters.AddWithValue("@credits", 0.0);
-            command.ExecuteNonQuery();
+                connection.Open();
 
-            connection.Close();
-            this.Close();
+                int studentId = int.Parse(txtID.Text);
+
+                string sql2 = "INSERT INTO STUDENT VALUES (@id, @first, @last, @cell, @email, @credits)";
+                command = new SqlCommand(sql2, connection);
+                command.Parameters.AddWithValue("@id", studentId);
+                command.Parameters.AddWithValue("@first", txtFirst.Text);
+                command.Parameters.AddWithValue("@last", txtLast.Text);
+                command.Parameters.AddWithValue("@cell", txtCell.Text);
+                command.Parameters.AddWithValue("@email", txtEmail.Text);
+                command.Parameters.AddWithValue("@credits", 0.0);
+                command.ExecuteNonQuery();
+
+                connection.Close();
+                this.Close();
+            }
         }
 
         private void NewStudent_Load(object sender, EventArgs e)

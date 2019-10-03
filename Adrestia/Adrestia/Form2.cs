@@ -29,18 +29,21 @@ namespace Adrestia
 
         private void HideAllControls()
         {
-            //messaging1.Visible = false;
+            messaging1.Visible = false;
             specialEvents1.Visible = false;
+            lessonsInstructor1.Visible = false;
         }
 
         private void BtnMessaging_Click(object sender, EventArgs e)
         {
-
+            HideAllControls();
+            messaging1.Visible = true;
         }
 
         private void BtnLessons_Click(object sender, EventArgs e)
         {
-
+            HideAllControls();
+            lessonsInstructor1.Visible = true;
         }
 
         private void BtnSpecialEvents_Click(object sender, EventArgs e)

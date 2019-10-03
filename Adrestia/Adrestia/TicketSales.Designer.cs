@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numPensioners = new System.Windows.Forms.NumericUpDown();
@@ -47,7 +48,6 @@
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.btnClear = new System.Windows.Forms.Button();
             this.cbxEventID = new System.Windows.Forms.ComboBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPensioners)).BeginInit();
@@ -76,6 +76,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 48);
             this.panel1.TabIndex = 1;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
+            this.btnExit.Location = new System.Drawing.Point(952, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(48, 45);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // label2
             // 
@@ -113,7 +126,7 @@
             0});
             this.numPensioners.Name = "numPensioners";
             this.numPensioners.Size = new System.Drawing.Size(150, 24);
-            this.numPensioners.TabIndex = 12;
+            this.numPensioners.TabIndex = 6;
             this.numPensioners.ValueChanged += new System.EventHandler(this.NumPensioners_ValueChanged);
             // 
             // numChildren
@@ -126,7 +139,7 @@
             0});
             this.numChildren.Name = "numChildren";
             this.numChildren.Size = new System.Drawing.Size(150, 24);
-            this.numChildren.TabIndex = 11;
+            this.numChildren.TabIndex = 5;
             this.numChildren.ValueChanged += new System.EventHandler(this.NumChildren_ValueChanged);
             // 
             // numAdult
@@ -139,7 +152,7 @@
             0});
             this.numAdult.Name = "numAdult";
             this.numAdult.Size = new System.Drawing.Size(150, 24);
-            this.numAdult.TabIndex = 10;
+            this.numAdult.TabIndex = 4;
             this.numAdult.ValueChanged += new System.EventHandler(this.NumAdult_ValueChanged);
             // 
             // label3
@@ -187,7 +200,7 @@
             this.btnSale.Location = new System.Drawing.Point(336, 536);
             this.btnSale.Name = "btnSale";
             this.btnSale.Size = new System.Drawing.Size(150, 50);
-            this.btnSale.TabIndex = 5;
+            this.btnSale.TabIndex = 7;
             this.btnSale.Text = "Add Sale";
             this.btnSale.UseVisualStyleBackColor = false;
             this.btnSale.Click += new System.EventHandler(this.BtnSale_Click);
@@ -214,7 +227,7 @@
             this.timePicker.Name = "timePicker";
             this.timePicker.ShowUpDown = true;
             this.timePicker.Size = new System.Drawing.Size(150, 24);
-            this.timePicker.TabIndex = 11;
+            this.timePicker.TabIndex = 3;
             // 
             // label6
             // 
@@ -240,7 +253,7 @@
             this.datePicker.Location = new System.Drawing.Point(143, 50);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(150, 24);
-            this.datePicker.TabIndex = 10;
+            this.datePicker.TabIndex = 2;
             // 
             // btnClear
             // 
@@ -250,7 +263,7 @@
             this.btnClear.Location = new System.Drawing.Point(516, 536);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 50);
-            this.btnClear.TabIndex = 14;
+            this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -262,20 +275,7 @@
             this.cbxEventID.Location = new System.Drawing.Point(421, 80);
             this.cbxEventID.Name = "cbxEventID";
             this.cbxEventID.Size = new System.Drawing.Size(150, 24);
-            this.cbxEventID.TabIndex = 15;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.Transparent;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::Adrestia.Properties.Resources.CloseIcon;
-            this.btnExit.Location = new System.Drawing.Point(952, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(48, 45);
-            this.btnExit.TabIndex = 16;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            this.cbxEventID.TabIndex = 1;
             // 
             // TicketSales
             // 
