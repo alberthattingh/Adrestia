@@ -25,8 +25,8 @@ namespace Adrestia
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
-            if(!cbUserType.Checked && !cbIFirstName.Checked && !cbILastName.Checked && !cbICellNo.Checked && !cbIEmail.Checked && !cbSalary.Checked &&
-                !cbSFirstName.Checked && !cbSLastName.Checked && !cbSCellNo.Checked &&!cbSEmail.Checked && !cbCredits.Checked && !cbLessonDate.Checked &&
+            if(!cbIFirstName.Checked && !cbILastName.Checked && !cbICellNo.Checked && !cbIEmail.Checked &&
+                !cbSFirstName.Checked && !cbSLastName.Checked && !cbSCellNo.Checked &&!cbSEmail.Checked && !cbLessonDate.Checked &&
                 !cbLessonTime.Checked && !cbLessonPrice.Checked && !cbLessonDesc.Checked && !cbplacesAvailable.Checked && !cbLessonInstructor.Checked && !cbEventDate.Checked &&
                 !cbEventTime.Checked &&!cbChildrenCost.Checked && !cbAdultCost.Checked && !cbPensionerCost.Checked && !cbVenue.Checked && !cbEventType.Checked &&
                 !cbEventTypeDesc.Checked && !cbVenueDesc.Checked && !cbMaxSeats.Checked && !cbSaleDate.Checked && !cbSaleTime.Checked && !cbNoOfAdults.Checked &&
@@ -50,7 +50,6 @@ namespace Adrestia
 
         private void HideAllGroupBoxes()
         {
-            gbUsers.Visible = false;
             gbInstructors.Visible = false;
             gbStudents.Visible = false;
             gbLessons.Visible = false;
@@ -64,17 +63,14 @@ namespace Adrestia
 
         private void UncheckAllCheckboxes()
         {
-            cbUserType.Checked = false;
             cbIFirstName.Checked = false;
             cbILastName.Checked = false;
             cbICellNo.Checked = false;
             cbIEmail.Checked = false;
-            cbSalary.Checked = false;
             cbSFirstName.Checked = false;
             cbSLastName.Checked = false;
             cbSCellNo.Checked = false;
             cbSEmail.Checked = false;
-            cbCredits.Checked = false;
             cbLessonDate.Checked = false;
             cbLessonTime.Checked = false;
             cbLessonPrice.Checked = false;
@@ -107,22 +103,15 @@ namespace Adrestia
             cbBackupTime.Checked = false;
         }
 
-        private void RbUsers_CheckedChanged(object sender, EventArgs e)
-        {
-            HideAllGroupBoxes();
-            gbUsers.Visible = true;
-            UncheckAllCheckboxes();
-            sqlFrom = "USER ";
-            sqlSelect = "UserID ";
-        }
-
+       
         private void RbInstructors_CheckedChanged(object sender, EventArgs e)
         {
             HideAllGroupBoxes();
             gbInstructors.Visible = true;
             UncheckAllCheckboxes();
-            sqlFrom = "INSTRUCTOR ";
+            sqlFrom = "[USER]";
             sqlSelect = "InstructorID ";
+
         }
 
         private void RbStudents_CheckedChanged(object sender, EventArgs e)
@@ -130,8 +119,8 @@ namespace Adrestia
             HideAllGroupBoxes();
             gbStudents.Visible = true;
             UncheckAllCheckboxes();
-            sqlFrom = "STUDENT ";
-            sqlSelect = "StudentID ";
+            sqlFrom = "[USER]";
+            sqlSelect = "UserID ";
         }
 
         private void RbLessons_CheckedChanged(object sender, EventArgs e)
@@ -276,12 +265,12 @@ namespace Adrestia
 
         private void CbplacesAvailable_CheckedChanged(object sender, EventArgs e)
         {
-            //sqlSelect += ", UserType";
+            sqlSelect += ", AvailablePlaces";
         }
 
         private void CbLessonOrganizer_CheckedChanged(object sender, EventArgs e)
         {
-            //sqlSelect += ", UserType";
+            sqlSelect += ", InstructorID";
         }
 
         private void CbEventDate_CheckedChanged(object sender, EventArgs e)
@@ -404,6 +393,11 @@ namespace Adrestia
         private void CbBackupTime_CheckedChanged(object sender, EventArgs e)
         {
             sqlSelect += ", BackupTime";
+        }
+
+        private void GbMessaging_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

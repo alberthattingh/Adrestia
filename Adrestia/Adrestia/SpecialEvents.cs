@@ -26,6 +26,7 @@ namespace Adrestia
         public DataSet ds;
         public SqlDataReader reader;
         int selectedEvent;
+        public string userID;
 
 
         // Create connection to database and populate the gridview
@@ -118,7 +119,10 @@ namespace Adrestia
         {
             try
             {
-                NewEvent eventForm = new NewEvent();
+                NewEvent eventForm = new NewEvent()
+                {
+                    userID = int.Parse(this.userID)
+                };
                 eventForm.ShowDialog();
                 PopulateGridView();
             }
@@ -194,7 +198,7 @@ namespace Adrestia
                     selectedEvent = (int)selectedRow.Cells["EventID"].Value;
                 }
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 MessageBox.Show("Please choose a row with values!");
                 selectedEvent = 0;

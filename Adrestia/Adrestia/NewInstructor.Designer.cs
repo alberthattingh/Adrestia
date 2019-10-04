@@ -42,6 +42,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirstname = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numSalary = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numSalary)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +96,7 @@
             this.btnAddInstructor.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAddInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddInstructor.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnAddInstructor.Location = new System.Drawing.Point(11, 295);
+            this.btnAddInstructor.Location = new System.Drawing.Point(12, 333);
             this.btnAddInstructor.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddInstructor.Name = "btnAddInstructor";
             this.btnAddInstructor.Size = new System.Drawing.Size(150, 50);
@@ -107,7 +110,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(169, 295);
+            this.btnCancel.Location = new System.Drawing.Point(170, 333);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
@@ -120,7 +123,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(18, 242);
+            this.label6.Location = new System.Drawing.Point(18, 249);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 17);
@@ -200,12 +203,52 @@
             this.txtFirstname.Size = new System.Drawing.Size(150, 24);
             this.txtFirstname.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(18, 295);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 17);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Salary:";
+            // 
+            // numSalary
+            // 
+            this.numSalary.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numSalary.Location = new System.Drawing.Point(143, 292);
+            this.numSalary.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numSalary.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numSalary.Name = "numSalary";
+            this.numSalary.Size = new System.Drawing.Size(150, 20);
+            this.numSalary.TabIndex = 22;
+            this.numSalary.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
             // NewInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(331, 356);
+            this.ClientSize = new System.Drawing.Size(331, 394);
+            this.Controls.Add(this.numSalary);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtFirstname);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -224,6 +267,7 @@
             this.Name = "NewInstructor";
             this.Text = "NewInstructor";
             this.Load += new System.EventHandler(this.NewInstructor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numSalary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +289,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFirstname;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numSalary;
     }
 }

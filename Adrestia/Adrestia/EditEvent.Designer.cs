@@ -32,11 +32,9 @@
             this.btnEditEvent = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbxType = new System.Windows.Forms.ComboBox();
-            this.btnNewType = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbxVenue = new System.Windows.Forms.ComboBox();
-            this.btnNewVenue = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.numPensioners = new System.Windows.Forms.NumericUpDown();
@@ -64,7 +62,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(293, 323);
+            this.btnCancel.Location = new System.Drawing.Point(292, 252);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 15;
@@ -77,7 +75,7 @@
             this.btnEditEvent.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEditEvent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditEvent.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnEditEvent.Location = new System.Drawing.Point(112, 323);
+            this.btnEditEvent.Location = new System.Drawing.Point(112, 252);
             this.btnEditEvent.Name = "btnEditEvent";
             this.btnEditEvent.Size = new System.Drawing.Size(150, 50);
             this.btnEditEvent.TabIndex = 14;
@@ -88,12 +86,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.cbxType);
-            this.groupBox4.Controls.Add(this.btnNewType);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox4.Location = new System.Drawing.Point(293, 167);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 150);
+            this.groupBox4.Size = new System.Drawing.Size(250, 79);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Type of Event";
@@ -107,19 +104,6 @@
             this.cbxType.Size = new System.Drawing.Size(125, 24);
             this.cbxType.TabIndex = 12;
             // 
-            // btnNewType
-            // 
-            this.btnNewType.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNewType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNewType.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnNewType.Location = new System.Drawing.Point(51, 80);
-            this.btnNewType.Name = "btnNewType";
-            this.btnNewType.Size = new System.Drawing.Size(150, 50);
-            this.btnNewType.TabIndex = 13;
-            this.btnNewType.Text = "New Type";
-            this.btnNewType.UseVisualStyleBackColor = false;
-            this.btnNewType.Click += new System.EventHandler(this.BtnNewType_Click_1);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -132,12 +116,11 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cbxVenue);
-            this.groupBox3.Controls.Add(this.btnNewVenue);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox3.Location = new System.Drawing.Point(12, 167);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 150);
+            this.groupBox3.Size = new System.Drawing.Size(250, 79);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Venue";
@@ -151,19 +134,6 @@
             this.cbxVenue.Name = "cbxVenue";
             this.cbxVenue.Size = new System.Drawing.Size(125, 24);
             this.cbxVenue.TabIndex = 9;
-            // 
-            // btnNewVenue
-            // 
-            this.btnNewVenue.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNewVenue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNewVenue.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.btnNewVenue.Location = new System.Drawing.Point(47, 80);
-            this.btnNewVenue.Name = "btnNewVenue";
-            this.btnNewVenue.Size = new System.Drawing.Size(150, 50);
-            this.btnNewVenue.TabIndex = 10;
-            this.btnNewVenue.Text = "New Venue";
-            this.btnNewVenue.UseVisualStyleBackColor = false;
-            this.btnNewVenue.Click += new System.EventHandler(this.BtnNewVenue_Click_1);
             // 
             // label7
             // 
@@ -324,7 +294,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(555, 384);
+            this.ClientSize = new System.Drawing.Size(555, 310);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEditEvent);
             this.Controls.Add(this.groupBox4);
@@ -355,11 +325,9 @@
         private System.Windows.Forms.Button btnEditEvent;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox cbxType;
-        private System.Windows.Forms.Button btnNewType;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cbxVenue;
-        private System.Windows.Forms.Button btnNewVenue;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown numPensioners;

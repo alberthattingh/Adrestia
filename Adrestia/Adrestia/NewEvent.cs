@@ -25,8 +25,8 @@ namespace Adrestia
         public SqlConnection connection;
         public SqlCommand command;
         public SqlDataReader reader;
-
-
+        public int userID;
+       
         //Add event record to database
         private void BtnAddEvent_Click(object sender, EventArgs e)
         {
@@ -70,14 +70,14 @@ namespace Adrestia
                 }
                 reader.Close();
 
-
-                sql = "INSERT INTO SPECIAL_EVENT VALUES (@date, @time, @costAdult, @costChildren, @costPensioner, @venue, @type)";
+                sql = "INSERT INTO SPECIAL_EVENT VALUES (@date, @time, @costAdult, @costChildren, @costPensioner, @id, @venue, @type)";
                 command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@date", datePicker.Value.ToShortDateString());
                 command.Parameters.AddWithValue("@time", timePicker.Value.ToShortTimeString());
                 command.Parameters.AddWithValue("@costAdult", numAdult.Value);
                 command.Parameters.AddWithValue("@costChildren", numChildren.Value);
                 command.Parameters.AddWithValue("@costPensioner", numPensioners.Value);
+                command.Parameters.AddWithValue("@id", this.userID);
                 command.Parameters.AddWithValue("@venue", int.Parse(venueID));
                 command.Parameters.AddWithValue("@type", int.Parse(typeID));
                 command.ExecuteNonQuery();
@@ -187,9 +187,12 @@ namespace Adrestia
             }
             else
             {
-                EditVenue editvenue = new EditVenue();
+                EditVenue editvenue = new EditVenue()
+                {
+                    selectedVenue = cbxVenue.SelectedItem.ToString()
+                };
                 editvenue.ShowDialog();
-
+                cbxVenue.Items.Clear();
                 connection.Open();
                 string sql = "SELECT * FROM VENUE";
                 command = new SqlCommand(sql, connection);
@@ -215,10 +218,12 @@ namespace Adrestia
             }
             else
             {
+                
                 connection.Open();
-                string sql = "DELETE FROM VENUE WHERE VenueID = '" + cbxVenue.SelectedItem.ToString() + "';";
+                string sql = "DELETE FROM VENUE WHERE Description = '" + cbxVenue.SelectedItem.ToString() + "';";
                 command = new SqlCommand(sql, connection);
                 command.ExecuteNonQuery();
+                cbxVenue.Items.Clear();
                 sql = "SELECT * FROM VENUE";
                 command = new SqlCommand(sql, connection);
                 reader = command.ExecuteReader();
@@ -243,9 +248,12 @@ namespace Adrestia
             }
             else
             {
-                EditEventType editType = new EditEventType();
+                EditEventType editType = new EditEventType()
+                {
+                    selectedType = cbxType.SelectedItem.ToString()
+                };
                 editType.ShowDialog();
-
+                cbxType.Items.Clear();
                 connection.Open();
                 string sql = "SELECT * FROM EVENT_TYPE";
                 command = new SqlCommand(sql, connection);
@@ -270,10 +278,12 @@ namespace Adrestia
             }
             else
             {
+                
                 connection.Open();
-                string sql = "DELETE FROM EVENT_TYPE WHERE EventID = '" + cbxType.SelectedItem.ToString() + "';";
+                string sql = "DELETE FROM EVENT_TYPE WHERE Description = '" + cbxType.SelectedItem.ToString() + "';";
                 command = new SqlCommand(sql, connection);
                 command.ExecuteNonQuery();
+                cbxType.Items.Clear();
                 sql = "SELECT * FROM EVENT_TYPE";
                 command = new SqlCommand(sql, connection);
                 reader = command.ExecuteReader();

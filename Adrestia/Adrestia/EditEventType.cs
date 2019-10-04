@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Adrestia
 {
@@ -16,6 +17,9 @@ namespace Adrestia
         {
             InitializeComponent();
         }
+        public SqlConnection connection;
+        public SqlCommand command;
+        public string selectedType;
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
@@ -24,7 +28,22 @@ namespace Adrestia
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-
+            if (txtDescription.Text == "")
+            {
+                MessageBox.Show("Please enter a description!");
+                txtDescription.Focus();
+            }
+            else
+            {
+                connection = new SqlConnection(Security.ConnectionString);
+                connection.Open();
+                string sql = "UPDATE EVENT_TYPE SET Description = '" + txtDescription.Text + "' " +
+                    "WHERE Description = '" + selectedType + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                connection.Close();
+                this.Close();
+            }
         }
     }
 }

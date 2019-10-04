@@ -85,11 +85,19 @@ namespace Adrestia
 
         private void BtnBackup_Click(object sender, EventArgs e)
         {
+            connection = new SqlConnection(Security.ConnectionString);
             connection.Open();
-            string sql = "BACKUP DATABASE adrestia TO DISK = '" + backupFileName + "' WITH DIFFERENTIAL;";
+            string sql = "BACKUP DATABASE Database6 TO DISK = '" + backupFileName + "' WITH DIFFERENTIAL;";
             command = new SqlCommand(sql, connection);
             command.ExecuteNonQuery();
+
+            sql = @"INSERT INTO BACKUP_LOG VALUES (@date,@time)";
+            command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@date", DateTime.Today);
+            command.Parameters.AddWithValue("@time", DateTime.Now.ToShortTimeString());
+
             MessageBox.Show("Database backup up successfull!");
+            connection.Close();
         }
     }
 }

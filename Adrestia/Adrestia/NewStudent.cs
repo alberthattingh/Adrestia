@@ -86,9 +86,6 @@ namespace Adrestia
 
                 connection.Open();
                 string hashedPassword = Security.GetSHA1Hash(txtPass.Text);
-
-
-
                 int studentId = GetStudentID();
 
                 string sql = "INSERT INTO [USER] VALUES (@pw, @first, @last, @cell, @email, @type)";

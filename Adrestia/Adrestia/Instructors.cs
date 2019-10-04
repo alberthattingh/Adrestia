@@ -37,7 +37,7 @@ namespace Adrestia
         {
             connection.Open();
 
-            string sql = "SELECT * FROM INSTRUCTOR";
+            string sql = "SELECT U.UserID, U.FirstName, U.LastName, U.CellNo, U.Email, I.Salary FROM [USER] U, INSTRUCTOR I WHERE UserTypeID = 2 AND U.UserID = I.InstructorID";
             command = new SqlCommand(sql, connection);
             ds = new DataSet();
 
@@ -56,8 +56,8 @@ namespace Adrestia
         {
             connection.Open();
 
-            string sql = "SELECT * FROM INSTRUCTOR " +
-                "WHERE InstructorID LIKE '%" + query + "%' OR " +
+            string sql = "SELECT * FROM [USER] " +
+                "WHERE UserID LIKE '%" + query + "%' OR " +
                 "FirstName LIKE '%" + query + "%' OR " +
                 "LastName LIKE '%" + query + "%' OR " +
                 "Email LIKE '%" + query + "%'";
@@ -154,7 +154,7 @@ namespace Adrestia
                 {
                     int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
-                    selectedInstructor = (int)selectedRow.Cells["InstructorID"].Value;
+                    selectedInstructor = (int)selectedRow.Cells["UserID"].Value;
                 }
             }
             catch (Exception error)

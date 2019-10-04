@@ -35,9 +35,10 @@
             this.btnSpecialEvents = new System.Windows.Forms.Button();
             this.btnLessons = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.specialEvents1 = new Adrestia.SpecialEvents();
-            this.messaging1 = new Adrestia.Messaging();
             this.lessonsInstructor1 = new Adrestia.LessonsInstructor();
+            this.messaging1 = new Adrestia.Messaging();
+            this.specialEvents1 = new Adrestia.SpecialEvents();
+            this.upcoming1 = new Adrestia.Upcoming();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +110,22 @@
             this.btnLessons.UseVisualStyleBackColor = true;
             this.btnLessons.Click += new System.EventHandler(this.BtnLessons_Click);
             // 
+            // lessonsInstructor1
+            // 
+            this.lessonsInstructor1.BackColor = System.Drawing.Color.White;
+            this.lessonsInstructor1.Location = new System.Drawing.Point(200, 3);
+            this.lessonsInstructor1.Name = "lessonsInstructor1";
+            this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
+            this.lessonsInstructor1.TabIndex = 5;
+            // 
+            // messaging1
+            // 
+            this.messaging1.BackColor = System.Drawing.Color.White;
+            this.messaging1.Location = new System.Drawing.Point(200, 0);
+            this.messaging1.Name = "messaging1";
+            this.messaging1.Size = new System.Drawing.Size(988, 666);
+            this.messaging1.TabIndex = 4;
+            // 
             // specialEvents1
             // 
             this.specialEvents1.AutoSize = true;
@@ -118,25 +135,19 @@
             this.specialEvents1.Size = new System.Drawing.Size(1000, 666);
             this.specialEvents1.TabIndex = 3;
             // 
-            // messaging1
+            // upcoming1
             // 
-            this.messaging1.Location = new System.Drawing.Point(200, 0);
-            this.messaging1.Name = "messaging1";
-            this.messaging1.Size = new System.Drawing.Size(988, 666);
-            this.messaging1.TabIndex = 4;
-            // 
-            // lessonsInstructor1
-            // 
-            this.lessonsInstructor1.Location = new System.Drawing.Point(200, 0);
-            this.lessonsInstructor1.Name = "lessonsInstructor1";
-            this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
-            this.lessonsInstructor1.TabIndex = 5;
+            this.upcoming1.Location = new System.Drawing.Point(200, 3);
+            this.upcoming1.Name = "upcoming1";
+            this.upcoming1.Size = new System.Drawing.Size(1000, 666);
+            this.upcoming1.TabIndex = 6;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
+            this.Controls.Add(this.upcoming1);
             this.Controls.Add(this.lessonsInstructor1);
             this.Controls.Add(this.messaging1);
             this.Controls.Add(this.specialEvents1);
@@ -146,6 +157,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adrestia";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Button btnLogout;
         private Messaging messaging1;
         private LessonsInstructor lessonsInstructor1;
+        private Upcoming upcoming1;
     }
 }
