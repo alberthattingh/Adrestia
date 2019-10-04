@@ -84,25 +84,41 @@ namespace Adrestia
         {
             connection.Open();
 
-            string sql = "SELECT * FROM STUDENT";
+            string sql = "SELECT * FROM [USER]";
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
 
             string first, last;
             while (reader.Read())
             {
-                first = reader.GetString(1);
-                last = reader.GetString(2);
-                current = double.Parse(reader.GetValue(5).ToString());
+                first = reader.GetString(2);
+                last = reader.GetString(3);
+                // current = double.Parse(reader.GetValue(5).ToString());
                 if (reader.GetValue(0).Equals(comboStudentID.SelectedItem))
                 {
                     txtFirst.Text = first;
                     txtLast.Text = last;
+
+                    
                     break;
                 }
             }
 
             reader.Close();
+
+            string sql2 = "SELECT * FROM STUDENT WHERE StudentID = '" + comboStudentID.SelectedItem.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(sql2, connection);
+            SqlDataReader reader2 = cmd.ExecuteReader();
+
+            while (reader2.Read())
+            {
+                if (reader2.GetValue(0).ToString().Equals(comboStudentID.SelectedItem.ToString()))
+                {
+                    current = double.Parse(reader2.GetValue(1).ToString());
+                    break;
+                }
+            }
+
             connection.Close();
         }
     }
