@@ -103,7 +103,7 @@ namespace Adrestia
                 {
                     MessageBox.Show(err.Message);
                 }
-                Avecredits = Convert.ToDouble(credits);
+                Avecredits = double.Parse(credits);
                 //Book Lesson
                 if (places > 0 && Avecredits >= price)
                 {

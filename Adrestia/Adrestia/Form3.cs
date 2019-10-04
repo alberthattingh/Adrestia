@@ -31,7 +31,7 @@ namespace Adrestia
         {
             studentLessons1.Visible = false;
             messaging1.Visible = false;
-           // upcoming1.Visible = false;
+            upcoming1.Visible = false;
         }
 
         private void BtnBookLessons_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Adrestia
         private void BtnUpcoming_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            //upcoming1.Visible = true;
+            upcoming1.Visible = true;
         }
 
         private void BtnMessaging_Click(object sender, EventArgs e)
