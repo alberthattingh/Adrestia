@@ -46,17 +46,10 @@ namespace Adrestia
 
             reader.Read();
             txtPassword.Text = txtConPassword.Text = reader.GetValue(1).ToString();
-            reader.Close();
-
-            string sql2 = "SELECT * FROM [INSTRUCTOR] WHERE InstructorID = '" + instructorID + "';";
-            command = new SqlCommand(sql2, connection);
-            reader = command.ExecuteReader();
-
-            reader.Read();
-            txtFirstname.Text = reader.GetValue(1).ToString();
-            txtLastname.Text = reader.GetValue(2).ToString();
-            txtCellNo.Text = reader.GetValue(3).ToString();
-            txtEmail.Text = reader.GetValue(4).ToString();
+            txtFirstname.Text = reader.GetValue(2).ToString();
+            txtLastname.Text = reader.GetValue(3).ToString();
+            txtCellNo.Text = reader.GetValue(4).ToString();
+            txtEmail.Text = reader.GetValue(5).ToString();
             reader.Close();
             connection.Close();
         }
@@ -109,10 +102,16 @@ namespace Adrestia
                     command.ExecuteNonQuery();
                 }
 
-                string sql2 = "UPDATE INSTRUCTOR SET FirstName = '" + txtFirstname.Text + "', " +
+                string sql2 = "UPDATE [USER] SET FirstName = '" + txtFirstname.Text + "', " +
                     "LastName = '" + txtLastname.Text + "', " +
                     "CellNo = '" + txtCellNo.Text + "', " +
                     "Email = '" + txtEmail.Text + "' " +
+                    "WHERE UserID = '" + instructorID + "';";
+
+                command = new SqlCommand(sql2, connection);
+                command.ExecuteNonQuery();
+
+                sql2 = "UPDATE INSTRUCTOR SET Salary = '" + numSalary.Value + "' " +
                     "WHERE InstructorID = '" + instructorID + "';";
 
                 command = new SqlCommand(sql2, connection);

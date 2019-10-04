@@ -56,5 +56,11 @@ namespace Adrestia
         {
             Application.Restart();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            specialEvents1.userID = this.UserID;
+            HideAllControls();
+        }
     }
 }

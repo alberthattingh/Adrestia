@@ -39,7 +39,6 @@ namespace Adrestia
 
         private int GetInstructorID()
         {
-            connection.Open();
             string sql = "SELECT MAX(UserID) FROM [USER]";
             command = new SqlCommand(sql, connection);
             int id;
@@ -53,7 +52,6 @@ namespace Adrestia
                 id = 0;
             }
 
-            connection.Close();
             return id;
         }
 
@@ -89,16 +87,23 @@ namespace Adrestia
                 // Add the newly created user as a instructor
                 connection.Open();
 
-                int instructorId = int.Parse(txtInstructorID.Text);
+                int instructorId = GetInstructorID();
+                string hashedPassword = Security.GetSHA1Hash(txtPassword.Text);
 
-                string sql2 = "INSERT INTO INSTRUCTOR VALUES (@id, @first, @last, @cell, @email, @salary)";
-                command = new SqlCommand(sql2, connection);
-                command.Parameters.AddWithValue("@id", instructorId);
+                string sql = "INSERT INTO [USER] VALUES (@pw, @first, @last, @cell, @email, @type)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@pw", hashedPassword);
                 command.Parameters.AddWithValue("@first", txtFirstname.Text);
                 command.Parameters.AddWithValue("@last", txtLastname.Text);
                 command.Parameters.AddWithValue("@cell", txtCellNo.Text);
                 command.Parameters.AddWithValue("@email", txtEmail.Text);
-                command.Parameters.AddWithValue("@salary", 0.0);
+                command.Parameters.AddWithValue("@type", TYPE_INSTRUCTOR);
+                command.ExecuteNonQuery();
+
+                sql = "INSERT INTO INSTRUCTOR VALUES (@id, @salary)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", instructorId);
+                command.Parameters.AddWithValue("@Salary", numSalary.Value);
                 command.ExecuteNonQuery();
 
                 connection.Close();
@@ -111,20 +116,8 @@ namespace Adrestia
             try
             {
                 // Add new user
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-
+                connection = new SqlConnection(connectionString);     
                 txtPassword.Text = DEFAULT_PASSWORD;
-                string hashedPassword = Security.GetSHA1Hash(txtPassword.Text);
-
-                string sql1 = "INSERT INTO [USER] VALUES (@pw, @type)";
-                command = new SqlCommand(sql1, connection);
-                command.Parameters.AddWithValue("@pw", hashedPassword);
-                command.Parameters.AddWithValue("@type", TYPE_INSTRUCTOR);
-                command.ExecuteNonQuery();
-                connection.Close();
-
-                txtInstructorID.Text = GetInstructorID().ToString();
             }
             catch (Exception err)
             {

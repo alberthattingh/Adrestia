@@ -144,65 +144,6 @@ namespace Adrestia
         }
 
 
-        // Add new event venue
-        private void BtnNewVenue_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                NewEventVenue venueForm = new NewEventVenue();
-                venueForm.ShowDialog();
-
-                connection.Open();
-
-                string sql = "SELECT * FROM VENUE";
-                command = new SqlCommand(sql, connection);
-                reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    if (!cbxVenue.Items.Contains(reader.GetValue(1)))
-                    {
-                        cbxVenue.Items.Add(reader.GetValue(1));
-                    }
-
-                }
-                reader.Close();
-                connection.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error: " + error.Message);
-            }
-        }
-
-
-        // Add new event type
-        private void BtnNewType_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                NewEventType typeForm = new NewEventType();
-                typeForm.ShowDialog();
-
-                connection.Open();
-
-                string sql = "SELECT * FROM EVENT_TYPE";
-                command = new SqlCommand(sql, connection);
-                reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    if (!cbxType.Items.Contains(reader.GetValue(1)))
-                    {
-                        cbxType.Items.Add(reader.GetValue(1));
-                    }
-                }
-                reader.Close();
-
-                connection.Close();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Error: " + error.Message);
-            }
-        }
+       
     }
 }
