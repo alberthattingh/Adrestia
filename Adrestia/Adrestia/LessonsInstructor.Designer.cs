@@ -443,6 +443,8 @@
             this.dgvLessons.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLessons.Size = new System.Drawing.Size(744, 157);
             this.dgvLessons.TabIndex = 40;
+            this.dgvLessons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLessons_CellContentClick_1);
+            this.dgvLessons.SelectionChanged += new System.EventHandler(this.DgvLessons_SelectionChanged_1);
             // 
             // LessonsInstructor
             // 

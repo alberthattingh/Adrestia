@@ -43,7 +43,6 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.gbUser = new System.Windows.Forms.GroupBox();
-            this.rdpAdmin = new System.Windows.Forms.RadioButton();
             this.rdpStudent = new System.Windows.Forms.RadioButton();
             this.rdpInstructor = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -206,28 +205,15 @@
             // 
             // gbUser
             // 
-            this.gbUser.Controls.Add(this.rdpAdmin);
             this.gbUser.Controls.Add(this.rdpStudent);
             this.gbUser.Controls.Add(this.rdpInstructor);
             this.gbUser.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbUser.Location = new System.Drawing.Point(76, 138);
+            this.gbUser.Location = new System.Drawing.Point(148, 138);
             this.gbUser.Name = "gbUser";
-            this.gbUser.Size = new System.Drawing.Size(338, 58);
+            this.gbUser.Size = new System.Drawing.Size(215, 58);
             this.gbUser.TabIndex = 14;
             this.gbUser.TabStop = false;
             this.gbUser.Text = "Select User Chat:";
-            // 
-            // rdpAdmin
-            // 
-            this.rdpAdmin.AutoSize = true;
-            this.rdpAdmin.Location = new System.Drawing.Point(255, 19);
-            this.rdpAdmin.Name = "rdpAdmin";
-            this.rdpAdmin.Size = new System.Drawing.Size(71, 21);
-            this.rdpAdmin.TabIndex = 17;
-            this.rdpAdmin.TabStop = true;
-            this.rdpAdmin.Text = "Admin";
-            this.rdpAdmin.UseVisualStyleBackColor = true;
-            this.rdpAdmin.CheckedChanged += new System.EventHandler(this.RdpAdmin_CheckedChanged);
             // 
             // rdpStudent
             // 
@@ -323,7 +309,6 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.GroupBox gbUser;
-        private System.Windows.Forms.RadioButton rdpAdmin;
         private System.Windows.Forms.RadioButton rdpStudent;
         private System.Windows.Forms.RadioButton rdpInstructor;
         private System.Windows.Forms.Label label6;

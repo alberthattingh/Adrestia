@@ -44,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.messaging1);
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnMessaging);
             this.panel1.Controls.Add(this.btnSpecialEvents);
@@ -113,24 +114,26 @@
             // 
             this.specialEvents1.AutoSize = true;
             this.specialEvents1.BackColor = System.Drawing.Color.White;
-            this.specialEvents1.Location = new System.Drawing.Point(200, 0);
+            this.specialEvents1.Location = new System.Drawing.Point(198, 0);
             this.specialEvents1.Name = "specialEvents1";
-            this.specialEvents1.Size = new System.Drawing.Size(1000, 666);
-            this.specialEvents1.TabIndex = 3;
+            this.specialEvents1.Size = new System.Drawing.Size(963, 653);
+            this.specialEvents1.TabIndex = 2;
             // 
             // messaging1
             // 
-            this.messaging1.Location = new System.Drawing.Point(200, 0);
+            this.messaging1.BackColor = System.Drawing.Color.White;
+            this.messaging1.Location = new System.Drawing.Point(198, 0);
             this.messaging1.Name = "messaging1";
             this.messaging1.Size = new System.Drawing.Size(988, 666);
-            this.messaging1.TabIndex = 4;
+            this.messaging1.TabIndex = 15;
             // 
             // lessonsInstructor1
             // 
-            this.lessonsInstructor1.Location = new System.Drawing.Point(200, 0);
+            this.lessonsInstructor1.BackColor = System.Drawing.Color.White;
+            this.lessonsInstructor1.Location = new System.Drawing.Point(198, 0);
             this.lessonsInstructor1.Name = "lessonsInstructor1";
             this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
-            this.lessonsInstructor1.TabIndex = 5;
+            this.lessonsInstructor1.TabIndex = 3;
             // 
             // Form2
             // 
@@ -138,7 +141,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 666);
             this.Controls.Add(this.lessonsInstructor1);
-            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.specialEvents1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -146,6 +148,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adrestia";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,9 +162,9 @@
         private System.Windows.Forms.Button btnLessons;
         private System.Windows.Forms.Button btnMessaging;
         private System.Windows.Forms.Button btnSpecialEvents;
-        private SpecialEvents specialEvents1;
         private System.Windows.Forms.Button btnLogout;
         private Messaging messaging1;
+        private SpecialEvents specialEvents1;
         private LessonsInstructor lessonsInstructor1;
     }
 }
