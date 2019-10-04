@@ -56,5 +56,10 @@ namespace Adrestia
         {
             Application.Restart();
         }
+
+        private void Messaging1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

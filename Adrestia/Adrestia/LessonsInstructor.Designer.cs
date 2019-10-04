@@ -61,6 +61,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvLessons = new System.Windows.Forms.DataGridView();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).BeginInit();
             this.gbEditDelete.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -444,6 +445,11 @@
             this.dgvLessons.Size = new System.Drawing.Size(744, 157);
             this.dgvLessons.TabIndex = 40;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\res\\Help files\\Us" +
+    "er Manual.htm";
+            // 
             // LessonsInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,6 +482,7 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label2);
             this.Name = "LessonsInstructor";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Size = new System.Drawing.Size(1000, 666);
             this.Load += new System.EventHandler(this.LessonsInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStudents)).EndInit();
@@ -520,5 +527,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvLessons;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

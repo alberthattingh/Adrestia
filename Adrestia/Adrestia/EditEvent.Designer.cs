@@ -50,6 +50,7 @@
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -319,6 +320,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Date:";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // EditEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +337,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "EditEvent";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "EditEvent";
             this.Load += new System.EventHandler(this.EditEvent_Load);
             this.groupBox4.ResumeLayout(false);
@@ -373,5 +379,6 @@
         private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

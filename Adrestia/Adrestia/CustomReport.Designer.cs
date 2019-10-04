@@ -61,6 +61,9 @@
             this.cbNoOfAdults = new System.Windows.Forms.CheckBox();
             this.cbTotalOfSale = new System.Windows.Forms.CheckBox();
             this.cbSalesEventID = new System.Windows.Forms.CheckBox();
+            this.gbEventVenues = new System.Windows.Forms.GroupBox();
+            this.cbMaxSeats = new System.Windows.Forms.CheckBox();
+            this.cbVenueDesc = new System.Windows.Forms.CheckBox();
             this.cnNoOfPensioners = new System.Windows.Forms.CheckBox();
             this.cnNoOfChildren = new System.Windows.Forms.CheckBox();
             this.cbSaleDate = new System.Windows.Forms.CheckBox();
@@ -87,22 +90,20 @@
             this.cbChildrenCost = new System.Windows.Forms.CheckBox();
             this.cbPensionerCost = new System.Windows.Forms.CheckBox();
             this.cbEventDate = new System.Windows.Forms.CheckBox();
-            this.gbEventVenues = new System.Windows.Forms.GroupBox();
-            this.cbMaxSeats = new System.Windows.Forms.CheckBox();
-            this.cbVenueDesc = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.gbUsers.SuspendLayout();
             this.gbInstructors.SuspendLayout();
             this.gbBackupLog.SuspendLayout();
             this.gbMessaging.SuspendLayout();
             this.gbTicketSales.SuspendLayout();
+            this.gbEventVenues.SuspendLayout();
             this.gbStudents.SuspendLayout();
             this.gbEventTypes.SuspendLayout();
             this.gbLessons.SuspendLayout();
             this.gbSpecialEvents.SuspendLayout();
-            this.gbEventVenues.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -505,6 +506,41 @@
             this.cbSalesEventID.UseVisualStyleBackColor = true;
             this.cbSalesEventID.CheckedChanged += new System.EventHandler(this.CbSalesEventID_CheckedChanged);
             // 
+            // gbEventVenues
+            // 
+            this.gbEventVenues.Controls.Add(this.gbMessaging);
+            this.gbEventVenues.Controls.Add(this.cbMaxSeats);
+            this.gbEventVenues.Controls.Add(this.cbVenueDesc);
+            this.gbEventVenues.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.gbEventVenues.Location = new System.Drawing.Point(0, 0);
+            this.gbEventVenues.Name = "gbEventVenues";
+            this.gbEventVenues.Size = new System.Drawing.Size(200, 325);
+            this.gbEventVenues.TabIndex = 10;
+            this.gbEventVenues.TabStop = false;
+            this.gbEventVenues.Text = "Event Venues";
+            // 
+            // cbMaxSeats
+            // 
+            this.cbMaxSeats.AutoSize = true;
+            this.cbMaxSeats.Location = new System.Drawing.Point(6, 85);
+            this.cbMaxSeats.Name = "cbMaxSeats";
+            this.cbMaxSeats.Size = new System.Drawing.Size(139, 21);
+            this.cbMaxSeats.TabIndex = 2;
+            this.cbMaxSeats.Text = "Max No Of Seats";
+            this.cbMaxSeats.UseVisualStyleBackColor = true;
+            this.cbMaxSeats.CheckedChanged += new System.EventHandler(this.CbMaxSeats_CheckedChanged);
+            // 
+            // cbVenueDesc
+            // 
+            this.cbVenueDesc.AutoSize = true;
+            this.cbVenueDesc.Location = new System.Drawing.Point(6, 58);
+            this.cbVenueDesc.Name = "cbVenueDesc";
+            this.cbVenueDesc.Size = new System.Drawing.Size(103, 21);
+            this.cbVenueDesc.TabIndex = 1;
+            this.cbVenueDesc.Text = "Description";
+            this.cbVenueDesc.UseVisualStyleBackColor = true;
+            this.cbVenueDesc.CheckedChanged += new System.EventHandler(this.CbVenueDesc_CheckedChanged);
+            // 
             // cnNoOfPensioners
             // 
             this.cnNoOfPensioners.AutoSize = true;
@@ -807,41 +843,6 @@
             this.cbEventDate.UseVisualStyleBackColor = true;
             this.cbEventDate.CheckedChanged += new System.EventHandler(this.CbEventDate_CheckedChanged);
             // 
-            // gbEventVenues
-            // 
-            this.gbEventVenues.Controls.Add(this.gbMessaging);
-            this.gbEventVenues.Controls.Add(this.cbMaxSeats);
-            this.gbEventVenues.Controls.Add(this.cbVenueDesc);
-            this.gbEventVenues.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.gbEventVenues.Location = new System.Drawing.Point(0, 0);
-            this.gbEventVenues.Name = "gbEventVenues";
-            this.gbEventVenues.Size = new System.Drawing.Size(200, 325);
-            this.gbEventVenues.TabIndex = 10;
-            this.gbEventVenues.TabStop = false;
-            this.gbEventVenues.Text = "Event Venues";
-            // 
-            // cbMaxSeats
-            // 
-            this.cbMaxSeats.AutoSize = true;
-            this.cbMaxSeats.Location = new System.Drawing.Point(6, 85);
-            this.cbMaxSeats.Name = "cbMaxSeats";
-            this.cbMaxSeats.Size = new System.Drawing.Size(139, 21);
-            this.cbMaxSeats.TabIndex = 2;
-            this.cbMaxSeats.Text = "Max No Of Seats";
-            this.cbMaxSeats.UseVisualStyleBackColor = true;
-            this.cbMaxSeats.CheckedChanged += new System.EventHandler(this.CbMaxSeats_CheckedChanged);
-            // 
-            // cbVenueDesc
-            // 
-            this.cbVenueDesc.AutoSize = true;
-            this.cbVenueDesc.Location = new System.Drawing.Point(6, 58);
-            this.cbVenueDesc.Name = "cbVenueDesc";
-            this.cbVenueDesc.Size = new System.Drawing.Size(103, 21);
-            this.cbVenueDesc.TabIndex = 1;
-            this.cbVenueDesc.Text = "Description";
-            this.cbVenueDesc.UseVisualStyleBackColor = true;
-            this.cbVenueDesc.CheckedChanged += new System.EventHandler(this.CbVenueDesc_CheckedChanged);
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
@@ -871,6 +872,10 @@
             this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // CustomReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -886,6 +891,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbUsers);
             this.Name = "CustomReport";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "CustomReport";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -899,6 +905,8 @@
             this.gbMessaging.PerformLayout();
             this.gbTicketSales.ResumeLayout(false);
             this.gbTicketSales.PerformLayout();
+            this.gbEventVenues.ResumeLayout(false);
+            this.gbEventVenues.PerformLayout();
             this.gbStudents.ResumeLayout(false);
             this.gbStudents.PerformLayout();
             this.gbEventTypes.ResumeLayout(false);
@@ -907,8 +915,6 @@
             this.gbLessons.PerformLayout();
             this.gbSpecialEvents.ResumeLayout(false);
             this.gbSpecialEvents.PerformLayout();
-            this.gbEventVenues.ResumeLayout(false);
-            this.gbEventVenues.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -979,5 +985,6 @@
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.CheckBox cbEventType;
         private System.Windows.Forms.CheckBox cbMaxSeats;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.numSeats)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +101,10 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // EditVenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +118,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEdit);
             this.Name = "EditVenue";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "EditVenue";
             ((System.ComponentModel.ISupportInitialize)(this.numSeats)).EndInit();
             this.ResumeLayout(false);
@@ -128,5 +134,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

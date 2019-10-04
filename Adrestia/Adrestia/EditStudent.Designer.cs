@@ -44,6 +44,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -209,6 +210,10 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Confirm password:";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +237,7 @@
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtID);
             this.Name = "EditStudent";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Edit Student";
             this.Load += new System.EventHandler(this.EditStudent_Load);
             this.ResumeLayout(false);
@@ -257,5 +263,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

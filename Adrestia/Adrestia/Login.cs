@@ -123,5 +123,10 @@ namespace Adrestia
                 MessageBox.Show("Error: " + er.Message);
             }
         }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

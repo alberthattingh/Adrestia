@@ -38,6 +38,7 @@
             this.specialEvents1 = new Adrestia.SpecialEvents();
             this.messaging1 = new Adrestia.Messaging();
             this.lessonsInstructor1 = new Adrestia.LessonsInstructor();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,6 +121,7 @@
             // 
             // messaging1
             // 
+            this.messaging1.BackColor = System.Drawing.Color.White;
             this.messaging1.Location = new System.Drawing.Point(200, 0);
             this.messaging1.Name = "messaging1";
             this.messaging1.Size = new System.Drawing.Size(988, 666);
@@ -127,10 +129,15 @@
             // 
             // lessonsInstructor1
             // 
+            this.lessonsInstructor1.BackColor = System.Drawing.Color.White;
             this.lessonsInstructor1.Location = new System.Drawing.Point(200, 0);
             this.lessonsInstructor1.Name = "lessonsInstructor1";
             this.lessonsInstructor1.Size = new System.Drawing.Size(1000, 666);
             this.lessonsInstructor1.TabIndex = 5;
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
             // 
             // Form2
             // 
@@ -144,6 +151,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
+            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adrestia";
             this.panel1.ResumeLayout(false);
@@ -163,5 +171,6 @@
         private System.Windows.Forms.Button btnLogout;
         private Messaging messaging1;
         private LessonsInstructor lessonsInstructor1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

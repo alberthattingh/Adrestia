@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirstname = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // label1
@@ -200,6 +201,10 @@
             this.txtFirstname.Size = new System.Drawing.Size(150, 24);
             this.txtFirstname.TabIndex = 0;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // NewInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,6 +227,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewInstructor";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "NewInstructor";
             this.Load += new System.EventHandler(this.NewInstructor_Load);
             this.ResumeLayout(false);
@@ -245,5 +251,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFirstname;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

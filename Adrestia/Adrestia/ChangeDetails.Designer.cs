@@ -44,6 +44,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // label1
@@ -223,6 +224,10 @@
             this.txtEmail.Size = new System.Drawing.Size(150, 24);
             this.txtEmail.TabIndex = 6;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // ChangeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +252,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeDetails";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "ChangeDetails";
             this.Load += new System.EventHandler(this.ChangeDetails_Load);
             this.ResumeLayout(false);
@@ -272,5 +278,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
