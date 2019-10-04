@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 666);
+            this.panel1.Size = new System.Drawing.Size(194, 666);
             this.panel1.TabIndex = 1;
             // 
             // btnLogout
@@ -137,7 +137,7 @@
             // 
             // upcoming1
             // 
-            this.upcoming1.Location = new System.Drawing.Point(200, 3);
+            this.upcoming1.Location = new System.Drawing.Point(188, 0);
             this.upcoming1.Name = "upcoming1";
             this.upcoming1.Size = new System.Drawing.Size(1000, 666);
             this.upcoming1.TabIndex = 6;
