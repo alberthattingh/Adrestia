@@ -32,6 +32,7 @@ namespace Adrestia
             messaging1.Visible = false;
             specialEvents1.Visible = false;
             lessonsInstructor1.Visible = false;
+            upcoming1.Visible = false ;
         }
 
         private void BtnMessaging_Click(object sender, EventArgs e)

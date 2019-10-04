@@ -56,11 +56,11 @@ namespace Adrestia
         {
             connection.Open();
 
-            string sql = "SELECT * FROM [USER] " +
-                "WHERE UserID LIKE '%" + query + "%' OR " +
-                "FirstName LIKE '%" + query + "%' OR " +
-                "LastName LIKE '%" + query + "%' OR " +
-                "Email LIKE '%" + query + "%'";
+            string sql = "SELECT U.UserID, U.FirstName, U.LastName, U.CellNo, U.Email, I.Salary FROM [USER] U, INSTRUCTOR I " +
+                "WHERE (U.UserID LIKE '%" + query + "%' OR " +
+                "U.FirstName LIKE '%" + query + "%' OR " +
+                "U.LastName LIKE '%" + query + "%' OR " +
+                "U.Email LIKE '%" + query + "%') AND UserTypeID = 2 AND U.UserID = I.InstructorID";
 
             command = new SqlCommand(sql, connection);
             ds = new DataSet();
