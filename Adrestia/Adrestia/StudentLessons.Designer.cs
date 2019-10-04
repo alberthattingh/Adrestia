@@ -44,6 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStudentLessons = new System.Windows.Forms.DataGridView();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLessons)).BeginInit();
             this.SuspendLayout();
@@ -209,16 +210,27 @@
             this.dgvStudentLessons.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvStudentLessons.Size = new System.Drawing.Size(609, 187);
             this.dgvStudentLessons.TabIndex = 11;
+            this.dgvStudentLessons.SelectionChanged += new System.EventHandler(this.DgvStudentLessons_SelectionChanged_1);
             // 
             // helpProvider1
             // 
             this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(417, 586);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "label5";
             // 
             // StudentLessons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvStudentLessons);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnShowBooked);
@@ -255,5 +267,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvStudentLessons;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Label label5;
     }
 }

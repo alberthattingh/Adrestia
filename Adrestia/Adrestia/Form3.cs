@@ -57,6 +57,14 @@ namespace Adrestia
             Application.Restart();
         }
 
+        private void BtnEvents_Load(object sender, EventArgs e)
+        {
+            messaging1.userID = int.Parse(this.UserID);
+            messaging1.userType = int.Parse(this.UserType);
+            studentLessons1.userID = int.Parse(this.UserID);
+            studentLessons1.studentID = int.Parse(this.UserID);
+        }
+
         private void Messaging1_Load(object sender, EventArgs e)
         {
 

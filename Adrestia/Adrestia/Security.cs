@@ -11,9 +11,10 @@ namespace Adrestia
     {
         public static string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ahatt\Documents\Study Material\Second Year\CMPG223\Adrestia\Adrestia\Adrestia\Database2.mdf;Integrated Security = True";
         //@"Data Source=alberts-pc;User ID=albert;Password=sql123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //public static string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marné\Documents\NWU\CMPG 223\Assignment\Adrestia\Adrestia\Adrestia\Database4.mdf;Integrated Security=True;MultipleActiveResultSets=true";
         // @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Marné\Documents\NWU\CMPG 223\Assignment\GitHub\Adrestia\Adrestia\Adrestia\Database2.mdf;Integrated Security=True";
         // @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Git\Adrestia\Adrestia\Adrestia\res\DatabaseAJ.mdf;Integrated Security=True";
-        //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Adrestia\Adrestia\Adrestia\Database6.mdf;Integrated Security=True";
+        //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Adrestia\Adrestia\Adrestia\Database5.mdf;Integrated Security=True";
 
         public static string GetSHA1Hash(string pw)
         {
