@@ -34,6 +34,7 @@
             this.btnAddType = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.numSeats = new System.Windows.Forms.NumericUpDown();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.numSeats)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,6 +101,10 @@
             this.numSeats.Size = new System.Drawing.Size(150, 24);
             this.numSeats.TabIndex = 2;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // NewEventVenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +118,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddType);
             this.Name = "NewEventVenue";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "NewEventVenue";
             this.Load += new System.EventHandler(this.NewEventVenue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSeats)).EndInit();
@@ -129,5 +135,6 @@
         private System.Windows.Forms.Button btnAddType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numSeats;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

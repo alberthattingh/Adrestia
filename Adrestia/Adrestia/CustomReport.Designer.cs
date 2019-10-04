@@ -821,6 +821,7 @@
             this.Controls.Add(this.gbStudents);
             this.Controls.Add(this.groupBox1);
             this.Name = "CustomReport";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "CustomReport";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

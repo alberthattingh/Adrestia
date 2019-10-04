@@ -36,6 +36,7 @@
             this.btnBookLessons = new System.Windows.Forms.Button();
             this.studentLessons1 = new Adrestia.StudentLessons();
             this.messaging1 = new Adrestia.Messaging();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,8 +121,14 @@
             this.messaging1.BackColor = System.Drawing.Color.White;
             this.messaging1.Location = new System.Drawing.Point(200, 0);
             this.messaging1.Name = "messaging1";
+            this.helpProvider1.SetShowHelp(this.messaging1, true);
             this.messaging1.Size = new System.Drawing.Size(988, 666);
             this.messaging1.TabIndex = 3;
+            this.messaging1.Load += new System.EventHandler(this.Messaging1_Load);
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
             // 
             // btnEvents
             // 
@@ -135,6 +142,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 200);
             this.Name = "btnEvents";
+            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adrestia";
             this.panel1.ResumeLayout(false);
@@ -151,5 +159,6 @@
         private System.Windows.Forms.Button btnLogout;
         private StudentLessons studentLessons1;
         private Messaging messaging1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

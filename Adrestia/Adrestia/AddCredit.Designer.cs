@@ -38,6 +38,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // comboStudentID
@@ -143,6 +144,10 @@
             this.txtAmount.Size = new System.Drawing.Size(150, 24);
             this.txtAmount.TabIndex = 8;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // AddCredit
             // 
             this.AcceptButton = this.btnAdd;
@@ -161,7 +166,11 @@
             this.Controls.Add(this.txtLast);
             this.Controls.Add(this.txtFirst);
             this.Controls.Add(this.comboStudentID);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddCredit";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Add Credit";
             this.Load += new System.EventHandler(this.AddCredit_Load);
             this.ResumeLayout(false);
@@ -181,5 +190,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

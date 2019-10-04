@@ -48,6 +48,7 @@
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.btnClear = new System.Windows.Forms.Button();
             this.cbxEventID = new System.Windows.Forms.ComboBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPensioners)).BeginInit();
@@ -277,6 +278,10 @@
             this.cbxEventID.Size = new System.Drawing.Size(150, 24);
             this.cbxEventID.TabIndex = 1;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // TicketSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +296,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "TicketSales";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Size = new System.Drawing.Size(1000, 666);
             this.Load += new System.EventHandler(this.TicketSales_Load);
             this.panel1.ResumeLayout(false);
@@ -329,5 +335,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox cbxEventID;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

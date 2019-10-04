@@ -42,6 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // txtID
@@ -188,6 +189,10 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // NewStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +214,7 @@
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtID);
             this.Name = "NewStudent";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "New Student";
             this.Load += new System.EventHandler(this.NewStudent_Load);
             this.ResumeLayout(false);
@@ -232,5 +238,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

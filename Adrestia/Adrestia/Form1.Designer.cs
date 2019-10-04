@@ -43,6 +43,7 @@
             this.students1 = new Adrestia.Students();
             this.messaging1 = new Adrestia.Messaging();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -197,10 +198,15 @@
             this.messaging1.Name = "messaging1";
             this.messaging1.Size = new System.Drawing.Size(988, 666);
             this.messaging1.TabIndex = 5;
+            this.messaging1.Load += new System.EventHandler(this.Messaging1_Load);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
             // 
             // Form1
             // 
@@ -214,6 +220,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adrestia";
             this.panel2.ResumeLayout(false);
@@ -239,6 +246,7 @@
         private System.Windows.Forms.Button btnLogout;
         private Messaging messaging1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 

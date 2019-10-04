@@ -32,6 +32,7 @@
             this.btnAddType = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -78,6 +79,10 @@
             this.txtDescription.Size = new System.Drawing.Size(150, 24);
             this.txtDescription.TabIndex = 1;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
             // NewEventType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +95,7 @@
             this.Controls.Add(this.btnAddType);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "NewEventType";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "NewEventType";
             this.Load += new System.EventHandler(this.NewEventType_Load);
             this.ResumeLayout(false);
@@ -103,5 +109,6 @@
         private System.Windows.Forms.Button btnAddType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

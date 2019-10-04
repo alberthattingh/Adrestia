@@ -45,6 +45,7 @@
             this.btnExportToPdf = new System.Windows.Forms.Button();
             this.btnExportToExcell = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,6 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
+            this.helpProvider1.SetShowHelp(this.panel1, true);
             this.panel1.Size = new System.Drawing.Size(1000, 48);
             this.panel1.TabIndex = 2;
             // 
@@ -218,8 +220,11 @@
             this.btnExportToPdf.UseVisualStyleBackColor = false;
             this.btnExportToPdf.Click += new System.EventHandler(this.BtnExportToPdf_Click);
             // 
-            // btnExportToExcell
+            
+            // helpProvider1
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
             // 
+            // btnExportToExcell
             this.btnExportToExcell.BackColor = System.Drawing.Color.SteelBlue;
             this.btnExportToExcell.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExportToExcell.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -230,6 +235,7 @@
             this.btnExportToExcell.Text = "Export To Excel";
             this.btnExportToExcell.UseVisualStyleBackColor = false;
             this.btnExportToExcell.Click += new System.EventHandler(this.BtnExportToExcell_Click);
+            
             // 
             // Reporting
             // 
@@ -269,5 +275,6 @@
         private System.Windows.Forms.Button btnExportToPdf;
         private System.Windows.Forms.Button btnExportToExcell;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

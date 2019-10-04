@@ -99,5 +99,10 @@ namespace Adrestia
             MessageBox.Show("Database backup up successfull!");
             connection.Close();
         }
+
+        private void Messaging1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

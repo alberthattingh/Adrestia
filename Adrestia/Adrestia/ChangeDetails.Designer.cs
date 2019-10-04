@@ -290,6 +290,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeDetails";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "ChangeDetails";
             this.Load += new System.EventHandler(this.ChangeDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSalary)).EndInit();
