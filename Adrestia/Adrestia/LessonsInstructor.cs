@@ -129,6 +129,7 @@ namespace Adrestia
                 MessageBox.Show("You did not fill in a description!");
                 tbDescription.Focus();
                 correct = false;
+                return;
             }
             else
             {
@@ -379,7 +380,7 @@ namespace Adrestia
                 SqlConnection conn = new SqlConnection(conString);
                 conn.Open();
 
-                string sqlQuery = "UPDATE LESSON SET LessonDate = '"+ lessonDate+ "', LessonTime = '" + lessonTime + "',Price = '" + lessonPrice + "',Description = '" + lessonDescription + "',AvailablePlaces = '" + lessonStudents + "' WHERE LessonId = '" + selectedLesson + "'";
+                string sqlQuery = "UPDATE LESSON SET LessonDate = '"+ lessonDate+ "', LessonTime = '" + lessonTime + "',Price = '" + lessonPrice + "',Description = '" + lessonDescription + "',AvailablePlaces = '" + lessonStudents + "' WHERE LessonID = '" + selectedLesson + "'";
                 SqlCommand cmn = new SqlCommand(sqlQuery, conn);
                 cmn.ExecuteNonQuery();
 

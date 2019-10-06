@@ -61,6 +61,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(292, 252);
@@ -296,9 +297,11 @@
             // 
             // EditEvent
             // 
+            this.AcceptButton = this.btnEditEvent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(555, 310);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEditEvent);

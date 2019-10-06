@@ -103,7 +103,7 @@
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Login.htm";
+            this.helpProvider1.HelpNamespace = "C:\\Program Files\\Adrestia Group\\Adrestia\\res\\help\\User Manual.htm";
             // 
             // Login
             // 

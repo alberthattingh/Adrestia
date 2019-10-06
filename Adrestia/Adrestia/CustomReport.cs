@@ -38,6 +38,14 @@ namespace Adrestia
             else
             {
                 sqlReport = "SELECT " + sqlSelect + " FROM " + sqlFrom ;
+                if(rbInstructors.Checked)
+                {
+                    sqlReport += " WHERE UserTypeID = 2";
+                }
+                else if (rbStudents.Checked)
+                {
+                    sqlReport += " WHERE UserTypeID = 3";
+                }
                 this.Close();
             }
         }
@@ -110,7 +118,7 @@ namespace Adrestia
             gbInstructors.Visible = true;
             UncheckAllCheckboxes();
             sqlFrom = "[USER]";
-            sqlSelect = "InstructorID ";
+            sqlSelect = "UserID ";
 
         }
 
@@ -396,6 +404,11 @@ namespace Adrestia
         }
 
         private void GbMessaging_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CustomReport_Load(object sender, EventArgs e)
         {
 
         }

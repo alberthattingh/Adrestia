@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtInstructorID = new System.Windows.Forms.TextBox();
@@ -44,8 +45,10 @@
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.numSalary = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numSalary)).BeginInit();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.numSalary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,9 +58,9 @@
             this.label1.Location = new System.Drawing.Point(18, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 17);
+            this.label1.Size = new System.Drawing.Size(90, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "InstructorID:";
+            this.label1.Text = "Instructor ID:";
             // 
             // label2
             // 
@@ -109,6 +112,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(170, 333);
@@ -140,6 +144,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 24);
             this.txtEmail.TabIndex = 3;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.TxtEmail_Validating);
             // 
             // label5
             // 
@@ -148,9 +153,9 @@
             this.label5.Location = new System.Drawing.Point(18, 201);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 17);
+            this.label5.Size = new System.Drawing.Size(96, 17);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Cell No:";
+            this.label5.Text = "Cell number:";
             // 
             // txtCellNo
             // 
@@ -161,6 +166,7 @@
             this.txtCellNo.Name = "txtCellNo";
             this.txtCellNo.Size = new System.Drawing.Size(150, 24);
             this.txtCellNo.TabIndex = 2;
+            this.txtCellNo.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCellNo_Validating);
             // 
             // txtLastname
             // 
@@ -179,9 +185,9 @@
             this.label4.Location = new System.Drawing.Point(18, 160);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 17);
+            this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 18;
-            this.label4.Text = "Lastname:";
+            this.label4.Text = "Last name:";
             // 
             // label3
             // 
@@ -190,9 +196,9 @@
             this.label3.Location = new System.Drawing.Point(18, 118);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 17);
+            this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Firstname:";
+            this.label3.Text = "First name:";
             // 
             // txtFirstname
             // 
@@ -203,10 +209,6 @@
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(150, 24);
             this.txtFirstname.TabIndex = 0;
-            // 
-            // helpProvider1
-            // 
-            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
             // 
             // label7
             // 
@@ -246,11 +248,21 @@
             0,
             0});
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // NewInstructor
             // 
+            this.AcceptButton = this.btnAddInstructor;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(331, 394);
             this.Controls.Add(this.numSalary);
             this.Controls.Add(this.label7);
@@ -271,9 +283,10 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewInstructor";
             this.helpProvider1.SetShowHelp(this, true);
-            this.Text = "NewInstructor";
+            this.Text = "New Instructor";
             this.Load += new System.EventHandler(this.NewInstructor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSalary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,5 +311,6 @@
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numSalary;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

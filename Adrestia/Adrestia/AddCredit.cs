@@ -19,6 +19,7 @@ namespace Adrestia
         public SqlDataReader reader;
 
         public double current;
+        public string studentID;
 
         public AddCredit()
         {
@@ -29,8 +30,9 @@ namespace Adrestia
         {
             connection = new SqlConnection(connectionString);
             connection.Open();
+            txtID.Text = studentID;
 
-            string sql = "SELECT * FROM STUDENT";
+            /*string sql = "SELECT * FROM STUDENT";
             command = new SqlCommand(sql, connection);
             reader = command.ExecuteReader();
 
@@ -40,6 +42,43 @@ namespace Adrestia
             }
 
             reader.Close();
+            connection.Close();*/
+
+            string sql = "SELECT * FROM [USER]";
+            command = new SqlCommand(sql, connection);
+            reader = command.ExecuteReader();
+
+            string first, last;
+            while (reader.Read())
+            {
+                first = reader.GetString(2);
+                last = reader.GetString(3);
+                // current = double.Parse(reader.GetValue(5).ToString());
+                if (reader.GetValue(0).ToString().Equals(studentID))
+                {
+                    txtFirst.Text = first;
+                    txtLast.Text = last;
+
+
+                    break;
+                }
+            }
+
+            reader.Close();
+
+            string sql2 = "SELECT * FROM STUDENT WHERE StudentID = '" + studentID + "'";
+            SqlCommand cmd = new SqlCommand(sql2, connection);
+            SqlDataReader reader2 = cmd.ExecuteReader();
+
+            while (reader2.Read())
+            {
+                if (reader2.GetValue(0).ToString().Equals(studentID))
+                {
+                    current = double.Parse(reader2.GetValue(1).ToString());
+                    break;
+                }
+            }
+
             connection.Close();
         }
 
@@ -60,12 +99,13 @@ namespace Adrestia
             }
             else
             {
-                if (comboStudentID.SelectedItem != null || comboStudentID.SelectedItem.ToString() != "")
+                if (studentID != null || studentID != "")
                 {
                     newAmount = current + amount;
+                    string sqlAmount = newAmount.ToString().Replace(',', '.');
 
                     connection.Open();
-                    string sql = "UPDATE STUDENT SET Credits = '" + newAmount + "' WHERE StudentID = '" + comboStudentID.SelectedItem.ToString() + "'";
+                    string sql = "UPDATE STUDENT SET Credits = " + sqlAmount + " WHERE StudentID = '" + studentID + "'";
                     command = new SqlCommand(sql, connection);
                     command.ExecuteNonQuery();
                     connection.Close();
@@ -74,7 +114,7 @@ namespace Adrestia
                 else
                 {
                     MessageBox.Show("You must select a student.");
-                    comboStudentID.Focus();
+                    txtID.Focus();
                     return;
                 }
             }
@@ -82,7 +122,7 @@ namespace Adrestia
 
         private void ComboStudentID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            connection.Open();
+            /*connection.Open();
 
             string sql = "SELECT * FROM [USER]";
             command = new SqlCommand(sql, connection);
@@ -119,7 +159,7 @@ namespace Adrestia
                 }
             }
 
-            connection.Close();
+            connection.Close();*/
         }
     }
 }

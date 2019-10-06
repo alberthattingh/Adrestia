@@ -51,12 +51,30 @@ namespace Adrestia
             txtCellNo.Text = reader.GetValue(4).ToString();
             txtEmail.Text = reader.GetValue(5).ToString();
             reader.Close();
+
+            string sql2 = "SELECT * FROM INSTRUCTOR WHERE InstructorID = '" + instructorID + "';";
+            command = new SqlCommand(sql2, connection);
+            reader = command.ExecuteReader();
+
+            reader.Read();
+            numSalary.Value = (decimal)double.Parse(reader.GetValue(1).ToString());
             connection.Close();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-        
+            if (!(txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".")))
+            {
+                errorProvider1.SetError(txtEmail, "The value entered is not a valid email address.");
+                return;
+            }
+
+            if ((txtCellNo.Text.Length != 10) || !int.TryParse(txtCellNo.Text, out int x))
+            {
+                errorProvider1.SetError(txtCellNo, "The value entered is not a valid cell number.");
+                return;
+            }
+
             if (txtPassword.Text != txtConPassword.Text)
             {
                 MessageBox.Show("Passwords do not match!");
@@ -119,6 +137,30 @@ namespace Adrestia
 
                 connection.Close();
                 this.Close();
+            }
+        }
+
+        private void TxtCellNo_Validating(object sender, CancelEventArgs e)
+        {
+            if ((txtCellNo.Text.Length != 10) || !int.TryParse(txtCellNo.Text, out int x))
+            {
+                errorProvider1.SetError(txtCellNo, "The value entered is not a valid cell number.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtCellNo, "");
+            }
+        }
+
+        private void TxtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (!(txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".")))
+            {
+                errorProvider1.SetError(txtEmail, "The value entered is not a valid email address.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmail, "");
             }
         }
     }

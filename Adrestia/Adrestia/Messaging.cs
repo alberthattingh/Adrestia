@@ -104,7 +104,6 @@ namespace Adrestia
             else if (rdpInstructor.Checked == true)
             {
                 Connection.Open();
-                label1.Text = userID.ToString();
                 string sql2;
                 SqlDataReader reader2;
 
@@ -170,7 +169,6 @@ namespace Adrestia
                 SqlDataReader reader2;
 
                 sql2 = @"Select UserID FROM [USER] WHERE UserTypeID = 1";
-                label1.Text = userID.ToString();
                 SqlCommand command2 = new SqlCommand(sql2, Connection);
 
                 reader2 = command2.ExecuteReader();

@@ -148,9 +148,25 @@ namespace Adrestia
 
         private void BtnAddCredit_Click(object sender, EventArgs e)
         {
-            AddCredit credit = new AddCredit();
-            credit.ShowDialog();
-            PopulateGridView();
+            try
+            {
+                if (selectedStudent != 0)
+                {
+                    AddCredit credit = new AddCredit
+                    {
+                        studentID = selectedStudent.ToString()
+                    };
+                    credit.ShowDialog();
+                    PopulateGridView();
+                    connection.Close();
+                }
+                else
+                    MessageBox.Show("Please select a student");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message);
+            }
         }
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)

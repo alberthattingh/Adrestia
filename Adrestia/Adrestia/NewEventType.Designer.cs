@@ -38,6 +38,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(173, 82);
@@ -85,9 +86,11 @@
             // 
             // NewEventType
             // 
+            this.AcceptButton = this.btnAddType;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(335, 146);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label1);
@@ -96,7 +99,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "NewEventType";
             this.helpProvider1.SetShowHelp(this, true);
-            this.Text = "NewEventType";
+            this.Text = "New Event Type";
             this.Load += new System.EventHandler(this.NewEventType_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

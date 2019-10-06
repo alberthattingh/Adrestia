@@ -93,7 +93,6 @@
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePicker.Location = new System.Drawing.Point(111, 33);
             this.datePicker.Name = "datePicker";
-            this.datePicker.ShowUpDown = true;
             this.datePicker.Size = new System.Drawing.Size(125, 24);
             this.datePicker.TabIndex = 1;
             // 
@@ -370,6 +369,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(292, 376);
@@ -387,9 +387,11 @@
             // 
             // NewEvent
             // 
+            this.AcceptButton = this.btnAddEvent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(555, 439);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddEvent);
@@ -399,7 +401,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "NewEvent";
             this.helpProvider1.SetShowHelp(this, true);
-            this.Text = "NewEvent";
+            this.Text = "New Event";
             this.Load += new System.EventHandler(this.NewEvent_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

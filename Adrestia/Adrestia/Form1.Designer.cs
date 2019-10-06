@@ -34,16 +34,14 @@
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnReporting = new System.Windows.Forms.Button();
             this.btnTicketSales = new System.Windows.Forms.Button();
-            this.btnMessaging = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnInstructors = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.reporting1 = new Adrestia.Reporting();
             this.ticketSales1 = new Adrestia.TicketSales();
             this.instructors1 = new Adrestia.Instructors();
             this.students1 = new Adrestia.Students();
-            this.messaging1 = new Adrestia.Messaging();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +52,6 @@
             this.panel2.Controls.Add(this.btnBackup);
             this.panel2.Controls.Add(this.btnReporting);
             this.panel2.Controls.Add(this.btnTicketSales);
-            this.panel2.Controls.Add(this.btnMessaging);
             this.panel2.Controls.Add(this.btnStudents);
             this.panel2.Controls.Add(this.btnInstructors);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -81,7 +78,7 @@
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackup.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBackup.Location = new System.Drawing.Point(0, 550);
+            this.btnBackup.Location = new System.Drawing.Point(0, 446);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(200, 75);
             this.btnBackup.TabIndex = 12;
@@ -95,7 +92,7 @@
             this.btnReporting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporting.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporting.ForeColor = System.Drawing.Color.White;
-            this.btnReporting.Location = new System.Drawing.Point(0, 450);
+            this.btnReporting.Location = new System.Drawing.Point(0, 371);
             this.btnReporting.Name = "btnReporting";
             this.btnReporting.Size = new System.Drawing.Size(200, 75);
             this.btnReporting.TabIndex = 11;
@@ -109,7 +106,7 @@
             this.btnTicketSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicketSales.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTicketSales.ForeColor = System.Drawing.Color.White;
-            this.btnTicketSales.Location = new System.Drawing.Point(0, 250);
+            this.btnTicketSales.Location = new System.Drawing.Point(0, 296);
             this.btnTicketSales.Name = "btnTicketSales";
             this.btnTicketSales.Size = new System.Drawing.Size(200, 75);
             this.btnTicketSales.TabIndex = 10;
@@ -117,27 +114,13 @@
             this.btnTicketSales.UseVisualStyleBackColor = true;
             this.btnTicketSales.Click += new System.EventHandler(this.BtnTicketSales_Click);
             // 
-            // btnMessaging
-            // 
-            this.btnMessaging.FlatAppearance.BorderSize = 0;
-            this.btnMessaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMessaging.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessaging.ForeColor = System.Drawing.Color.White;
-            this.btnMessaging.Location = new System.Drawing.Point(0, 350);
-            this.btnMessaging.Name = "btnMessaging";
-            this.btnMessaging.Size = new System.Drawing.Size(200, 75);
-            this.btnMessaging.TabIndex = 9;
-            this.btnMessaging.Text = "Messaging";
-            this.btnMessaging.UseVisualStyleBackColor = true;
-            this.btnMessaging.Click += new System.EventHandler(this.BtnMessaging_Click);
-            // 
             // btnStudents
             // 
             this.btnStudents.FlatAppearance.BorderSize = 0;
             this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStudents.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudents.ForeColor = System.Drawing.Color.White;
-            this.btnStudents.Location = new System.Drawing.Point(0, 63);
+            this.btnStudents.Location = new System.Drawing.Point(0, 146);
             this.btnStudents.Name = "btnStudents";
             this.btnStudents.Size = new System.Drawing.Size(200, 75);
             this.btnStudents.TabIndex = 7;
@@ -151,13 +134,22 @@
             this.btnInstructors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInstructors.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstructors.ForeColor = System.Drawing.Color.White;
-            this.btnInstructors.Location = new System.Drawing.Point(0, 150);
+            this.btnInstructors.Location = new System.Drawing.Point(0, 221);
             this.btnInstructors.Name = "btnInstructors";
             this.btnInstructors.Size = new System.Drawing.Size(200, 75);
             this.btnInstructors.TabIndex = 8;
             this.btnInstructors.Text = "Instructors";
             this.btnInstructors.UseVisualStyleBackColor = true;
             this.btnInstructors.Click += new System.EventHandler(this.BtnInstructors_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\ahatt\\Documents\\Study Material\\Second Year\\CMPG223\\Adrestia\\Adrestia\\Adr" +
+    "estia\\res\\Help files\\User Manual.htm";
             // 
             // reporting1
             // 
@@ -166,6 +158,7 @@
             this.reporting1.Name = "reporting1";
             this.reporting1.Size = new System.Drawing.Size(1000, 666);
             this.reporting1.TabIndex = 4;
+            this.reporting1.Visible = false;
             // 
             // ticketSales1
             // 
@@ -174,6 +167,7 @@
             this.ticketSales1.Name = "ticketSales1";
             this.ticketSales1.Size = new System.Drawing.Size(1000, 666);
             this.ticketSales1.TabIndex = 3;
+            this.ticketSales1.Visible = false;
             // 
             // instructors1
             // 
@@ -182,6 +176,7 @@
             this.instructors1.Name = "instructors1";
             this.instructors1.Size = new System.Drawing.Size(1000, 666);
             this.instructors1.TabIndex = 2;
+            this.instructors1.Visible = false;
             // 
             // students1
             // 
@@ -191,27 +186,9 @@
             this.students1.Size = new System.Drawing.Size(1000, 666);
             this.students1.TabIndex = 1;
             // 
-            // messaging1
-            // 
-            this.messaging1.BackColor = System.Drawing.Color.White;
-            this.messaging1.Location = new System.Drawing.Point(200, 0);
-            this.messaging1.Name = "messaging1";
-            this.messaging1.Size = new System.Drawing.Size(988, 666);
-            this.messaging1.TabIndex = 5;
-            this.messaging1.Load += new System.EventHandler(this.Messaging1_Load);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // helpProvider1
-            // 
-            this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
-            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(1184, 666);
-            this.Controls.Add(this.messaging1);
             this.Controls.Add(this.reporting1);
             this.Controls.Add(this.ticketSales1);
             this.Controls.Add(this.instructors1);
@@ -233,7 +210,6 @@
 
      
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnMessaging;
         private System.Windows.Forms.Button btnInstructors;
         private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnTicketSales;
@@ -244,7 +220,6 @@
         private TicketSales ticketSales1;
         private Reporting reporting1;
         private System.Windows.Forms.Button btnLogout;
-        private Messaging messaging1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.HelpProvider helpProvider1;
     }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboStudentID = new System.Windows.Forms.ComboBox();
             this.txtFirst = new System.Windows.Forms.TextBox();
             this.txtLast = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,17 +38,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // comboStudentID
-            // 
-            this.comboStudentID.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.comboStudentID.FormattingEnabled = true;
-            this.comboStudentID.Location = new System.Drawing.Point(169, 26);
-            this.comboStudentID.Name = "comboStudentID";
-            this.comboStudentID.Size = new System.Drawing.Size(150, 24);
-            this.comboStudentID.TabIndex = 0;
-            this.comboStudentID.SelectedIndexChanged += new System.EventHandler(this.ComboStudentID_SelectedIndexChanged);
             // 
             // txtFirst
             // 
@@ -58,7 +48,7 @@
             this.txtFirst.Location = new System.Drawing.Point(169, 68);
             this.txtFirst.Name = "txtFirst";
             this.txtFirst.Size = new System.Drawing.Size(150, 24);
-            this.txtFirst.TabIndex = 1;
+            this.txtFirst.TabIndex = 11;
             // 
             // txtLast
             // 
@@ -67,7 +57,7 @@
             this.txtLast.Location = new System.Drawing.Point(169, 110);
             this.txtLast.Name = "txtLast";
             this.txtLast.Size = new System.Drawing.Size(150, 24);
-            this.txtLast.TabIndex = 1;
+            this.txtLast.TabIndex = 12;
             // 
             // label1
             // 
@@ -118,7 +108,7 @@
             this.btnCancel.Location = new System.Drawing.Point(169, 198);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -131,7 +121,7 @@
             this.btnAdd.Location = new System.Drawing.Point(12, 198);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 50);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add Credit";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
@@ -142,11 +132,20 @@
             this.txtAmount.Location = new System.Drawing.Point(169, 152);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(150, 24);
-            this.txtAmount.TabIndex = 8;
+            this.txtAmount.TabIndex = 0;
             // 
             // helpProvider1
             // 
             this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.txtID.Location = new System.Drawing.Point(169, 26);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(150, 24);
+            this.txtID.TabIndex = 10;
             // 
             // AddCredit
             // 
@@ -164,8 +163,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLast);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtFirst);
-            this.Controls.Add(this.comboStudentID);
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -179,8 +178,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboStudentID;
         private System.Windows.Forms.TextBox txtFirst;
         private System.Windows.Forms.TextBox txtLast;
         private System.Windows.Forms.Label label1;
@@ -191,5 +188,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

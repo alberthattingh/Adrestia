@@ -69,5 +69,14 @@ namespace Adrestia
         {
 
         }
+
+        private void BtnEditProfile_Click(object sender, EventArgs e)
+        {
+            EditStudent edit = new EditStudent
+            {
+                studentID = this.UserID
+            };
+            edit.ShowDialog();
+        }
     }
 }

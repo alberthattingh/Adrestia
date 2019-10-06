@@ -23,7 +23,7 @@ CREATE TABLE [USER_TYPE] (
  */
 
 CREATE TABLE [USER] (
-	UserID		INT				NOT NULL	IDENTITY(1000,1)	PRIMARY KEY,
+	UserID		INT				NOT NULL	PRIMARY KEY,
 	[Password]	VARCHAR(40)		NOT NULL,
 	[FirstName] [varchar](30)		NULL,
 	[LastName]	[varchar](30)		NULL,

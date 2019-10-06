@@ -44,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvStudentLessons = new System.Windows.Forms.DataGridView();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentLessons)).BeginInit();
             this.SuspendLayout();
@@ -138,7 +137,7 @@
             this.btnShowBooked.Name = "btnShowBooked";
             this.btnShowBooked.Size = new System.Drawing.Size(150, 50);
             this.btnShowBooked.TabIndex = 9;
-            this.btnShowBooked.Text = "Show Boooked Lessons";
+            this.btnShowBooked.Text = "Show Booked Lessons";
             this.btnShowBooked.UseVisualStyleBackColor = false;
             this.btnShowBooked.Click += new System.EventHandler(this.BtnShowBooked_Click);
             // 
@@ -164,6 +163,7 @@
             this.btnExit.Size = new System.Drawing.Size(48, 45);
             this.btnExit.TabIndex = 13;
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click_1);
             // 
             // label1
             // 
@@ -216,21 +216,11 @@
             // 
             this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(417, 586);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "label5";
-            // 
             // StudentLessons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvStudentLessons);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnShowBooked);
@@ -267,6 +257,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvStudentLessons;
         private System.Windows.Forms.HelpProvider helpProvider1;
-        private System.Windows.Forms.Label label5;
     }
 }

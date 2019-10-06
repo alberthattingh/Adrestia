@@ -59,6 +59,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(168, 85);
@@ -97,6 +98,11 @@
             // 
             this.numSeats.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.numSeats.Location = new System.Drawing.Point(172, 50);
+            this.numSeats.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
             this.numSeats.Name = "numSeats";
             this.numSeats.Size = new System.Drawing.Size(150, 24);
             this.numSeats.TabIndex = 2;
@@ -107,9 +113,11 @@
             // 
             // NewEventVenue
             // 
+            this.AcceptButton = this.btnAddType;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(335, 146);
             this.Controls.Add(this.numSeats);
             this.Controls.Add(this.label2);
@@ -119,7 +127,7 @@
             this.Controls.Add(this.btnAddType);
             this.Name = "NewEventVenue";
             this.helpProvider1.SetShowHelp(this, true);
-            this.Text = "NewEventVenue";
+            this.Text = "New Event Venue";
             this.Load += new System.EventHandler(this.NewEventVenue_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSeats)).EndInit();
             this.ResumeLayout(false);

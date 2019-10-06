@@ -80,11 +80,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(416, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 19);
+            this.label1.Size = new System.Drawing.Size(139, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Messaging";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
@@ -200,7 +200,7 @@
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(150, 50);
             this.btnSend.TabIndex = 13;
-            this.btnSend.Text = "Send:";
+            this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.BtnSend_Click);
             // 
@@ -263,7 +263,7 @@
             this.groupBox1.Size = new System.Drawing.Size(437, 176);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "New Message:";
+            this.groupBox1.Text = "New Message";
             // 
             // helpProvider1
             // 

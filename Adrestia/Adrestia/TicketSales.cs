@@ -73,7 +73,7 @@ namespace Adrestia
                 command.Parameters.AddWithValue("@total", totalSale);
                 command.Parameters.AddWithValue("@eventId", cbxEventID.SelectedItem);
                 command.ExecuteNonQuery();
-                MessageBox.Show("Sale Successfull!");
+                MessageBox.Show("Sale successfull!");
                 connection.Close();
             }
         }

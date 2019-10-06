@@ -70,7 +70,25 @@ namespace Adrestia
             messaging1.userType = int.Parse(this.UserType);
             specialEvents1.userID = this.UserID;
             HideAllControls();
+            upcoming1.Visible = true;
         }
-            
+
+        private void BtnUpcoming_Click(object sender, EventArgs e)
+        {
+            HideAllControls();
+            upcoming1.PopulateGridView();
+            upcoming1.Visible = true;
+        }
+
+        private void BtnEditProfile_Click(object sender, EventArgs e)
+        {
+            ChangeDetails edit = new ChangeDetails
+            {
+                instructorID = this.UserID,
+                //numSalary.Enabled = false
+            };
+            edit.numSalary.Enabled = false;
+            edit.ShowDialog();
+        }
     }
 }

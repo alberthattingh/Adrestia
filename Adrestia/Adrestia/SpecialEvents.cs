@@ -51,7 +51,7 @@ namespace Adrestia
             {
                 connection.Open();
 
-                string sql = "SELECT * FROM SPECIAL_EVENT";
+                string sql = "SELECT S.EventID, T.Description AS EventDescription, S.EventDate, S.EventTime, S.CostAdult, S.CostChildren, S.CostPensioner, U.LastName AS Organizer, V.Description AS Venue FROM SPECIAL_EVENT S, VENUE V, EVENT_TYPE T, [USER] U WHERE S.VenueID = V.VenueID AND S.EventTypeID = T.EventTypeID AND S.Organizer = U.UserID";
                 command = new SqlCommand(sql, connection);
                 ds = new DataSet();
 
@@ -94,7 +94,7 @@ namespace Adrestia
             {
                 connection.Open();
 
-                string sql = "SELECT * FROM SPECIAL_EVENT WHERE EventDate >='" + DateTime.Today + "';";
+                string sql = "SELECT S.EventID, T.Description AS EventDescription, S.EventDate, S.EventTime, S.CostAdult, S.CostChildren, S.CostPensioner, U.LastName AS Organizer, V.Description AS Venue FROM SPECIAL_EVENT S, VENUE V, EVENT_TYPE T, [USER] U WHERE S.VenueID = V.VenueID AND S.EventTypeID = T.EventTypeID AND S.Organizer = U.UserID AND EventDate >='" + DateTime.Today + "';";
                 command = new SqlCommand(sql, connection);
                 ds = new DataSet();
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,11 +46,14 @@
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
@@ -144,6 +148,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(150, 24);
             this.txtEmail.TabIndex = 7;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.TxtEmail_Validating);
             // 
             // txtCell
             // 
@@ -153,6 +158,7 @@
             this.txtCell.Name = "txtCell";
             this.txtCell.Size = new System.Drawing.Size(150, 24);
             this.txtCell.TabIndex = 6;
+            this.txtCell.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCell_Validating);
             // 
             // txtLast
             // 
@@ -214,11 +220,17 @@
             // 
             this.helpProvider1.HelpNamespace = "D:\\Media\\Documents\\CMPG 223\\Adrestia\\Adrestia\\Adrestia\\Adrestia\\Main Menu.htm";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditStudent
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(331, 356);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -238,8 +250,9 @@
             this.Controls.Add(this.txtID);
             this.Name = "EditStudent";
             this.helpProvider1.SetShowHelp(this, true);
-            this.Text = "Edit Student";
+            this.Text = "Change Student Details";
             this.Load += new System.EventHandler(this.EditStudent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +277,6 @@
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

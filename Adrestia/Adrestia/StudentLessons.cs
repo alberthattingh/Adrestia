@@ -63,7 +63,6 @@ namespace Adrestia
 
         private void BtnBook_Click(object sender, EventArgs e)
         {
-            label5.Text = selectedLesson;
             if(selectedLesson == "")
             {
                 MessageBox.Show("You have not selected a lesson!!");
@@ -127,12 +126,13 @@ namespace Adrestia
                         command.Parameters.AddWithValue("@StudentID", userID);
                         command.ExecuteNonQuery();
                         int newAvailable = places - 1;
-                        string sqlQuery = "UPDATE LESSON SET AvailablePlaces  = '" + newAvailable + "' WHERE LessonID = '" + selectedLesson + "'";
+                        string sqlQuery = "UPDATE LESSON SET AvailablePlaces  = " + newAvailable + " WHERE LessonID = '" + selectedLesson + "'";
                         SqlCommand cmn = new SqlCommand(sqlQuery, conn);
                         cmn.ExecuteNonQuery();
 
                         double finalcredits = Avecredits - price;
-                        sqlQuery = "UPDATE STUDENT SET Credits  = '" + finalcredits + "' WHERE StudentID = '" + userID + "'";
+                        string creditString = finalcredits.ToString().Replace(',', '.');
+                        sqlQuery = "UPDATE STUDENT SET Credits  = " + creditString + " WHERE StudentID = '" + userID + "'";
                         SqlCommand cmn2 = new SqlCommand(sqlQuery, conn);
                         cmn2.ExecuteNonQuery();
 
@@ -170,6 +170,7 @@ namespace Adrestia
 
         private void BtnShowBooked_Click(object sender, EventArgs e)
         {
+            lbBookedLessons.Items.Clear();
             lbBookedLessons.Items.Add("ID\t" + "DATE\t\t\t" + "TIME\t\t" + "DESCRIPTION\t" + "INSTRUCTOR\t");
             ///Load Booked lessons.
             try
@@ -215,9 +216,18 @@ namespace Adrestia
 
         private void BtnCancelBooking_Click(object sender, EventArgs e)
         {
-            
-            string id = lbBookedLessons.SelectedItem.ToString().Split('\t')[0];
-            if (id == "ID")
+            string id;
+            try
+            {
+                id = lbBookedLessons.SelectedItem.ToString().Split('\t')[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("You have not selected a booking to cancel");
+                return;
+            }
+
+            if (id == "ID" || id == null)
             {
                 MessageBox.Show("You have not selected a lesson!");
             }
@@ -280,7 +290,6 @@ namespace Adrestia
                 {
                     MessageBox.Show(err.Message);
                 }
-                label5.Text = price;
                 doublePrice = double.Parse(price);
 
                 //Get value of available spaces:
@@ -313,7 +322,8 @@ namespace Adrestia
                 double total = doublePrice + doubleCredits;
 
                 conn.Open();
-                ; string sqlQuery = "UPDATE STUDENT SET Credits  = " + total + " WHERE StudentID = '" + userID + "'";
+                string stringTotal = total.ToString().Replace(',', '.');
+                string sqlQuery = "UPDATE STUDENT SET Credits  = " + stringTotal + " WHERE StudentID = '" + userID + "'";
                 SqlCommand cmn = new SqlCommand(sqlQuery, conn);
                 cmn.ExecuteNonQuery();
 
@@ -343,7 +353,7 @@ namespace Adrestia
 
                 //RELOAD DATA:
                 lbBookedLessons.Items.Clear();
-                lbBookedLessons.Items.Add("ID\t" + "DATE\t\t\t\t" + "TIME\t\t" + "DESCRIPTION\t\t" + "INSTRUCTOR\t");
+                lbBookedLessons.Items.Add("ID\t" + "DATE\t\t" + "TIME\t\t" + "DESCRIPTION\t\t" + "INSTRUCTOR\t");
                 ///Load Booked lessons.
                 try
                 {
@@ -421,12 +431,17 @@ namespace Adrestia
                 selectedInstructor = Convert.ToString(selectedRow.Cells["InstructorID"].Value);
                 lbLessonSum.Items.Add("Selected Lesson: \t\t" + selectedLesson);
                 lbLessonSum.Items.Add("Lesson Date: \t\t" + selectedDate);
-                lbLessonSum.Items.Add("Lesson Time:: \t\t" + selectedTime);
+                lbLessonSum.Items.Add("Lesson Time: \t\t" + selectedTime);
                 lbLessonSum.Items.Add("Price: \t\t\tR" + selectedPrice);
                 lbLessonSum.Items.Add("Description: \t\t" + selectedDescription);
                 lbLessonSum.Items.Add("Available Spaces: \t\t" + selectedMax);
                 lbLessonSum.Items.Add("Instructor ID: \t\t" + selectedInstructor);
             }
+        }
+
+        private void BtnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

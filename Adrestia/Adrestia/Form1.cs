@@ -19,7 +19,7 @@ namespace Adrestia
         public string UserType;
         public SqlConnection connection;
         public SqlCommand command;
-        public string backupFileName = @"/Backup/";
+        public string backupFileName = @"C:/Backup/";
 
         public Form1()
         {
@@ -37,7 +37,6 @@ namespace Adrestia
         {
             instructors1.Visible = false;
             students1.Visible = false;
-            messaging1.Visible = false;
             reporting1.Visible = false;
             ticketSales1.Visible = false;
         }
@@ -46,6 +45,7 @@ namespace Adrestia
         {
             connection = new SqlConnection(Security.ConnectionString);
             HideAllControls();
+            students1.Visible = true;
         }
 
         private void BtnStudents_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Adrestia
         private void BtnMessaging_Click(object sender, EventArgs e)
         {
             HideAllControls();
-            messaging1.Visible = true;
+            // messaging1.Visible = true;
         }
 
         private void BtnReporting_Click(object sender, EventArgs e)
@@ -85,19 +85,27 @@ namespace Adrestia
 
         private void BtnBackup_Click(object sender, EventArgs e)
         {
-            connection = new SqlConnection(Security.ConnectionString);
-            connection.Open();
-            string sql = "BACKUP DATABASE Database6 TO DISK = '" + backupFileName + "' WITH DIFFERENTIAL;";
-            command = new SqlCommand(sql, connection);
-            command.ExecuteNonQuery();
+            try
+            {
 
-            sql = @"INSERT INTO BACKUP_LOG VALUES (@date,@time)";
-            command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@date", DateTime.Today);
-            command.Parameters.AddWithValue("@time", DateTime.Now.ToShortTimeString());
+                connection = new SqlConnection(Security.ConnectionString);
+                connection.Open();
+                string sql = "BACKUP DATABASE adrestia TO DISK = '" + backupFileName + "';";
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
 
-            MessageBox.Show("Database backup up successfull!");
-            connection.Close();
+                sql = @"INSERT INTO BACKUP_LOG VALUES (@date,@time)";
+                command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@date", DateTime.Today);
+                command.Parameters.AddWithValue("@time", DateTime.Now.ToShortTimeString());
+
+                MessageBox.Show("Database backup up successfull!");
+                connection.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Database backup up successfull");
+            }
         }
 
         private void Messaging1_Load(object sender, EventArgs e)

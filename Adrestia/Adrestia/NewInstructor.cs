@@ -28,17 +28,19 @@ namespace Adrestia
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             // Remove newly created user when cancelled
-            connection.Open();
+            /*connection.Open();
             string sql = "DELETE FROM [USER] WHERE UserID = '" + txtInstructorID.Text + "';";
             command = new SqlCommand(sql, connection);
             command.ExecuteNonQuery();
-            connection.Close();
+            connection.Close();*/
 
             this.Close();
         }
 
         private int GetInstructorID()
         {
+            connection.Open();
+
             string sql = "SELECT MAX(UserID) FROM [USER]";
             command = new SqlCommand(sql, connection);
             int id;
@@ -46,17 +48,32 @@ namespace Adrestia
             try
             {
                 id = (int)command.ExecuteScalar();
+                
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                id = 0;
+                MessageBox.Show(e.Message);
+                id = 1000;
             }
 
-            return id;
+            connection.Close();
+            return id + 1;
         }
 
         private void BtnAddInstructor_Click(object sender, EventArgs e)
         {
+            if (!(txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".")))
+            {
+                errorProvider1.SetError(txtEmail, "The value entered is not a valid email address.");
+                return;
+            }
+
+            if ((txtCellNo.Text.Length != 10) || !int.TryParse(txtCellNo.Text, out int x))
+            {
+                errorProvider1.SetError(txtCellNo, "The value entered is not a valid cell number.");
+                return;
+            }
+
             if (txtFirstname.Text == "" && txtLastname.Text == "" && txtCellNo.Text == "" && txtEmail.Text == "")
             {
                 MessageBox.Show("Please enter the details of the instructor!");
@@ -87,11 +104,12 @@ namespace Adrestia
                 // Add the newly created user as a instructor
                 connection.Open();
 
-                int instructorId = GetInstructorID();
+                int instructorId = int.Parse(txtInstructorID.Text);
                 string hashedPassword = Security.GetSHA1Hash(txtPassword.Text);
 
-                string sql = "INSERT INTO [USER] VALUES (@pw, @first, @last, @cell, @email, @type)";
+                string sql = "INSERT INTO [USER] VALUES (@id, @pw, @first, @last, @cell, @email, @type)";
                 command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", instructorId);
                 command.Parameters.AddWithValue("@pw", hashedPassword);
                 command.Parameters.AddWithValue("@first", txtFirstname.Text);
                 command.Parameters.AddWithValue("@last", txtLastname.Text);
@@ -118,10 +136,35 @@ namespace Adrestia
                 // Add new user
                 connection = new SqlConnection(connectionString);     
                 txtPassword.Text = DEFAULT_PASSWORD;
+                txtInstructorID.Text = GetInstructorID().ToString();
             }
             catch (Exception err)
             {
                 MessageBox.Show("DB Error: " + err.Message);
+            }
+        }
+
+        private void TxtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (!(txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".")))
+            {
+                errorProvider1.SetError(txtEmail, "The value entered is not a valid email address.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmail, "");
+            }
+        }
+
+        private void TxtCellNo_Validating(object sender, CancelEventArgs e)
+        {
+            if ((txtCellNo.Text.Length != 10) || !int.TryParse(txtCellNo.Text, out int x))
+            {
+                errorProvider1.SetError(txtCellNo, "The value entered is not a valid cell number.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtCellNo, "");
             }
         }
     }

@@ -56,6 +56,18 @@ namespace Adrestia
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            if (!(txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".")))
+            {
+                errorProvider1.SetError(txtEmail, "The value entered is not a valid email address.");
+                return;
+            }
+
+            if ((txtCell.Text.Length != 10) || !int.TryParse(txtCell.Text, out int x))
+            {
+                errorProvider1.SetError(txtCell, "The value entered is not a valid cell number.");
+                return;
+            }
+
             if (txtPass.Text != txtConfirm.Text)
             {
                 MessageBox.Show("Passwords do not match!");
@@ -113,6 +125,30 @@ namespace Adrestia
 
                 connection.Close();
                 this.Close();
+            }
+        }
+
+        private void TxtCell_Validating(object sender, CancelEventArgs e)
+        {
+            if ((txtCell.Text.Length != 10) || !int.TryParse(txtCell.Text, out int x))
+            {
+                errorProvider1.SetError(txtCell, "The value entered is not a valid cell number.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtCell, "");
+            }
+        }
+
+        private void TxtEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (!(txtEmail.Text.Contains("@") && txtEmail.Text.Contains(".")))
+            {
+                errorProvider1.SetError(txtEmail, "The value entered is not a valid email address.");
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmail, "");
             }
         }
     }

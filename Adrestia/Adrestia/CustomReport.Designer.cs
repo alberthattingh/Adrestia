@@ -57,12 +57,12 @@
             this.cbNoOfAdults = new System.Windows.Forms.CheckBox();
             this.cbTotalOfSale = new System.Windows.Forms.CheckBox();
             this.cbSalesEventID = new System.Windows.Forms.CheckBox();
-            this.gbEventVenues = new System.Windows.Forms.GroupBox();
-            this.cbMaxSeats = new System.Windows.Forms.CheckBox();
-            this.cbVenueDesc = new System.Windows.Forms.CheckBox();
             this.cnNoOfPensioners = new System.Windows.Forms.CheckBox();
             this.cnNoOfChildren = new System.Windows.Forms.CheckBox();
             this.cbSaleDate = new System.Windows.Forms.CheckBox();
+            this.gbEventVenues = new System.Windows.Forms.GroupBox();
+            this.cbMaxSeats = new System.Windows.Forms.CheckBox();
+            this.cbVenueDesc = new System.Windows.Forms.CheckBox();
             this.gbStudents = new System.Windows.Forms.GroupBox();
             this.cbSLastName = new System.Windows.Forms.CheckBox();
             this.cbSCellNo = new System.Windows.Forms.CheckBox();
@@ -81,12 +81,12 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.gbLessons = new System.Windows.Forms.GroupBox();
-            this.cbLessonDate = new System.Windows.Forms.CheckBox();
-            this.cbplacesAvailable = new System.Windows.Forms.CheckBox();
-            this.cbLessonDesc = new System.Windows.Forms.CheckBox();
-            this.cbLessonPrice = new System.Windows.Forms.CheckBox();
-            this.cbLessonTime = new System.Windows.Forms.CheckBox();
             this.cbLessonInstructor = new System.Windows.Forms.CheckBox();
+            this.cbLessonTime = new System.Windows.Forms.CheckBox();
+            this.cbLessonPrice = new System.Windows.Forms.CheckBox();
+            this.cbLessonDesc = new System.Windows.Forms.CheckBox();
+            this.cbplacesAvailable = new System.Windows.Forms.CheckBox();
+            this.cbLessonDate = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.gbInstructors.SuspendLayout();
             this.gbBackupLog.SuspendLayout();
@@ -450,6 +450,39 @@
             this.cbSalesEventID.UseVisualStyleBackColor = true;
             this.cbSalesEventID.CheckedChanged += new System.EventHandler(this.CbSalesEventID_CheckedChanged);
             // 
+            // cnNoOfPensioners
+            // 
+            this.cnNoOfPensioners.AutoSize = true;
+            this.cnNoOfPensioners.Location = new System.Drawing.Point(6, 135);
+            this.cnNoOfPensioners.Name = "cnNoOfPensioners";
+            this.cnNoOfPensioners.Size = new System.Drawing.Size(141, 21);
+            this.cnNoOfPensioners.TabIndex = 3;
+            this.cnNoOfPensioners.Text = "No Of Pensioners";
+            this.cnNoOfPensioners.UseVisualStyleBackColor = true;
+            this.cnNoOfPensioners.CheckedChanged += new System.EventHandler(this.CnNoOfPensioners_CheckedChanged);
+            // 
+            // cnNoOfChildren
+            // 
+            this.cnNoOfChildren.AutoSize = true;
+            this.cnNoOfChildren.Location = new System.Drawing.Point(6, 106);
+            this.cnNoOfChildren.Name = "cnNoOfChildren";
+            this.cnNoOfChildren.Size = new System.Drawing.Size(127, 21);
+            this.cnNoOfChildren.TabIndex = 2;
+            this.cnNoOfChildren.Text = "No Of Children";
+            this.cnNoOfChildren.UseVisualStyleBackColor = true;
+            this.cnNoOfChildren.CheckedChanged += new System.EventHandler(this.CnNoOfChildren_CheckedChanged);
+            // 
+            // cbSaleDate
+            // 
+            this.cbSaleDate.AutoSize = true;
+            this.cbSaleDate.Location = new System.Drawing.Point(6, 23);
+            this.cbSaleDate.Name = "cbSaleDate";
+            this.cbSaleDate.Size = new System.Drawing.Size(59, 21);
+            this.cbSaleDate.TabIndex = 1;
+            this.cbSaleDate.Text = "Date";
+            this.cbSaleDate.UseVisualStyleBackColor = true;
+            this.cbSaleDate.CheckedChanged += new System.EventHandler(this.CbSaleDate_CheckedChanged);
+            // 
             // gbEventVenues
             // 
             this.gbEventVenues.Controls.Add(this.cbMaxSeats);
@@ -483,39 +516,6 @@
             this.cbVenueDesc.Text = "Description";
             this.cbVenueDesc.UseVisualStyleBackColor = true;
             this.cbVenueDesc.CheckedChanged += new System.EventHandler(this.CbVenueDesc_CheckedChanged);
-            // 
-            // cnNoOfPensioners
-            // 
-            this.cnNoOfPensioners.AutoSize = true;
-            this.cnNoOfPensioners.Location = new System.Drawing.Point(6, 135);
-            this.cnNoOfPensioners.Name = "cnNoOfPensioners";
-            this.cnNoOfPensioners.Size = new System.Drawing.Size(141, 21);
-            this.cnNoOfPensioners.TabIndex = 3;
-            this.cnNoOfPensioners.Text = "No Of Pensioners";
-            this.cnNoOfPensioners.UseVisualStyleBackColor = true;
-            this.cnNoOfPensioners.CheckedChanged += new System.EventHandler(this.CnNoOfPensioners_CheckedChanged);
-            // 
-            // cnNoOfChildren
-            // 
-            this.cnNoOfChildren.AutoSize = true;
-            this.cnNoOfChildren.Location = new System.Drawing.Point(6, 106);
-            this.cnNoOfChildren.Name = "cnNoOfChildren";
-            this.cnNoOfChildren.Size = new System.Drawing.Size(127, 21);
-            this.cnNoOfChildren.TabIndex = 2;
-            this.cnNoOfChildren.Text = "No Of Children";
-            this.cnNoOfChildren.UseVisualStyleBackColor = true;
-            this.cnNoOfChildren.CheckedChanged += new System.EventHandler(this.CnNoOfChildren_CheckedChanged);
-            // 
-            // cbSaleDate
-            // 
-            this.cbSaleDate.AutoSize = true;
-            this.cbSaleDate.Location = new System.Drawing.Point(6, 23);
-            this.cbSaleDate.Name = "cbSaleDate";
-            this.cbSaleDate.Size = new System.Drawing.Size(59, 21);
-            this.cbSaleDate.TabIndex = 1;
-            this.cbSaleDate.Text = "Date";
-            this.cbSaleDate.UseVisualStyleBackColor = true;
-            this.cbSaleDate.CheckedChanged += new System.EventHandler(this.CbSaleDate_CheckedChanged);
             // 
             // gbStudents
             // 
@@ -694,6 +694,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Location = new System.Drawing.Point(39, 432);
@@ -736,49 +737,16 @@
             this.gbLessons.TabStop = false;
             this.gbLessons.Text = "Lessons";
             // 
-            // cbLessonDate
+            // cbLessonInstructor
             // 
-            this.cbLessonDate.AutoSize = true;
-            this.cbLessonDate.Location = new System.Drawing.Point(9, 50);
-            this.cbLessonDate.Name = "cbLessonDate";
-            this.cbLessonDate.Size = new System.Drawing.Size(59, 21);
-            this.cbLessonDate.TabIndex = 1;
-            this.cbLessonDate.Text = "Date";
-            this.cbLessonDate.UseVisualStyleBackColor = true;
-            this.cbLessonDate.CheckedChanged += new System.EventHandler(this.CbLessonDate_CheckedChanged);
-            // 
-            // cbplacesAvailable
-            // 
-            this.cbplacesAvailable.AutoSize = true;
-            this.cbplacesAvailable.Location = new System.Drawing.Point(9, 135);
-            this.cbplacesAvailable.Name = "cbplacesAvailable";
-            this.cbplacesAvailable.Size = new System.Drawing.Size(141, 21);
-            this.cbplacesAvailable.TabIndex = 2;
-            this.cbplacesAvailable.Text = "Places Available";
-            this.cbplacesAvailable.UseVisualStyleBackColor = true;
-            this.cbplacesAvailable.CheckedChanged += new System.EventHandler(this.CbplacesAvailable_CheckedChanged);
-            // 
-            // cbLessonDesc
-            // 
-            this.cbLessonDesc.AutoSize = true;
-            this.cbLessonDesc.Location = new System.Drawing.Point(9, 23);
-            this.cbLessonDesc.Name = "cbLessonDesc";
-            this.cbLessonDesc.Size = new System.Drawing.Size(103, 21);
-            this.cbLessonDesc.TabIndex = 3;
-            this.cbLessonDesc.Text = "Description";
-            this.cbLessonDesc.UseVisualStyleBackColor = true;
-            this.cbLessonDesc.CheckedChanged += new System.EventHandler(this.CbLessonDesc_CheckedChanged);
-            // 
-            // cbLessonPrice
-            // 
-            this.cbLessonPrice.AutoSize = true;
-            this.cbLessonPrice.Location = new System.Drawing.Point(9, 107);
-            this.cbLessonPrice.Name = "cbLessonPrice";
-            this.cbLessonPrice.Size = new System.Drawing.Size(61, 21);
-            this.cbLessonPrice.TabIndex = 4;
-            this.cbLessonPrice.Text = "Price";
-            this.cbLessonPrice.UseVisualStyleBackColor = true;
-            this.cbLessonPrice.CheckedChanged += new System.EventHandler(this.CbLessonPrice_CheckedChanged);
+            this.cbLessonInstructor.AutoSize = true;
+            this.cbLessonInstructor.Location = new System.Drawing.Point(9, 163);
+            this.cbLessonInstructor.Name = "cbLessonInstructor";
+            this.cbLessonInstructor.Size = new System.Drawing.Size(87, 21);
+            this.cbLessonInstructor.TabIndex = 6;
+            this.cbLessonInstructor.Text = "Instructor";
+            this.cbLessonInstructor.UseVisualStyleBackColor = true;
+            this.cbLessonInstructor.CheckedChanged += new System.EventHandler(this.CbLessonOrganizer_CheckedChanged);
             // 
             // cbLessonTime
             // 
@@ -791,22 +759,57 @@
             this.cbLessonTime.UseVisualStyleBackColor = true;
             this.cbLessonTime.CheckedChanged += new System.EventHandler(this.CbLessonTime_CheckedChanged);
             // 
-            // cbLessonInstructor
+            // cbLessonPrice
             // 
-            this.cbLessonInstructor.AutoSize = true;
-            this.cbLessonInstructor.Location = new System.Drawing.Point(9, 163);
-            this.cbLessonInstructor.Name = "cbLessonInstructor";
-            this.cbLessonInstructor.Size = new System.Drawing.Size(87, 21);
-            this.cbLessonInstructor.TabIndex = 6;
-            this.cbLessonInstructor.Text = "Instructor";
-            this.cbLessonInstructor.UseVisualStyleBackColor = true;
-            this.cbLessonInstructor.CheckedChanged += new System.EventHandler(this.CbLessonOrganizer_CheckedChanged);
+            this.cbLessonPrice.AutoSize = true;
+            this.cbLessonPrice.Location = new System.Drawing.Point(9, 107);
+            this.cbLessonPrice.Name = "cbLessonPrice";
+            this.cbLessonPrice.Size = new System.Drawing.Size(61, 21);
+            this.cbLessonPrice.TabIndex = 4;
+            this.cbLessonPrice.Text = "Price";
+            this.cbLessonPrice.UseVisualStyleBackColor = true;
+            this.cbLessonPrice.CheckedChanged += new System.EventHandler(this.CbLessonPrice_CheckedChanged);
+            // 
+            // cbLessonDesc
+            // 
+            this.cbLessonDesc.AutoSize = true;
+            this.cbLessonDesc.Location = new System.Drawing.Point(9, 23);
+            this.cbLessonDesc.Name = "cbLessonDesc";
+            this.cbLessonDesc.Size = new System.Drawing.Size(103, 21);
+            this.cbLessonDesc.TabIndex = 3;
+            this.cbLessonDesc.Text = "Description";
+            this.cbLessonDesc.UseVisualStyleBackColor = true;
+            this.cbLessonDesc.CheckedChanged += new System.EventHandler(this.CbLessonDesc_CheckedChanged);
+            // 
+            // cbplacesAvailable
+            // 
+            this.cbplacesAvailable.AutoSize = true;
+            this.cbplacesAvailable.Location = new System.Drawing.Point(9, 135);
+            this.cbplacesAvailable.Name = "cbplacesAvailable";
+            this.cbplacesAvailable.Size = new System.Drawing.Size(141, 21);
+            this.cbplacesAvailable.TabIndex = 2;
+            this.cbplacesAvailable.Text = "Places Available";
+            this.cbplacesAvailable.UseVisualStyleBackColor = true;
+            this.cbplacesAvailable.CheckedChanged += new System.EventHandler(this.CbplacesAvailable_CheckedChanged);
+            // 
+            // cbLessonDate
+            // 
+            this.cbLessonDate.AutoSize = true;
+            this.cbLessonDate.Location = new System.Drawing.Point(9, 50);
+            this.cbLessonDate.Name = "cbLessonDate";
+            this.cbLessonDate.Size = new System.Drawing.Size(59, 21);
+            this.cbLessonDate.TabIndex = 1;
+            this.cbLessonDate.Text = "Date";
+            this.cbLessonDate.UseVisualStyleBackColor = true;
+            this.cbLessonDate.CheckedChanged += new System.EventHandler(this.CbLessonDate_CheckedChanged);
             // 
             // CustomReport
             // 
+            this.AcceptButton = this.btnGenerate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(1181, 584);
             this.Controls.Add(this.gbMessaging);
             this.Controls.Add(this.gbLessons);
@@ -821,8 +824,8 @@
             this.Controls.Add(this.gbStudents);
             this.Controls.Add(this.groupBox1);
             this.Name = "CustomReport";
-            //this.helpProvider1.SetShowHelp(this, true);
             this.Text = "CustomReport";
+            this.Load += new System.EventHandler(this.CustomReport_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbInstructors.ResumeLayout(false);

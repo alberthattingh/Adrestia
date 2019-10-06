@@ -38,6 +38,7 @@
             this.studentLessons1 = new Adrestia.StudentLessons();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.upcoming1 = new Adrestia.Upcoming();
+            this.btnEditProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnUpcoming);
             this.panel1.Controls.Add(this.btnMessaging);
+            this.panel1.Controls.Add(this.btnEditProfile);
             this.panel1.Controls.Add(this.btnBookLessons);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -73,7 +75,7 @@
             this.btnUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpcoming.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpcoming.ForeColor = System.Drawing.Color.White;
-            this.btnUpcoming.Location = new System.Drawing.Point(0, 200);
+            this.btnUpcoming.Location = new System.Drawing.Point(0, 346);
             this.btnUpcoming.Name = "btnUpcoming";
             this.btnUpcoming.Size = new System.Drawing.Size(200, 75);
             this.btnUpcoming.TabIndex = 5;
@@ -87,7 +89,7 @@
             this.btnMessaging.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMessaging.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMessaging.ForeColor = System.Drawing.Color.White;
-            this.btnMessaging.Location = new System.Drawing.Point(0, 300);
+            this.btnMessaging.Location = new System.Drawing.Point(0, 446);
             this.btnMessaging.Name = "btnMessaging";
             this.btnMessaging.Size = new System.Drawing.Size(200, 75);
             this.btnMessaging.TabIndex = 4;
@@ -101,7 +103,7 @@
             this.btnBookLessons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookLessons.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookLessons.ForeColor = System.Drawing.Color.White;
-            this.btnBookLessons.Location = new System.Drawing.Point(0, 100);
+            this.btnBookLessons.Location = new System.Drawing.Point(0, 246);
             this.btnBookLessons.Name = "btnBookLessons";
             this.btnBookLessons.Size = new System.Drawing.Size(200, 75);
             this.btnBookLessons.TabIndex = 2;
@@ -137,6 +139,20 @@
             this.upcoming1.Name = "upcoming1";
             this.upcoming1.Size = new System.Drawing.Size(1000, 666);
             this.upcoming1.TabIndex = 4;
+            // 
+            // btnEditProfile
+            // 
+            this.btnEditProfile.FlatAppearance.BorderSize = 0;
+            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditProfile.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProfile.ForeColor = System.Drawing.Color.White;
+            this.btnEditProfile.Location = new System.Drawing.Point(0, 146);
+            this.btnEditProfile.Name = "btnEditProfile";
+            this.btnEditProfile.Size = new System.Drawing.Size(200, 75);
+            this.btnEditProfile.TabIndex = 2;
+            this.btnEditProfile.Text = "Edit Profile";
+            this.btnEditProfile.UseVisualStyleBackColor = true;
+            this.btnEditProfile.Click += new System.EventHandler(this.BtnEditProfile_Click);
             // 
             // btnEvents
             // 
@@ -179,5 +195,6 @@
 
         private System.Windows.Forms.HelpProvider helpProvider1;
         private Upcoming upcoming1;
+        private System.Windows.Forms.Button btnEditProfile;
     }
 }
