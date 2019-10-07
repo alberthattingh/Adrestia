@@ -36,11 +36,12 @@
             this.btnLessons = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.btnUpcoming = new System.Windows.Forms.Button();
+            this.btnEditProfile = new System.Windows.Forms.Button();
             this.upcoming1 = new Adrestia.Upcoming();
             this.lessonsInstructor1 = new Adrestia.LessonsInstructor();
             this.messaging1 = new Adrestia.Messaging();
             this.specialEvents1 = new Adrestia.SpecialEvents();
-            this.btnEditProfile = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +129,20 @@
             this.btnUpcoming.UseVisualStyleBackColor = true;
             this.btnUpcoming.Click += new System.EventHandler(this.BtnUpcoming_Click);
             // 
+            // btnEditProfile
+            // 
+            this.btnEditProfile.FlatAppearance.BorderSize = 0;
+            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditProfile.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProfile.ForeColor = System.Drawing.Color.White;
+            this.btnEditProfile.Location = new System.Drawing.Point(0, 110);
+            this.btnEditProfile.Name = "btnEditProfile";
+            this.btnEditProfile.Size = new System.Drawing.Size(200, 75);
+            this.btnEditProfile.TabIndex = 3;
+            this.btnEditProfile.Text = "Edit Profile";
+            this.btnEditProfile.UseVisualStyleBackColor = true;
+            this.btnEditProfile.Click += new System.EventHandler(this.BtnEditProfile_Click);
+            // 
             // upcoming1
             // 
             this.upcoming1.Location = new System.Drawing.Point(200, 0);
@@ -160,19 +175,9 @@
             this.specialEvents1.Size = new System.Drawing.Size(1000, 666);
             this.specialEvents1.TabIndex = 3;
             // 
-            // btnEditProfile
+            // helpProvider1
             // 
-            this.btnEditProfile.FlatAppearance.BorderSize = 0;
-            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditProfile.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProfile.ForeColor = System.Drawing.Color.White;
-            this.btnEditProfile.Location = new System.Drawing.Point(0, 110);
-            this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.Size = new System.Drawing.Size(200, 75);
-            this.btnEditProfile.TabIndex = 3;
-            this.btnEditProfile.Text = "Edit Profile";
-            this.btnEditProfile.UseVisualStyleBackColor = true;
-            this.btnEditProfile.Click += new System.EventHandler(this.BtnEditProfile_Click);
+            this.helpProvider1.HelpNamespace = "C:\\Program Files\\Adrestia Group\\Adrestia\\res\\help\\User Manual.htm";
             // 
             // Form2
             // 
@@ -218,5 +223,6 @@
         private System.Windows.Forms.Button btnUpcoming;
         private Upcoming upcoming1;
         private System.Windows.Forms.Button btnEditProfile;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

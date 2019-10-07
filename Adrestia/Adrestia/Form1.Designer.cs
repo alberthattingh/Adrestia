@@ -148,8 +148,7 @@
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "C:\\Users\\ahatt\\Documents\\Study Material\\Second Year\\CMPG223\\Adrestia\\Adrestia\\Adr" +
-    "estia\\res\\Help files\\User Manual.htm";
+            this.helpProvider1.HelpNamespace = "C:\\Program Files\\Adrestia Group\\Adrestia\\res\\help\\User Manual.htm";
             // 
             // reporting1
             // 
